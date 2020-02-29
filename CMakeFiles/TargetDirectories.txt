@@ -1,0 +1,4 @@
+/home/wangk/code/cpp/sylar/code/CMakeFiles/rebuild_cache.dir
+/home/wangk/code/cpp/sylar/code/CMakeFiles/edit_cache.dir
+/home/wangk/code/cpp/sylar/code/CMakeFiles/sylar.dir
+/home/wangk/code/cpp/sylar/code/CMakeFiles/testLog.dir
