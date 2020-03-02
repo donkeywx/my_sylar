@@ -13,7 +13,7 @@ SET(LIB_SRC
 add_library(sylar SHARED ${LIB_SRC})
 add_executable(testLog tests/test.cpp)
 add_dependencies(testLog sylar)
-target_link_libraries(sylar)
+target_link_libraries(testLog sylar)
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
