@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/wangk/code/cpp/sylar/code/sylar/log.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
+util.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
+singleton.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
 string
 -
 memory
@@ -19,10 +23,30 @@ vector
 -
 fstream
 -
+time.h
+-
+map
+-
 
-/home/wangk/code/cpp/sylar/code/tests/test.cpp
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
+memory
+-
+
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
+pthread.h
+-
+stdint.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/syscall.h
+-
+
+/home/wangk/code/cpp/sylar/code/my_sylar/tests/test.cpp
 iostream
 -
 ../sylar/log.h
-/home/wangk/code/cpp/sylar/code/sylar/log.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
 

@@ -1,0 +1,2 @@
+2020-03-03 22:15:24	6811	thread_name	0	[ERROR]	[root]	/home/wangk/code/cpp/sylar/code/my_sylar/tests/test_config.cpp:9	8080
+2020-03-03 22:15:24	6811	thread_name	0	[DEBUG]	[root]	/home/wangk/code/cpp/sylar/code/my_sylar/tests/test_config.cpp:10	8080

@@ -51,10 +51,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wangk/code/cpp/sylar/code
+CMAKE_SOURCE_DIR = /home/wangk/code/cpp/sylar/code/my_sylar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wangk/code/cpp/sylar/code
+CMAKE_BINARY_DIR = /home/wangk/code/cpp/sylar/code/my_sylar
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -83,9 +83,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/CMakeFiles /home/wangk/code/cpp/sylar/code/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -114,6 +114,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testConfig
+
+# Build rule for target.
+testConfig: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testConfig
+.PHONY : testConfig
+
+# fast build rule for target.
+testConfig/fast:
+	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/build
+.PHONY : testConfig/fast
+
+#=============================================================================
 # Target rules for targets named sylar
 
 # Build rule for target.
@@ -138,6 +151,33 @@ testLog: cmake_check_build_system
 testLog/fast:
 	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/build
 .PHONY : testLog/fast
+
+sylar/config.o: sylar/config.cpp.o
+
+.PHONY : sylar/config.o
+
+# target to build an object file
+sylar/config.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/config.cpp.o
+.PHONY : sylar/config.cpp.o
+
+sylar/config.i: sylar/config.cpp.i
+
+.PHONY : sylar/config.i
+
+# target to preprocess a source file
+sylar/config.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/config.cpp.i
+.PHONY : sylar/config.cpp.i
+
+sylar/config.s: sylar/config.cpp.s
+
+.PHONY : sylar/config.s
+
+# target to generate assembly for a file
+sylar/config.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/config.cpp.s
+.PHONY : sylar/config.cpp.s
 
 sylar/log.o: sylar/log.cpp.o
 
@@ -166,6 +206,33 @@ sylar/log.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/log.cpp.s
 .PHONY : sylar/log.cpp.s
 
+sylar/util.o: sylar/util.cpp.o
+
+.PHONY : sylar/util.o
+
+# target to build an object file
+sylar/util.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/util.cpp.o
+.PHONY : sylar/util.cpp.o
+
+sylar/util.i: sylar/util.cpp.i
+
+.PHONY : sylar/util.i
+
+# target to preprocess a source file
+sylar/util.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/util.cpp.i
+.PHONY : sylar/util.cpp.i
+
+sylar/util.s: sylar/util.cpp.s
+
+.PHONY : sylar/util.s
+
+# target to generate assembly for a file
+sylar/util.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/util.cpp.s
+.PHONY : sylar/util.cpp.s
+
 tests/test.o: tests/test.cpp.o
 
 .PHONY : tests/test.o
@@ -193,6 +260,33 @@ tests/test.cpp.s:
 	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
 
+tests/test_config.o: tests/test_config.cpp.o
+
+.PHONY : tests/test_config.o
+
+# target to build an object file
+tests/test_config.cpp.o:
+	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/test_config.cpp.o
+.PHONY : tests/test_config.cpp.o
+
+tests/test_config.i: tests/test_config.cpp.i
+
+.PHONY : tests/test_config.i
+
+# target to preprocess a source file
+tests/test_config.cpp.i:
+	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/test_config.cpp.i
+.PHONY : tests/test_config.cpp.i
+
+tests/test_config.s: tests/test_config.cpp.s
+
+.PHONY : tests/test_config.s
+
+# target to generate assembly for a file
+tests/test_config.cpp.s:
+	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/test_config.cpp.s
+.PHONY : tests/test_config.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -201,14 +295,24 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... testConfig"
 	@echo "... sylar"
 	@echo "... testLog"
+	@echo "... sylar/config.o"
+	@echo "... sylar/config.i"
+	@echo "... sylar/config.s"
 	@echo "... sylar/log.o"
 	@echo "... sylar/log.i"
 	@echo "... sylar/log.s"
+	@echo "... sylar/util.o"
+	@echo "... sylar/util.i"
+	@echo "... sylar/util.s"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
+	@echo "... tests/test_config.o"
+	@echo "... tests/test_config.i"
+	@echo "... tests/test_config.s"
 .PHONY : help
 
 
