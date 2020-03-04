@@ -6,5 +6,5 @@ CXX_FLAGS =  -O0 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-functio
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/boost/include 
+CXX_INCLUDES = -I/usr/local/yaml-cpp/include -I/usr/local/boost/include 
 

@@ -40,6 +40,8 @@
 // 获取主日志
 #define SYLAR_LOG_ROOT() sylar::LoggerMgr::getInstance()->getRoot()
 
+#define SYLAR_LOG_NAME(name) sylar::LoggerMgr::getInstance()->getLogger(name)
+
 namespace sylar
 {
 

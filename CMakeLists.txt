@@ -10,18 +10,21 @@ SET(LIB_SRC
     sylar/util.cpp
     sylar/config.cpp
 )
+LINK_DIRECTORIES(/usr/local/yaml-cpp/lib)
+INCLUDE_DIRECTORIES(/usr/local/yaml-cpp/include)
 LINK_DIRECTORIES(/usr/local/boost/lib)
 INCLUDE_DIRECTORIES(/usr/local/boost/include)
+
 
 add_library(sylar SHARED ${LIB_SRC})
 
 add_executable(testLog tests/test.cpp)
 add_dependencies(testLog sylar)
-target_link_libraries(testLog sylar)
+target_link_libraries(testLog sylar -lyaml-cpp)
 
 add_executable(testConfig tests/test_config.cpp)
 add_dependencies(testConfig sylar)
-target_link_libraries(testConfig sylar)
+target_link_libraries(testConfig sylar -lyaml-cpp)
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
