@@ -1,0 +1,30 @@
+# logs: # log为数组
+#     - name: root
+#       level: info # 单值
+#       appenders:
+#           - type: FileLogAppender
+#             file: /apps/logs/sylar/root.txt
+#           - type: StdoutLogAppender
+#     - name: system
+#       level: info
+#       appenders:
+#           - type: FileLogAppender # type为map
+#             file: /apps/logs/sylar/system.txt
+#           - type: StdoutLogAppender
+# aihao:  
+#   - nin # 数组
+#   - nini
+#   - sdaf
+# nihao: hah # 单值
+# port: 9090
+
+vec:
+    - 11
+    - 22
+    - 33
+    - 44
+
+map: # map
+    name: 2
+    sex: 3
+
