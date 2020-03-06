@@ -13,6 +13,7 @@
 #include <map>
 
 // 使用流方式输出日志
+// 大致流程就是获取event的输出流，然后在LogEventWrap析构的时候输出内容
 #define SYLAR_LOG_LEVEL(logger, level) \
     if (logger->getLevel() <= level) \
         sylar::LogEventWrap(sylar::LogEvent::ptr (new sylar::LogEvent(logger, level, \
@@ -26,6 +27,7 @@
 #define SYLAR_LOG_FATAL(logger) SYLAR_LOG_LEVEL(logger, sylar::LogLevel::FATAL)
 
 // 格式化输出日志
+// 和SYLAR_LOG_LEVEL差不多，但是多了format解析的过程，具体日志内容存储在m_ss中
 #define SYLAR_LOG_FMT_LEVEL(logger, level, fmt, ...) \
     if(logger->getLevel() <= level) \
         sylar::LogEventWrap(sylar::LogEvent::ptr(new sylar::LogEvent(logger, level, \
@@ -40,6 +42,7 @@
 // 获取主日志
 #define SYLAR_LOG_ROOT() sylar::LoggerMgr::getInstance()->getRoot()
 
+// 根据名称获取对应的日志器
 #define SYLAR_LOG_NAME(name) sylar::LoggerMgr::getInstance()->getLogger(name)
 
 namespace sylar
@@ -66,6 +69,7 @@ public:
 };
 
 // 日志事件
+// 该类最重要的事情就是记录日志内容的所有属性，以及具体日志内容
 class LogEvent
 {
 public:
@@ -161,18 +165,19 @@ private:
 // 日志输出地
 class LogAppender
 {
-friend class Logger;
 public:
     typedef std::shared_ptr<LogAppender> ptr;
     virtual ~LogAppender(){}
 
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) = 0;
 
-    void setFormatter(LogFormatter::ptr formatter);
-    LogFormatter::ptr getFormatter()const;
-
     LogLevel::Level getLevel() const {return m_level;}
     void setLevel(LogLevel::Level level) {m_level = level;}
+
+    bool hasFormatter() const {return m_hasFormatter;}
+    
+    void setFormatter(LogFormatter::ptr formatter);
+    LogFormatter::ptr getFormatter()const;
 protected:
     LogLevel::Level m_level = LogLevel::DEBUG;
     bool m_hasFormatter = false;
@@ -191,6 +196,8 @@ public:
 class FileLogAppender: public LogAppender
 {
 public:
+    virtual ~FileLogAppender();
+    
     typedef std::shared_ptr<FileLogAppender> ptr;
     FileLogAppender(const std::string& filename);
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) override;
@@ -207,7 +214,6 @@ private:
 // 日志器
 class Logger: public std::enable_shared_from_this<Logger>
 {
-friend class LoggerManager;
 public:
     typedef std::shared_ptr<Logger> ptr;
 
@@ -215,27 +221,33 @@ public:
 
     void log(LogLevel::Level level, const LogEvent::ptr event);
     
-    void addAppender(LogAppender::ptr appender);
-    void delAppender(LogAppender::ptr appender);
-    void clearAppender();
-    void setFormatter(LogFormatter::ptr val);
-    void setFormatter(const std::string& val);
-    LogFormatter::ptr getFormatter();
-    LogLevel::Level getLevel()const{return m_level;}
-    void setLevel(LogLevel::Level level){m_level = level;}
-    const std::string& getName() const { return m_name;}
-
     void debug(LogEvent::ptr event);
     void info(LogEvent::ptr event);
     void warn(LogEvent::ptr event);
     void error(LogEvent::ptr event);
     void fatal(LogEvent::ptr event);
+
+    const std::string& getName() const { return m_name;}
+
+    LogLevel::Level getLevel()const{return m_level;}
+    void setLevel(LogLevel::Level level){m_level = level;}
+
+    void addAppender(LogAppender::ptr appender);
+    void delAppender(LogAppender::ptr appender);
+    void clearAppender();
+
+    void setFormatter(LogFormatter::ptr val);
+    void setFormatter(const std::string& val);
+    LogFormatter::ptr getFormatter() const {return m_formatter;}
+
+    Logger::ptr getRoot() const {return m_root;}
+    void setRoot(Logger::ptr root) {m_root = root;}
 private:
     std::string m_name;
     LogLevel::Level m_level;
     std::list<LogAppender::ptr> m_appenders;
     LogFormatter::ptr m_formatter;
-    Logger::ptr m_root; // 主日志器
+    Logger::ptr m_root; // 在不指定任何的appender的时候，使用root日志器
 };
 
 class LoggerManager

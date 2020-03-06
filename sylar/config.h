@@ -1,7 +1,9 @@
 #ifndef __SYLAR_CONFIG_H__
 #define __SYLAR_CONFIG_H__
 
+#include <iostream>
 #include <memory>
+#include <functional>
 #include <string>
 #include <algorithm>
 #include <boost/lexical_cast.hpp>
@@ -15,31 +17,6 @@
 #include "log.h"
 namespace sylar
 {
-
-class ConfigVarBase
-{
-public:
-    typedef std::shared_ptr<ConfigVarBase> ptr;
-
-    // name配置名 description配置参数描述
-    ConfigVarBase(const std::string& name, const std::string& description = "")
-        :m_name(name), m_description(description)
-    {
-        std::transform(m_name.begin(), m_name.end(), m_name.begin(), ::tolower);
-    }
-
-    virtual ~ConfigVarBase(){}
-
-    const std::string& getName() const{return m_name;}
-    const std::string& getDescription() const{return m_description;}
-    virtual std::string toString() = 0;
-    // 从字符串初始化值
-    virtual bool fromString(const std::string& val) = 0;
-    virtual std::string getTypeName() const = 0;
-protected:
-    std::string m_name;
-    std::string m_description;
-};
 
 /**
  * @brief 类型转换模板类(F 源类型, T 目标类型)
@@ -90,6 +67,7 @@ public:
         }
         std::stringstream ss;
         ss << node;
+        // std::cout << "wangkang: " << ss.str() << std::endl;
         return ss.str();
     }
 };
@@ -126,6 +104,7 @@ public:
         }
         std::stringstream ss;
         ss << node;
+        
         return ss.str();
     }
 };
@@ -278,12 +257,38 @@ public:
     }
 };
 
+class ConfigVarBase
+{
+public:
+    typedef std::shared_ptr<ConfigVarBase> ptr;
+
+    // name配置名 description配置参数描述
+    ConfigVarBase(const std::string& name, const std::string& description = "")
+        :m_name(name), m_description(description)
+    {
+        std::transform(m_name.begin(), m_name.end(), m_name.begin(), ::tolower);
+    }
+
+    virtual ~ConfigVarBase(){}
+
+    const std::string& getName() const{return m_name;}
+    const std::string& getDescription() const{return m_description;}
+    virtual std::string toString() = 0;                 // 转换成字符串
+    virtual bool fromString(const std::string& val) = 0;    // 从字符串转换成具体类型值
+    virtual std::string getTypeName() const = 0;        // 获取类型名称
+protected:
+    std::string m_name;
+    std::string m_description;
+};
+
+// 模板类的定义和实现最好都在.h文件中
 template<class T, class FromStr = LexicalCast<std::string, T>
                 ,class ToStr = LexicalCast<T, std::string> >
 class ConfigVar: public ConfigVarBase
 {
 public:
     typedef std::shared_ptr<ConfigVar> ptr;
+    typedef std::function<void (const T& old_value, const T& new_value)> on_change_cb;
 
     ConfigVar(const std::string& name,
         const T& default_value,
@@ -329,11 +334,66 @@ public:
     }
 
     T getVal() {return m_val;}
-    void setValue(const T& v){m_val = v;}
+    void setValue(const T& v)
+    {
+        if(v == m_val) 
+        {
+            return;
+        }
+        for(auto& i : m_cbs)
+        {
+            i.second(m_val, v);
+        }
 
-    std::string getTypeName() const override { return typeid(m_val).name();}
+        m_val = v;
+    }
+
+    std::string getTypeName() const override { return typeid(m_val).name();}// ?? T
+
+    /**
+     * @brief 添加变化回调函数
+     * @return 返回该回调函数对应的唯一id,用于删除回调
+     */
+    uint64_t addListener(on_change_cb cb) 
+    {
+        static uint64_t s_fun_id = 0;
+        ++s_fun_id;
+        m_cbs[s_fun_id] = cb;
+        return s_fun_id;
+    }
+
+    /**
+     * @brief 删除回调函数
+     * @param[in] key 回调函数的唯一id
+     */
+    void delListener(uint64_t key) 
+    {
+        m_cbs.erase(key);
+    }
+
+    /**
+     * @brief 获取回调函数
+     * @param[in] key 回调函数的唯一id
+     * @return 如果存在返回对应的回调函数,否则返回nullptr
+     */
+    on_change_cb getListener(uint64_t key) 
+    {
+        auto it = m_cbs.find(key);
+        return it == m_cbs.end() ? nullptr : it->second;
+    }
+
+    /**
+     * @brief 清理所有的回调函数
+     */
+    void clearListener() 
+    {
+        m_cbs.clear();
+    }
 private:
     T m_val;
+
+    //变更回调函数组, uint64_t key,要求唯一，一般可以用hash
+    std::map<uint64_t, on_change_cb> m_cbs;
 };
 
 class Config
@@ -344,13 +404,24 @@ public:
 
     template<class T>
     static typename ConfigVar<T>::ptr Lookup(const std::string& name,
-            const T& default_value, const std::string& description = "") 
+            const T& default_value, const std::string& description = "")
     {
-        auto tmp = Lookup<T>(name);
-        if(tmp)
+        auto it = GetDatas().find(name);
+        if(it != GetDatas().end()) 
         {
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "Lookup name = " << name << " exists";
-            return tmp;
+            auto tmp = std::dynamic_pointer_cast<ConfigVar<T> >(it->second);
+            if(tmp) 
+            {
+                SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "Lookup name=" << name << " exists";
+                return tmp;
+            } 
+            else 
+            {
+                SYLAR_LOG_ERROR(SYLAR_LOG_ROOT()) << "Lookup name=" << name << " exists but type not "
+                        << typeid(T).name() << " real_type=" << it->second->getTypeName()
+                        << " " << it->second->toString();
+                return nullptr;
+            }
         }
 
         if(name.find_first_not_of("abcdefghikjlmnopqrstuvwxyz._012345678")
@@ -366,18 +437,29 @@ public:
         return v;
     }
 
+    /**
+     * @brief 查找配置参数,返回配置参数类
+     * @param[in] name 配置参数名称
+     */
     template<class T>
-    static typename ConfigVar<T>::ptr Lookup(const std::string& name) 
+    static typename ConfigVar<T>::ptr Lookup(const std::string& name)
     {
         auto it = GetDatas().find(name);
-        if(it == GetDatas().end()) {
+        if(it == GetDatas().end()) 
+        {
             return nullptr;
         }
         return std::dynamic_pointer_cast<ConfigVar<T> >(it->second);
     }
 
+    /**
+     * @brief 查找配置参数,返回配置参数的基类
+     * @param[in] name 配置参数名称
+     */
+    static ConfigVarBase::ptr LookupBase(const std::string& name);
+
         /**
-     * @brief 使用YAML::Node初始化配置模块
+     * @brief 使用YAML::Node初始化配置模块 使用配置文件修改已有的属性
      */
     static void LoadFromYaml(const YAML::Node& root);
 
@@ -387,22 +469,12 @@ public:
     static void LoadFromConfDir(const std::string& path, bool force = false);
 
     /**
-     * @brief 查找配置参数,返回配置参数的基类
-     * @param[in] name 配置参数名称
-     */
-    static ConfigVarBase::ptr LookupBase(const std::string& name);
-
-    /**
      * @brief 遍历配置模块里面所有配置项
      * @param[in] cb 配置项回调函数
      */
     static void Visit(std::function<void(ConfigVarBase::ptr)> cb);
 private:
-    static ConfigVarMap& GetDatas() {
-        static ConfigVarMap s_datas;
-        return s_datas;
-    }
-
+    static ConfigVarMap& GetDatas();
 };
 
 }

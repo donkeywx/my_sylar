@@ -7,7 +7,11 @@
 #IncludeRegexTransform: 
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.h
+iostream
+-
 memory
+-
+functional
 -
 string
 -

@@ -60,38 +60,38 @@ include CMakeFiles/testLog.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/testLog.dir/flags.make
 
-CMakeFiles/testLog.dir/tests/test.cpp.o: CMakeFiles/testLog.dir/flags.make
-CMakeFiles/testLog.dir/tests/test.cpp.o: tests/test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testLog.dir/tests/test.cpp.o"
-	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testLog.dir/tests/test.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/tests/test.cpp
+CMakeFiles/testLog.dir/tests/testLog.cpp.o: CMakeFiles/testLog.dir/flags.make
+CMakeFiles/testLog.dir/tests/testLog.cpp.o: tests/testLog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testLog.dir/tests/testLog.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testLog.dir/tests/testLog.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp
 
-CMakeFiles/testLog.dir/tests/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testLog.dir/tests/test.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/tests/test.cpp > CMakeFiles/testLog.dir/tests/test.cpp.i
+CMakeFiles/testLog.dir/tests/testLog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testLog.dir/tests/testLog.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp > CMakeFiles/testLog.dir/tests/testLog.cpp.i
 
-CMakeFiles/testLog.dir/tests/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testLog.dir/tests/test.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/tests/test.cpp -o CMakeFiles/testLog.dir/tests/test.cpp.s
+CMakeFiles/testLog.dir/tests/testLog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testLog.dir/tests/testLog.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp -o CMakeFiles/testLog.dir/tests/testLog.cpp.s
 
-CMakeFiles/testLog.dir/tests/test.cpp.o.requires:
+CMakeFiles/testLog.dir/tests/testLog.cpp.o.requires:
 
-.PHONY : CMakeFiles/testLog.dir/tests/test.cpp.o.requires
+.PHONY : CMakeFiles/testLog.dir/tests/testLog.cpp.o.requires
 
-CMakeFiles/testLog.dir/tests/test.cpp.o.provides: CMakeFiles/testLog.dir/tests/test.cpp.o.requires
-	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/tests/test.cpp.o.provides.build
-.PHONY : CMakeFiles/testLog.dir/tests/test.cpp.o.provides
+CMakeFiles/testLog.dir/tests/testLog.cpp.o.provides: CMakeFiles/testLog.dir/tests/testLog.cpp.o.requires
+	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/tests/testLog.cpp.o.provides.build
+.PHONY : CMakeFiles/testLog.dir/tests/testLog.cpp.o.provides
 
-CMakeFiles/testLog.dir/tests/test.cpp.o.provides.build: CMakeFiles/testLog.dir/tests/test.cpp.o
+CMakeFiles/testLog.dir/tests/testLog.cpp.o.provides.build: CMakeFiles/testLog.dir/tests/testLog.cpp.o
 
 
 # Object files for target testLog
 testLog_OBJECTS = \
-"CMakeFiles/testLog.dir/tests/test.cpp.o"
+"CMakeFiles/testLog.dir/tests/testLog.cpp.o"
 
 # External object files for target testLog
 testLog_EXTERNAL_OBJECTS =
 
-bin/testLog: CMakeFiles/testLog.dir/tests/test.cpp.o
+bin/testLog: CMakeFiles/testLog.dir/tests/testLog.cpp.o
 bin/testLog: CMakeFiles/testLog.dir/build.make
 bin/testLog: lib/libsylar.so
 bin/testLog: CMakeFiles/testLog.dir/link.txt
@@ -103,7 +103,7 @@ CMakeFiles/testLog.dir/build: bin/testLog
 
 .PHONY : CMakeFiles/testLog.dir/build
 
-CMakeFiles/testLog.dir/requires: CMakeFiles/testLog.dir/tests/test.cpp.o.requires
+CMakeFiles/testLog.dir/requires: CMakeFiles/testLog.dir/tests/testLog.cpp.o.requires
 
 .PHONY : CMakeFiles/testLog.dir/requires
 

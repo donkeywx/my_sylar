@@ -233,32 +233,32 @@ sylar/util.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/util.cpp.s
 .PHONY : sylar/util.cpp.s
 
-tests/test.o: tests/test.cpp.o
+tests/testLog.o: tests/testLog.cpp.o
 
-.PHONY : tests/test.o
+.PHONY : tests/testLog.o
 
 # target to build an object file
-tests/test.cpp.o:
-	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/tests/test.cpp.o
-.PHONY : tests/test.cpp.o
+tests/testLog.cpp.o:
+	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/tests/testLog.cpp.o
+.PHONY : tests/testLog.cpp.o
 
-tests/test.i: tests/test.cpp.i
+tests/testLog.i: tests/testLog.cpp.i
 
-.PHONY : tests/test.i
+.PHONY : tests/testLog.i
 
 # target to preprocess a source file
-tests/test.cpp.i:
-	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/tests/test.cpp.i
-.PHONY : tests/test.cpp.i
+tests/testLog.cpp.i:
+	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/tests/testLog.cpp.i
+.PHONY : tests/testLog.cpp.i
 
-tests/test.s: tests/test.cpp.s
+tests/testLog.s: tests/testLog.cpp.s
 
-.PHONY : tests/test.s
+.PHONY : tests/testLog.s
 
 # target to generate assembly for a file
-tests/test.cpp.s:
-	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/tests/test.cpp.s
-.PHONY : tests/test.cpp.s
+tests/testLog.cpp.s:
+	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/tests/testLog.cpp.s
+.PHONY : tests/testLog.cpp.s
 
 tests/test_config.o: tests/test_config.cpp.o
 
@@ -307,9 +307,9 @@ help:
 	@echo "... sylar/util.o"
 	@echo "... sylar/util.i"
 	@echo "... sylar/util.s"
-	@echo "... tests/test.o"
-	@echo "... tests/test.i"
-	@echo "... tests/test.s"
+	@echo "... tests/testLog.o"
+	@echo "... tests/testLog.i"
+	@echo "... tests/testLog.s"
 	@echo "... tests/test_config.o"
 	@echo "... tests/test_config.i"
 	@echo "... tests/test_config.s"

@@ -18,7 +18,7 @@ INCLUDE_DIRECTORIES(/usr/local/boost/include)
 
 add_library(sylar SHARED ${LIB_SRC})
 
-add_executable(testLog tests/test.cpp)
+add_executable(testLog tests/testLog.cpp)
 add_dependencies(testLog sylar)
 target_link_libraries(testLog sylar -lyaml-cpp)
 

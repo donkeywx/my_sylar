@@ -1,3 +1,2 @@
-2020-03-04 18:11:38	11557	thread_name	0	[INFO]	[root]	/home/wangk/code/cpp/sylar/code/my_sylar/tests/../sylar/config.h:352	Lookup name = port exists
-2020-03-04 18:11:38	11557	thread_name	0	[ERROR]	[root]	/home/wangk/code/cpp/sylar/code/my_sylar/tests/test_config.cpp:12	8080
-2020-03-04 18:11:38	11557	thread_name	0	[DEBUG]	[root]	/home/wangk/code/cpp/sylar/code/my_sylar/tests/test_config.cpp:13	8080
+2020-03-06 13:05:58	14215	thread_name	0	[ERROR]	[xx]	/home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp:28	xxx
+2020-03-06 13:05:58	14215	thread_name	0	[ERROR]	[root]	/home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp:32	root

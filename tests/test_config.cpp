@@ -1,16 +1,175 @@
 #include "../sylar/config.h"
 #include "../sylar/log.h"
 
-static sylar::ConfigVar<int>::ptr global = 
-    sylar::Config::Lookup("port", (int)8080, "port");
+static sylar::ConfigVar<int>::ptr g_int = 
+    sylar::Config::Lookup("test.g_int", (int)8080, "test.g_int");
+static sylar::ConfigVar<float>::ptr g_float = 
+    sylar::Config::Lookup("test.g_float", (float)3.4, "test.g_float");
+static sylar::ConfigVar<std::vector<int> >::ptr g_vec =
+    sylar::Config::Lookup("test.g_vec", std::vector<int>{1,2}, "test.g_vec");
+static sylar::ConfigVar<std::list<int> >::ptr g_list =
+    sylar::Config::Lookup("test.g_list", std::list<int>{1,2}, "test.g_list");
+static sylar::ConfigVar<std::set<int> >::ptr g_set =
+    sylar::Config::Lookup("test.g_set", std::set<int>{3, 1}, "test.g_set");
+static sylar::ConfigVar<std::unordered_set<int> >::ptr g_uset = 
+    sylar::Config::Lookup("test.g_uset", std::unordered_set<int>{1,3,1}, "test.g_uset");
+static sylar::ConfigVar<std::map<std::string, int> >::ptr g_map =
+    sylar::Config::Lookup("test.g_map", std::map<std::string, int>{{"name",1},{"sex",2}}, "test.g_map");
+static sylar::ConfigVar<std::unordered_map<std::string, int> >::ptr g_umap = 
+    sylar::Config::Lookup("test.g_umap", std::unordered_map<std::string, int>{{"name", 1}, {"sex", 2}}, "test.g_umap");
 
-static sylar::ConfigVar<int>::ptr c = 
-    sylar::Config::Lookup("port", (int)8080, "port");
 
+void print_yaml(const YAML::Node& node, int level) 
+{
+    if(node.IsScalar()) { // 纯量，单个的、不可再分的值
+        SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << std::string(level * 4, ' ')
+            << node.Scalar() << " - " << node.Type() << " - " << level;
+    } else if(node.IsNull()) {
+        SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << std::string(level * 4, ' ')
+            << "NULL - " << node.Type() << " - " << level;
+    } else if(node.IsMap()) {
+        for(auto it = node.begin();
+                it != node.end(); ++it) {
+            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << std::string(level * 4, ' ')
+                    << it->first << " - " << it->second.Type() << " - " << level;
+            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << it->first.Scalar() << " "<< it->second.Scalar() << std::endl;
+            print_yaml(it->second, level + 1);
+        }
+    } else if(node.IsSequence()) {
+        for(size_t i = 0; i < node.size(); ++i) {
+            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << std::string(level * 4, ' ')
+                << i << " - " << node[i].Type() << " - " << level;
+            print_yaml(node[i], level + 1);
+        }
+    }
+}
+
+void test_yaml() 
+{
+    YAML::Node root = YAML::LoadFile("/home/wangk/code/cpp/sylar/code/my_sylar/tests/log.yaml");
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "map: " << YAML::NodeType::Map << " "
+        << "null: " << YAML::NodeType::Null << " "
+        << "scalar: " << YAML::NodeType::Scalar << " "
+        << "sequence" << YAML::NodeType::Sequence << " "
+        << "undefined" << YAML::NodeType::Undefined << std::endl;
+    print_yaml(root, 0);
+}
+
+void test_stl()
+{
+    // SYLAR_LOG_ERROR(SYLAR_LOG_ROOT()) << "before: " << vec->getVal();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "before: " << g_int->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "before: " << g_float->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "before: " << g_vec->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "before: " << g_list->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "before: " << g_set->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "before: " << g_uset->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "before: " << g_map->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "before: " << g_umap->toString();
+    YAML::Node root = YAML::LoadFile("/home/wangk/code/cpp/sylar/code/my_sylar/tests/log.yaml");
+    sylar::Config::LoadFromYaml(root);
+
+    std::map<std::string, int> map = g_map->getVal();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << map["name"] << " " << map["sex"];
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_int->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_float->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_vec->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_list->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_set->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_uset->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_map->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_umap->toString();
+}
+
+class Person
+{
+public:
+    Person(){}
+    std::string m_name;
+    bool m_sex;
+    int m_age;
+
+    std::string toString()const
+    {
+        std::stringstream ss;
+        ss << "name: " << m_name << " "
+            << "sex: " << m_sex << " "
+            << "age: " << m_age;
+        
+        return ss.str();
+    }
+
+    bool operator==(const Person& other) const
+    {
+        return m_name == other.m_name
+            && m_sex == other.m_sex
+            && m_age == other.m_age;
+    }
+};
+
+namespace sylar
+{
+template<>
+class LexicalCast<std::string, Person>
+{
+public:
+    Person operator()(const std::string& v)
+    {
+
+        YAML::Node node = YAML::Load(v);
+        Person p;
+        p.m_name = node["name"].as<std::string>();
+        p.m_sex = node["sex"].as<bool>();
+        p.m_age = node["age"].as<int>();
+        return p;
+    }
+};
+
+template<>
+class LexicalCast<Person, std::string>
+{
+public:
+    std::string operator()(const Person& p)
+    {
+        YAML::Node node;
+        node["name"] = p.m_name;
+        node["age"] = p.m_age;
+        node["sex"] = p.m_sex;
+        std::stringstream ss;
+        ss << node;
+        return ss.str();
+    }
+};
+}
+
+sylar::ConfigVar<Person>::ptr g_person =
+    sylar::Config::Lookup("class.person", Person(), "system person");
+
+sylar::ConfigVar<std::map<std::string, Person> >::ptr g_person_map =
+    sylar::Config::Lookup("class.map", std::map<std::string, Person>(), "system person");
+
+sylar::ConfigVar<std::map<std::string, std::vector<Person> > >::ptr g_person_vec_map =
+    sylar::Config::Lookup("class.vec_map", std::map<std::string, std::vector<Person> >(), "system person");
+
+
+void test_class()
+{
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "before: " << g_person->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "before: " << g_person_map->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "before: " << g_person_vec_map->toString();
+
+    YAML::Node root = YAML::LoadFile("/home/wangk/code/cpp/sylar/code/my_sylar/tests/log.yaml");
+    sylar::Config::LoadFromYaml(root);
+
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_person->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_person_map->toString();
+    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_person_vec_map->toString();
+
+}
 int main()
 {
-    SYLAR_LOG_ERROR(SYLAR_LOG_ROOT()) << global->getVal();
-    SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << global->toString();
+    // test_stl();
+    test_class();
     return 0;
 }
 

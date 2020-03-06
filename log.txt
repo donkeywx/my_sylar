@@ -1,0 +1,2 @@
+2020-03-06 13:05:58	14215	thread_name	0	[INFO]	[test]	/home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp:23	test macro
+2020-03-06 13:05:58	14215	thread_name	0	[ERROR]	[test]	/home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp:24	test macro fmt error aa

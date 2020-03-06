@@ -62,7 +62,7 @@ class NameFormatItem : public LogFormatter::FormatItem {
 public:
     NameFormatItem(const std::string& str = "") {}
     void format(std::ostream& os, Logger::ptr logger, LogLevel::Level level, LogEvent::ptr event) override {
-        os << logger->getName();
+        os << event->getLogger()->getName();
     }
 };
 
@@ -186,7 +186,8 @@ void LogEvent::format(const char* fmt, va_list al)
 {
     char* buf = nullptr;
     int len = vasprintf(&buf, fmt, al);
-    if(len != -1) {
+    if(len != -1) 
+    {
         m_ss << std::string(buf, len);
         free(buf);
     }
@@ -368,6 +369,14 @@ FileLogAppender::FileLogAppender(const std::string& filename)
     reopen();
 }
 
+FileLogAppender::~FileLogAppender()
+{
+    if (m_filestream.is_open())
+    {
+        m_filestream.close();
+    }
+}
+
 void FileLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
 {
     if (level >= m_level)
@@ -407,7 +416,7 @@ Logger::Logger(const std::string& name)
 
 void Logger::addAppender(LogAppender::ptr appender)
 {
-    if (!appender->m_hasFormatter)
+    if (!appender->hasFormatter())
     {
         appender->setFormatter(m_formatter);
     }
@@ -435,11 +444,11 @@ void Logger::clearAppender()
 void Logger::setFormatter(LogFormatter::ptr val)
 {
     m_formatter = val;
-    for (auto& i : m_appenders)
+    for (auto& appender : m_appenders)
     {
-        if (!i->m_hasFormatter)
+        if (!appender->hasFormatter())
         {
-            i->m_formatter = m_formatter;
+            appender->setFormatter(m_formatter);
         }
     }
 }
@@ -447,7 +456,8 @@ void Logger::setFormatter(const std::string& val)
 {
     std::cout << "---" << val << std::endl;
     sylar::LogFormatter::ptr new_val(new sylar::LogFormatter(val));
-    if(new_val->isError()) {
+    if(new_val->isError()) 
+    {
         std::cout << "Logger setFormatter name=" << m_name
                   << " value=" << val << " invalid formatter"
                   << std::endl;
@@ -456,20 +466,23 @@ void Logger::setFormatter(const std::string& val)
     //m_formatter = new_val;
     setFormatter(new_val);
 }
-LogFormatter::ptr Logger::getFormatter()
-{
-    return m_formatter;
-}
-
 
 void Logger::log(LogLevel::Level level, const LogEvent::ptr event)
 {
-    if (level >= m_level)
+    if(level >= m_level) 
     {
         auto self = shared_from_this();
-        for (auto& i : m_appenders)
+
+        if(!m_appenders.empty()) 
         {
-            i->log(self, level, event);
+            for(auto& i : m_appenders) 
+            {
+                i->log(self, level, event);
+            }
+        }
+        else if(m_root) 
+        {
+            m_root->log(level, event);
         }
     }
 }
@@ -500,7 +513,7 @@ LoggerManager::LoggerManager()
     m_root.reset(new Logger("root"));
     m_root->addAppender(LogAppender::ptr(new FileLogAppender("root.txt")));
 
-    m_loggers[m_root->m_name] = m_root;
+    m_loggers[m_root->getName()] = m_root;
 
     init();
 }
@@ -515,8 +528,8 @@ Logger::ptr LoggerManager::getLogger(const std::string& name)
 
     Logger::ptr logger(new Logger(name));
     std::string logName = name;
-    logger->addAppender(LogAppender::ptr(new FileLogAppender(logName.append(".txt"))));
-    logger->m_root = m_root;
+
+    logger->setRoot(m_root);
     m_loggers[name] = logger;
     return logger;
 }

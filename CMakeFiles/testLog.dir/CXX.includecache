@@ -44,7 +44,7 @@ sys/types.h
 sys/syscall.h
 -
 
-/home/wangk/code/cpp/sylar/code/my_sylar/tests/test.cpp
+/home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp
 iostream
 -
 ../sylar/log.h
