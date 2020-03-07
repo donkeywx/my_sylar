@@ -166,10 +166,31 @@ void test_class()
     SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_person_vec_map->toString();
 
 }
+
+void test_log()
+{
+    static sylar::Logger::ptr system_log = SYLAR_LOG_NAME("system");
+    SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
+
+    // std::cout << sylar::LoggerMgr::getInstance()->toYamlString() << std::endl;
+    YAML::Node root = YAML::LoadFile("/home/wangk/code/cpp/sylar/code/my_sylar/tests/log.yaml");
+
+    sylar::Config::LoadFromYaml(root);
+    // std::cout << "=============" << std::endl;
+    // std::cout << sylar::LoggerMgr::getInstance()->toYamlString() << std::endl;
+    // std::cout << "=============" << std::endl;
+    // std::cout << root << std::endl;
+
+    SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
+
+    system_log->setFormatter("%d - %m%n");
+    SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
+}
 int main()
 {
     // test_stl();
-    test_class();
+    // test_class();
+    test_log();
     return 0;
 }
 

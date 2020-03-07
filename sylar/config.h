@@ -474,6 +474,7 @@ public:
      */
     static void Visit(std::function<void(ConfigVarBase::ptr)> cb);
 private:
+    // 使用静态成员函数可以，解决静态成员变量初始化的顺序问题
     static ConfigVarMap& GetDatas();
 };
 

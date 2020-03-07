@@ -11,6 +11,7 @@
 #include <fstream>
 #include <time.h>
 #include <map>
+#include <set>
 
 // 使用流方式输出日志
 // 大致流程就是获取event的输出流，然后在LogEventWrap析构的时候输出内容
@@ -66,6 +67,8 @@ public:
     };
 
     static const char* ToString(LogLevel::Level level);
+
+    static LogLevel::Level FromString(const std::string& str);
 };
 
 // 日志事件
@@ -171,6 +174,8 @@ public:
 
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) = 0;
 
+    virtual std::string toYamlString() = 0;
+
     LogLevel::Level getLevel() const {return m_level;}
     void setLevel(LogLevel::Level level) {m_level = level;}
 
@@ -190,6 +195,7 @@ class StdoutLogAppender: public LogAppender
 public:
     typedef std::shared_ptr<StdoutLogAppender> ptr;
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) override;
+    std::string toYamlString() override;
 };
 
 // 输出到文件的Appender
@@ -202,6 +208,7 @@ public:
     FileLogAppender(const std::string& filename);
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) override;
 
+    std::string toYamlString() override;
     // 重新打开文件，返回true
     bool reopen();
 private:
@@ -242,6 +249,8 @@ public:
 
     Logger::ptr getRoot() const {return m_root;}
     void setRoot(Logger::ptr root) {m_root = root;}
+
+    std::string toYamlString();
 private:
     std::string m_name;
     LogLevel::Level m_level;
@@ -260,16 +269,74 @@ public:
     void init();
 
     Logger::ptr getRoot() const {return m_root;}
+
+    std::string toYamlString();
 private:
 
     std::map<std::string, Logger::ptr> m_loggers;
     
     Logger::ptr m_root;
 };
-
-
 /// 日志器管理类单例模式
 typedef sylar::Singleton<LoggerManager> LoggerMgr;
+
+
+class  LogAppenderDefine
+{
+public:
+
+    bool operator==(const LogAppenderDefine& other) const;
+
+    int getType() const{return m_type;}
+    void setType(int type){m_type = type;}
+    LogLevel::Level getLevel() const{return m_level;}
+    void setLevel(LogLevel::Level level){m_level = level;}
+    std::string getFormatter() const{return m_formatter;}
+    void setFormatter(std::string formatter){m_formatter = formatter;}
+    std::string getFile() const {return m_file;}
+    void setFile(std::string file){m_file = file;}
+private:
+    int m_type = 0;   // 1 file 2 stdout
+    LogLevel::Level m_level = LogLevel::UNKNOWN;
+    std::string m_formatter;
+    std::string m_file;
+};
+
+class LogDefine
+{
+public:
+    bool operator==(const LogDefine& other) const;
+
+    bool operator<(const LogDefine& other) const;
+
+    bool isValid() const;
+
+    std::string getName() const {return m_name;}
+    void setName(std::string name){m_name = name;}
+    LogLevel::Level getLevel() const {return m_level;}
+    void setLevel(LogLevel::Level level) {m_level = level;}
+    std::string getFormatter() const {return m_formatter;}
+    void setFormatter(std::string formatter){m_formatter = formatter;}
+    // todo: 返回一个引用
+    const std::vector<LogAppenderDefine>& getAppenders() const {return m_appenders;}
+    void addLogAppenderDefine(LogAppenderDefine& ad) {m_appenders.push_back(ad);}
+private:
+    std::string m_name;
+    LogLevel::Level m_level = LogLevel::UNKNOWN;
+    std::string m_formatter;
+    std::vector<LogAppenderDefine> m_appenders;
+};
+
+class LogIniter
+{
+public:
+    LogIniter();
+private:
+    static void resetLogger(const std::set<LogDefine>& oldValue,
+            const std::set<LogDefine>& newValue);
+    static void resetLoggerAppender(Logger::ptr logger, const LogDefine& newLogDefine);
+};
+
 }
 
 #endif

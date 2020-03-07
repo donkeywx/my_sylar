@@ -1,17 +1,18 @@
-# logs: # log为数组
-#     - name: root
-#       level: info # 单值
-#       appenders:
-#           - type: FileLogAppender
-#             file: /apps/logs/sylar/root.txt
-#           - type: StdoutLogAppender
-#     - name: system
-#       level: info
-#       appenders:
-#           - type: FileLogAppender # type为map
-#             file: /apps/logs/sylar/system.txt
-#           - type: StdoutLogAppender
-# aihao:  
+logs: # log为数组
+    - name: root
+      level: info # 单值
+      appenders:
+          - type: FileLogAppender
+            file: ./logs/root.txt
+          - type: StdoutLogAppender
+    - name: system
+      level: info
+      foramtter: '%d%T%m%n'
+      appenders:
+          - type: FileLogAppender # type为map
+            file: ./logs/system.txt
+          - type: StdoutLogAppender
+# aihao: 
 #   - nin # 数组
 #   - nini
 #   - sdaf
@@ -29,49 +30,49 @@
 #     sex: 3
 
 # g_int: 9090
-test:
-    g_int: 9090
-    g_float: 4.5555
-    g_vec:
-        - 30
-        - 40
-        - 50
-    g_list: [1,2,3]
-    g_set: 
-        - 3
-        - 4
-        - 5
-    g_uset: [5, 6, 7]
-    g_map:
-        name: 11
-        sex: 12
-    g_umap:
-        name: 33
-        sex: 44
+# test:
+#     g_int: 9090
+#     g_float: 4.5555
+#     g_vec:
+#         - 30
+#         - 40
+#         - 50
+#     g_list: [1,2,3]
+#     g_set: 
+#         - 3
+#         - 4
+#         - 5
+#     g_uset: [5, 6, 7]
+#     g_map:
+#         name: 11
+#         sex: 12
+#     g_umap:
+#         name: 33
+#         sex: 44
 
-class:
-    person:
-        name: wangkang
-        sex: true
-        age: 31
-    map:
-        s01:
-            name: af01
-            age: 45
-            sex: false
-        s02:
-            name: ad02
-            age: 46
-            sex: true
-    vec_map:
-        k1:
-            - name: af03
-              age: 45
-              sex: false
-            - name: af04
-              age: 45
-              sex: true
-        k2:
-            - name: af05
-              age: 45
-              sex: true
+# class:
+#     person:
+#         name: wangkang
+#         sex: true
+#         age: 31
+#     map:
+#         s01:
+#             name: af01
+#             age: 45
+#             sex: false
+#         s02:
+#             name: ad02
+#             age: 46
+#             sex: true
+#     vec_map:
+#         k1:
+#             - name: af03
+#               age: 45
+#               sex: false
+#             - name: af04
+#               age: 45
+#               sex: true
+#         k2:
+#             - name: af05
+#               age: 45
+#               sex: true

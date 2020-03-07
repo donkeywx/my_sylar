@@ -1,0 +1,4 @@
+2020-03-07 16:57:38	21189	thread_name	0	[INFO]	[system]	/home/wangk/code/cpp/sylar/code/my_sylar/tests/test_config.cpp:184	hello system
+
+2020-03-07 16:57:38	21189	thread_name	0	[INFO]	[system]	/home/wangk/code/cpp/sylar/code/my_sylar/tests/test_config.cpp:187	hello system
+

@@ -1,4 +1,5 @@
 #include "log.h"
+#include "config.h"
 #include <functional>
 #include <map>
 #include <iostream>
@@ -26,6 +27,26 @@ const char* LogLevel::ToString(LogLevel::Level level)
     }
 
     return "UNKNOWN";
+}
+
+LogLevel::Level LogLevel::FromString(const std::string& str) {
+#define XX(level, v) \
+    if(str == #v) { \
+        return LogLevel::level; \
+    }
+    XX(DEBUG, debug);
+    XX(INFO, info);
+    XX(WARN, warn);
+    XX(ERROR, error);
+    XX(FATAL, fatal);
+
+    XX(DEBUG, DEBUG);
+    XX(INFO, INFO);
+    XX(WARN, WARN);
+    XX(ERROR, ERROR);
+    XX(FATAL, FATAL);
+    return LogLevel::UNKNOWN;
+#undef XX
 }
 
 class MessageFormatItem: public LogFormatter::FormatItem
@@ -362,6 +383,24 @@ void StdoutLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level leve
         m_formatter->format(std::cout, logger, level, event);
     }
 }
+std::string StdoutLogAppender::toYamlString() 
+{
+    // MutexType::Lock lock(m_mutex);
+    YAML::Node node;
+    node["type"] = "StdoutLogAppender";
+    if(m_level != LogLevel::UNKNOWN) 
+    {
+        node["level"] = LogLevel::ToString(m_level);
+    }
+    if(m_hasFormatter && m_formatter) 
+    {
+        node["formatter"] = m_formatter->getPattern();
+    }
+    std::stringstream ss;
+    ss << node;
+    return ss.str();
+}
+
 
 FileLogAppender::FileLogAppender(const std::string& filename)
     :m_filename(filename)
@@ -393,6 +432,25 @@ void FileLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level level,
             std::cout << "error" << std::endl;
         }
     }
+}
+
+std::string FileLogAppender::toYamlString()
+{
+    // MutexType::Lock lock(m_mutex);
+    YAML::Node node;
+    node["type"] = "FileLogAppender";
+    node["file"] = m_filename;
+    if(m_level != LogLevel::UNKNOWN) 
+    {
+        node["level"] = LogLevel::ToString(m_level);
+    }
+    if(m_hasFormatter && m_formatter) 
+    {
+        node["formatter"] = m_formatter->getPattern();
+    }
+    std::stringstream ss;
+    ss << node;
+    return ss.str();
 }
 
 bool FileLogAppender::reopen()
@@ -473,17 +531,24 @@ void Logger::log(LogLevel::Level level, const LogEvent::ptr event)
     {
         auto self = shared_from_this();
 
-        if(!m_appenders.empty()) 
+        if(!m_appenders.empty())
         {
-            for(auto& i : m_appenders) 
+            for(auto& i : m_appenders)
             {
                 i->log(self, level, event);
             }
         }
-        else if(m_root) 
+        else if(m_root)
         {
             m_root->log(level, event);
         }
+        else
+        {
+            std::cout << "There is not any appender in logger:" 
+                << self->getName()
+                << std::endl;
+        }
+        
     }
 }
 
@@ -506,6 +571,28 @@ void Logger::warn(LogEvent::ptr event)
 void Logger::fatal(LogEvent::ptr event)
 {
     log(LogLevel::FATAL, event);
+}
+
+std::string Logger::toYamlString() 
+{
+    // MutexType::Lock lock(m_mutex);
+    YAML::Node node;
+    node["name"] = m_name;
+    if(m_level != LogLevel::UNKNOWN) 
+    {
+        node["level"] = LogLevel::ToString(m_level);
+    }
+    if(m_formatter) {
+        node["formatter"] = m_formatter->getPattern();
+    }
+
+    for(auto& i : m_appenders) 
+    {
+        node["appenders"].push_back(YAML::Load(i->toYamlString()));
+    }
+    std::stringstream ss;
+    ss << node;
+    return ss.str();
 }
 
 LoggerManager::LoggerManager()
@@ -539,4 +626,229 @@ void LoggerManager::init()
 
 }
 
+std::string LoggerManager::toYamlString() 
+{
+    // MutexType::Lock lock(m_mutex);
+    YAML::Node node;
+    for(auto& i : m_loggers)
+    {
+        node.push_back(YAML::Load(i.second->toYamlString()));
+    }
+    std::stringstream ss;
+    ss << node;
+    return ss.str();
+}
+
+bool LogAppenderDefine::operator==(const LogAppenderDefine& other) const
+{
+    return m_type == other.m_type
+        && m_level == other.m_level
+        && m_formatter == other.m_formatter
+        && m_file == other.m_file;
+}
+
+bool LogDefine::operator==(const LogDefine& other) const 
+{
+    return m_name == other.m_name
+        && m_level == other.m_level
+        && m_formatter == other.m_formatter;
+}
+
+bool LogDefine::operator<(const LogDefine& other) const 
+{
+    return m_name < other.m_name;
+}
+
+bool LogDefine::isValid() const 
+{
+    return !m_name.empty();
+}
+
+sylar::ConfigVar<std::set<LogDefine> >::ptr g_log_defines = 
+    sylar::Config::Lookup("logs", std::set<LogDefine>(), "logs config");
+
+template<>
+class LexicalCast<std::string, LogDefine> {
+public:
+    LogDefine operator()(const std::string& v) {
+        YAML::Node n = YAML::Load(v);
+        LogDefine ld;
+        if(!n["name"].IsDefined()) {
+            std::cout << "log config error: name is null, " << n
+                      << std::endl;
+            throw std::logic_error("log config name is null");
+        }
+        ld.setName(n["name"].as<std::string>());
+        ld.setLevel(LogLevel::FromString(n["level"].IsDefined() ? n["level"].as<std::string>() : ""));
+        if(n["formatter"].IsDefined()) {
+            ld.setFormatter(n["formatter"].as<std::string>());
+        }
+
+        if(n["appenders"].IsDefined()) {
+            //std::cout << "==" << ld.name << " = " << n["appenders"].size() << std::endl;
+            for(size_t x = 0; x < n["appenders"].size(); ++x) {
+                auto a = n["appenders"][x];
+                if(!a["type"].IsDefined()) {
+                    std::cout << "log config error: appender type is null, " << a
+                              << std::endl;
+                    continue;
+                }
+                std::string type = a["type"].as<std::string>();
+                LogAppenderDefine lad;
+                if(type == "FileLogAppender") {
+                    lad.setType(1);
+                    if(!a["file"].IsDefined()) {
+                        std::cout << "log config error: fileappender file is null, " << a
+                              << std::endl;
+                        continue;
+                    }
+                    lad.setFile(a["file"].as<std::string>());
+                    if(a["formatter"].IsDefined()) {
+                        lad.setFormatter(a["formatter"].as<std::string>());
+                    }
+                } else if(type == "StdoutLogAppender") {
+                    lad.setType(2);
+                    if(a["formatter"].IsDefined()) {
+                        lad.setFormatter(a["formatter"].as<std::string>());
+                    }
+                } else {
+                    std::cout << "log config error: appender type is invalid, " << a
+                              << std::endl;
+                    continue;
+                }
+
+                ld.addLogAppenderDefine(lad);
+            }
+        }
+        return ld;
+    }
+};
+
+template<>
+class LexicalCast<LogDefine, std::string> {
+public:
+    std::string operator()(const LogDefine& i) {
+        YAML::Node n;
+        n["name"] = i.getName();
+        if(i.getLevel() != LogLevel::UNKNOWN) {
+            n["level"] = LogLevel::ToString(i.getLevel());
+        }
+        if(!i.getFormatter().empty()) {
+            n["formatter"] = i.getFormatter();
+        }
+
+        for(auto& a : i.getAppenders()) {
+            YAML::Node na;
+            if(a.getType() == 1) {
+                na["type"] = "FileLogAppender";
+                na["file"] = a.getType();
+            } else if(a.getType() == 2) {
+                na["type"] = "StdoutLogAppender";
+            }
+            if(a.getLevel() != LogLevel::UNKNOWN) {
+                na["level"] = LogLevel::ToString(a.getLevel());
+            }
+
+            if(!a.getFormatter().empty()) {
+                na["formatter"] = a.getFormatter();
+            }
+
+            n["appenders"].push_back(na);
+        }
+        std::stringstream ss;
+        ss << n;
+        return ss.str();
+    }
+};
+
+LogIniter::LogIniter()
+{
+    std::function<void (const std::set<LogDefine>&, const std::set<LogDefine>&)> cb = resetLogger;
+    g_log_defines->addListener(cb);
+}
+
+void LogIniter::resetLogger(const std::set<LogDefine>& oldValue,
+            const std::set<LogDefine>& newValue)
+{
+    SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "on_logger_conf_changed";
+    for (auto& newLogDefine : newValue)
+    {
+        auto oldLogDefine = oldValue.find(newLogDefine);
+        sylar::Logger::ptr logger;
+        if (oldValue.end() == oldLogDefine)
+        {
+            // 新增logger
+            logger = SYLAR_LOG_NAME(newLogDefine.getName());
+        }
+        else
+        {
+            // old中有， new中也有，但是不相同，就是修改
+            if (!(newLogDefine == *oldLogDefine))
+            {
+                logger = SYLAR_LOG_NAME(newLogDefine.getName());
+            }
+            else
+            {
+                continue;
+            }
+        }
+        
+        logger->setLevel(newLogDefine.getLevel());
+        if (!newLogDefine.getFormatter().empty())
+        {
+            logger->setFormatter(newLogDefine.getFormatter());
+        }
+
+        resetLoggerAppender(logger, newLogDefine);
+    }
+    for(auto& oldLogDefine : oldValue) 
+    {
+        auto it = newValue.find(oldLogDefine);
+        if(it == newValue.end()) 
+        {
+            //删除logger
+            auto logger = SYLAR_LOG_NAME(oldLogDefine.getName());
+            logger->setLevel((LogLevel::Level)0);
+            logger->clearAppender();
+        }
+    }
+}
+
+void LogIniter::resetLoggerAppender(Logger::ptr logger, const LogDefine& newLogDefine)
+{
+    logger->clearAppender();
+    std::vector<LogAppenderDefine> newAppenders= newLogDefine.getAppenders();
+    for (auto appender : newAppenders)
+    {
+        sylar::LogAppender::ptr newAppender;
+        if(1 == appender.getType()) 
+        {
+            newAppender.reset(new FileLogAppender(appender.getFile()));
+        } 
+        else if(2 ==  appender.getType()) 
+        {
+            // if(!sylar::EnvMgr::GetInstance()->has("d")) {
+            newAppender.reset(new StdoutLogAppender);
+            // } else {
+                continue;
+            // }
+        }
+        newAppender->setLevel(appender.getLevel());
+        if(!appender.getFormatter().empty()) 
+        {
+            LogFormatter::ptr fmt(new LogFormatter(appender.getFormatter()));
+            if(!fmt->isError()) 
+            {
+                newAppender->setFormatter(fmt);
+            } else 
+            {
+                std::cout << "log.name=" << newLogDefine.getName() << " appender type=" << appender.getType()
+                        << " formatter=" << appender.getFormatter() << " is invalid" << std::endl;
+            }
+        }
+        logger->addAppender(newAppender);
+    }
+}
+// 确保__log_init在程序执行前完成
+static LogIniter __log_init;
 }
