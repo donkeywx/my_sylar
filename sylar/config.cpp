@@ -61,7 +61,7 @@ void Config::LoadFromYaml(const YAML::Node& root)
 
                 // std::cout << i.first << " " << i.second.Scalar() << std::endl;
             }
-            else 
+            else
             {
                 std::stringstream ss;
                 ss << i.second;

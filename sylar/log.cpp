@@ -364,9 +364,12 @@ void LogFormatter::init() {
 void LogAppender::setFormatter(LogFormatter::ptr val) 
 {
     m_formatter = val;
-    if(m_formatter) {
+    if(m_formatter) 
+    {
         m_hasFormatter = true;
-    } else {
+    } 
+    else 
+    {
         m_hasFormatter = false;
     }
 }
@@ -504,10 +507,10 @@ void Logger::setFormatter(LogFormatter::ptr val)
     m_formatter = val;
     for (auto& appender : m_appenders)
     {
-        if (!appender->hasFormatter())
-        {
-            appender->setFormatter(m_formatter);
-        }
+        // if (!appender->hasFormatter())
+        // {
+        appender->setFormatter(m_formatter);
+        // }
     }
 }
 void Logger::setFormatter(const std::string& val)
@@ -794,9 +797,11 @@ void LogIniter::resetLogger(const std::set<LogDefine>& oldValue,
         }
         
         logger->setLevel(newLogDefine.getLevel());
+        std::cout << newLogDefine.getLevel() << std::endl;
         if (!newLogDefine.getFormatter().empty())
         {
             logger->setFormatter(newLogDefine.getFormatter());
+            std::cout << newLogDefine.getFormatter() << std::endl;
         }
 
         resetLoggerAppender(logger, newLogDefine);
@@ -821,7 +826,7 @@ void LogIniter::resetLoggerAppender(Logger::ptr logger, const LogDefine& newLogD
     for (auto appender : newAppenders)
     {
         sylar::LogAppender::ptr newAppender;
-        if(1 == appender.getType()) 
+        if(1 == appender.getType())
         {
             newAppender.reset(new FileLogAppender(appender.getFile()));
         } 

@@ -183,7 +183,7 @@ void test_log()
 
     SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
 
-    system_log->setFormatter("%d - %m%n");
+    system_log->setFormatter("%d{%Y-%m-%d %H:%M:%S}- %m%n");
     SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
 }
 int main()
