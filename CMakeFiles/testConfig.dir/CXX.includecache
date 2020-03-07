@@ -76,7 +76,7 @@ sys/types.h
 sys/syscall.h
 -
 
-/home/wangk/code/cpp/sylar/code/my_sylar/tests/test_config.cpp
+/home/wangk/code/cpp/sylar/code/my_sylar/tests/testConfig.cpp
 ../sylar/config.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.h
 ../sylar/log.h

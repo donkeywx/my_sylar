@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wangk/code/cpp/sylar/code/my_sylar/tests/test_config.cpp" "/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testConfig.dir/tests/test_config.cpp.o"
+  "/home/wangk/code/cpp/sylar/code/my_sylar/tests/testConfig.cpp" "/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testConfig.dir/tests/testConfig.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

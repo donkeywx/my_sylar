@@ -509,6 +509,7 @@ void Logger::setFormatter(LogFormatter::ptr val)
     {
         // if (!appender->hasFormatter())
         // {
+            // std::cout << "wangkang" << std::endl;
         appender->setFormatter(m_formatter);
         // }
     }

@@ -63,15 +63,15 @@ include CMakeFiles/testLog.dir/flags.make
 CMakeFiles/testLog.dir/tests/testLog.cpp.o: CMakeFiles/testLog.dir/flags.make
 CMakeFiles/testLog.dir/tests/testLog.cpp.o: tests/testLog.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testLog.dir/tests/testLog.cpp.o"
-	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testLog.dir/tests/testLog.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"tests/testLog.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testLog.dir/tests/testLog.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp
 
 CMakeFiles/testLog.dir/tests/testLog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testLog.dir/tests/testLog.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp > CMakeFiles/testLog.dir/tests/testLog.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"tests/testLog.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp > CMakeFiles/testLog.dir/tests/testLog.cpp.i
 
 CMakeFiles/testLog.dir/tests/testLog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testLog.dir/tests/testLog.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp -o CMakeFiles/testLog.dir/tests/testLog.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"tests/testLog.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp -o CMakeFiles/testLog.dir/tests/testLog.cpp.s
 
 CMakeFiles/testLog.dir/tests/testLog.cpp.o.requires:
 

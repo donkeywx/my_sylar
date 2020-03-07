@@ -60,38 +60,38 @@ include CMakeFiles/testConfig.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/testConfig.dir/flags.make
 
-CMakeFiles/testConfig.dir/tests/test_config.cpp.o: CMakeFiles/testConfig.dir/flags.make
-CMakeFiles/testConfig.dir/tests/test_config.cpp.o: tests/test_config.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testConfig.dir/tests/test_config.cpp.o"
-	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testConfig.dir/tests/test_config.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/tests/test_config.cpp
+CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: CMakeFiles/testConfig.dir/flags.make
+CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: tests/testConfig.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testConfig.dir/tests/testConfig.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"tests/testConfig.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testConfig.dir/tests/testConfig.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/tests/testConfig.cpp
 
-CMakeFiles/testConfig.dir/tests/test_config.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testConfig.dir/tests/test_config.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/tests/test_config.cpp > CMakeFiles/testConfig.dir/tests/test_config.cpp.i
+CMakeFiles/testConfig.dir/tests/testConfig.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testConfig.dir/tests/testConfig.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"tests/testConfig.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/tests/testConfig.cpp > CMakeFiles/testConfig.dir/tests/testConfig.cpp.i
 
-CMakeFiles/testConfig.dir/tests/test_config.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testConfig.dir/tests/test_config.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/tests/test_config.cpp -o CMakeFiles/testConfig.dir/tests/test_config.cpp.s
+CMakeFiles/testConfig.dir/tests/testConfig.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testConfig.dir/tests/testConfig.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"tests/testConfig.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/tests/testConfig.cpp -o CMakeFiles/testConfig.dir/tests/testConfig.cpp.s
 
-CMakeFiles/testConfig.dir/tests/test_config.cpp.o.requires:
+CMakeFiles/testConfig.dir/tests/testConfig.cpp.o.requires:
 
-.PHONY : CMakeFiles/testConfig.dir/tests/test_config.cpp.o.requires
+.PHONY : CMakeFiles/testConfig.dir/tests/testConfig.cpp.o.requires
 
-CMakeFiles/testConfig.dir/tests/test_config.cpp.o.provides: CMakeFiles/testConfig.dir/tests/test_config.cpp.o.requires
-	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/test_config.cpp.o.provides.build
-.PHONY : CMakeFiles/testConfig.dir/tests/test_config.cpp.o.provides
+CMakeFiles/testConfig.dir/tests/testConfig.cpp.o.provides: CMakeFiles/testConfig.dir/tests/testConfig.cpp.o.requires
+	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/testConfig.cpp.o.provides.build
+.PHONY : CMakeFiles/testConfig.dir/tests/testConfig.cpp.o.provides
 
-CMakeFiles/testConfig.dir/tests/test_config.cpp.o.provides.build: CMakeFiles/testConfig.dir/tests/test_config.cpp.o
+CMakeFiles/testConfig.dir/tests/testConfig.cpp.o.provides.build: CMakeFiles/testConfig.dir/tests/testConfig.cpp.o
 
 
 # Object files for target testConfig
 testConfig_OBJECTS = \
-"CMakeFiles/testConfig.dir/tests/test_config.cpp.o"
+"CMakeFiles/testConfig.dir/tests/testConfig.cpp.o"
 
 # External object files for target testConfig
 testConfig_EXTERNAL_OBJECTS =
 
-bin/testConfig: CMakeFiles/testConfig.dir/tests/test_config.cpp.o
+bin/testConfig: CMakeFiles/testConfig.dir/tests/testConfig.cpp.o
 bin/testConfig: CMakeFiles/testConfig.dir/build.make
 bin/testConfig: lib/libsylar.so
 bin/testConfig: CMakeFiles/testConfig.dir/link.txt
@@ -103,7 +103,7 @@ CMakeFiles/testConfig.dir/build: bin/testConfig
 
 .PHONY : CMakeFiles/testConfig.dir/build
 
-CMakeFiles/testConfig.dir/requires: CMakeFiles/testConfig.dir/tests/test_config.cpp.o.requires
+CMakeFiles/testConfig.dir/requires: CMakeFiles/testConfig.dir/tests/testConfig.cpp.o.requires
 
 .PHONY : CMakeFiles/testConfig.dir/requires
 

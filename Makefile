@@ -233,6 +233,33 @@ sylar/util.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/util.cpp.s
 .PHONY : sylar/util.cpp.s
 
+tests/testConfig.o: tests/testConfig.cpp.o
+
+.PHONY : tests/testConfig.o
+
+# target to build an object file
+tests/testConfig.cpp.o:
+	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/testConfig.cpp.o
+.PHONY : tests/testConfig.cpp.o
+
+tests/testConfig.i: tests/testConfig.cpp.i
+
+.PHONY : tests/testConfig.i
+
+# target to preprocess a source file
+tests/testConfig.cpp.i:
+	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/testConfig.cpp.i
+.PHONY : tests/testConfig.cpp.i
+
+tests/testConfig.s: tests/testConfig.cpp.s
+
+.PHONY : tests/testConfig.s
+
+# target to generate assembly for a file
+tests/testConfig.cpp.s:
+	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/testConfig.cpp.s
+.PHONY : tests/testConfig.cpp.s
+
 tests/testLog.o: tests/testLog.cpp.o
 
 .PHONY : tests/testLog.o
@@ -260,33 +287,6 @@ tests/testLog.cpp.s:
 	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/tests/testLog.cpp.s
 .PHONY : tests/testLog.cpp.s
 
-tests/test_config.o: tests/test_config.cpp.o
-
-.PHONY : tests/test_config.o
-
-# target to build an object file
-tests/test_config.cpp.o:
-	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/test_config.cpp.o
-.PHONY : tests/test_config.cpp.o
-
-tests/test_config.i: tests/test_config.cpp.i
-
-.PHONY : tests/test_config.i
-
-# target to preprocess a source file
-tests/test_config.cpp.i:
-	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/test_config.cpp.i
-.PHONY : tests/test_config.cpp.i
-
-tests/test_config.s: tests/test_config.cpp.s
-
-.PHONY : tests/test_config.s
-
-# target to generate assembly for a file
-tests/test_config.cpp.s:
-	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/test_config.cpp.s
-.PHONY : tests/test_config.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -307,12 +307,12 @@ help:
 	@echo "... sylar/util.o"
 	@echo "... sylar/util.i"
 	@echo "... sylar/util.s"
+	@echo "... tests/testConfig.o"
+	@echo "... tests/testConfig.i"
+	@echo "... tests/testConfig.s"
 	@echo "... tests/testLog.o"
 	@echo "... tests/testLog.i"
 	@echo "... tests/testLog.s"
-	@echo "... tests/test_config.o"
-	@echo "... tests/test_config.i"
-	@echo "... tests/test_config.s"
 .PHONY : help
 
 
