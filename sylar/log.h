@@ -70,7 +70,16 @@ public:
 
     static LogLevel::Level FromString(const std::string& str);
 };
-
+class AppenderType
+{
+public:
+    enum Type
+    {
+        UNKNOWN = 0,
+        STDCOUTAPPENDER = 1,
+        FILEAPPENDER = 2
+    };
+};
 // 日志事件
 // 该类最重要的事情就是记录日志内容的所有属性，以及具体日志内容
 class LogEvent
@@ -287,8 +296,8 @@ public:
 
     bool operator==(const LogAppenderDefine& other) const;
 
-    int getType() const{return m_type;}
-    void setType(int type){m_type = type;}
+    AppenderType::Type getType() const{return m_type;}
+    void setType(AppenderType::Type type){m_type = type;}
     LogLevel::Level getLevel() const{return m_level;}
     void setLevel(LogLevel::Level level){m_level = level;}
     std::string getFormatter() const{return m_formatter;}
@@ -296,7 +305,7 @@ public:
     std::string getFile() const {return m_file;}
     void setFile(std::string file){m_file = file;}
 private:
-    int m_type = 0;   // 1 file 2 stdout
+    AppenderType::Type m_type = AppenderType::Type::UNKNOWN;
     LogLevel::Level m_level = LogLevel::UNKNOWN;
     std::string m_formatter;
     std::string m_file;

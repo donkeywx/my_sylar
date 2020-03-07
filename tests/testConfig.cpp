@@ -176,15 +176,16 @@ void test_log()
     YAML::Node root = YAML::LoadFile("/home/wangk/code/cpp/sylar/code/my_sylar/tests/log.yaml");
 
     sylar::Config::LoadFromYaml(root);
-    std::cout << "=============" << std::endl;
-    std::cout << sylar::LoggerMgr::getInstance()->toYamlString() << std::endl;
-    std::cout << "=============" << std::endl;
-    std::cout << root << std::endl;
+
+    // std::cout << "=============" << std::endl;
+    // std::cout << sylar::LoggerMgr::getInstance()->toYamlString() << std::endl;
+    // std::cout << "=============" << std::endl;
+    // std::cout << root << std::endl;
 
     SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "hello root" << std::endl;
     SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
 
-    system_log->setFormatter("%d{%Y-%m-%d %H:%M:%S}- %m%n");
+    // system_log->setFormatter("%d{%Y-%m-%d %H:%M:%S}- %m%n");
     SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
 }
 int main()

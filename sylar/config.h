@@ -67,7 +67,6 @@ public:
         }
         std::stringstream ss;
         ss << node;
-        // std::cout << "wangkang: " << ss.str() << std::endl;
         return ss.str();
     }
 };
