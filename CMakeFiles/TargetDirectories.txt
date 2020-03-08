@@ -1,5 +1,6 @@
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/rebuild_cache.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/edit_cache.dir
+/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testThread.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testConfig.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/sylar.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testLog.dir

@@ -45,6 +45,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/testThread.dir/DependInfo.cmake"
   "CMakeFiles/testConfig.dir/DependInfo.cmake"
   "CMakeFiles/sylar.dir/DependInfo.cmake"
   "CMakeFiles/testLog.dir/DependInfo.cmake"

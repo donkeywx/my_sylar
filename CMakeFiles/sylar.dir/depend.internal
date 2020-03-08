@@ -1301,6 +1301,12 @@ CMakeFiles/sylar.dir/sylar/log.cpp.o
  /usr/local/yaml-cpp/include/yaml-cpp/stlemitter.h
  /usr/local/yaml-cpp/include/yaml-cpp/traits.h
  /usr/local/yaml-cpp/include/yaml-cpp/yaml.h
+CMakeFiles/sylar.dir/sylar/thread.cpp.o
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.cpp
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
 CMakeFiles/sylar.dir/sylar/util.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.cpp
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h

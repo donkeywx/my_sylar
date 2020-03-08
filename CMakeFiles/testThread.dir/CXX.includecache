@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.cpp
-config.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar.h
+sylar/log.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
+sylar/config.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.h
-iostream
--
+sylar/thread.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
+sylar/singleton.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
+sylar/util.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.h
 iostream
@@ -42,18 +48,6 @@ unordered_set
 log.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
 
-/home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.cpp
-log.h
-/home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
-config.h
-/home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.h
-functional
--
-map
--
-iostream
--
-
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
 util.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
@@ -82,14 +76,6 @@ set
 memory
 -
 
-/home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.cpp
-thread.h
-/home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
-log.h
-/home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
-util.h
-/home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
-
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
 pthread.h
 -
@@ -99,10 +85,6 @@ functional
 -
 memory
 -
-
-/home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.cpp
-util.h
-/home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
 pthread.h
@@ -114,6 +96,12 @@ unistd.h
 sys/types.h
 -
 sys/syscall.h
+-
+
+/home/wangk/code/cpp/sylar/code/my_sylar/tests/testThread.cpp
+../sylar.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar.h
+vector
 -
 
 /usr/local/boost/include/boost/array.hpp
