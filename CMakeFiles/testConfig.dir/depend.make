@@ -3,6 +3,8 @@
 
 CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/config.h
 CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/log.h
+CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/mutex.h
+CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/noncopyable.h
 CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/singleton.h
 CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/util.h
 CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: tests/testConfig.cpp

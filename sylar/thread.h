@@ -1,10 +1,12 @@
 #ifndef __SYLAR_THREAD_H__
 #define __SYLAR_THREAD_H__
 
+#include "mutex.h"
 #include <pthread.h>
 #include <string>
 #include <functional>
 #include <memory>
+
 
 namespace sylar
 {
@@ -12,7 +14,7 @@ class Thread
 {
 public:
     typedef std::shared_ptr<Thread> ptr;
-    Thread(std::function<void()> cb, const std::string name);
+    Thread(std::function<void()> cb, const std::string name = "");
     virtual ~Thread();
 
     pid_t getId() const {return m_id;}
@@ -32,6 +34,7 @@ private:
     pthread_t m_thread = 0;
     std::function<void()> m_cb;
     std::string m_name;
+    Semaphore m_semaphore;
 };
 }
 

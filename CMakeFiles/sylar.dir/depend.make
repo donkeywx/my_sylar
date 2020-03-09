@@ -4,6 +4,8 @@
 CMakeFiles/sylar.dir/sylar/config.cpp.o: sylar/config.cpp
 CMakeFiles/sylar.dir/sylar/config.cpp.o: sylar/config.h
 CMakeFiles/sylar.dir/sylar/config.cpp.o: sylar/log.h
+CMakeFiles/sylar.dir/sylar/config.cpp.o: sylar/mutex.h
+CMakeFiles/sylar.dir/sylar/config.cpp.o: sylar/noncopyable.h
 CMakeFiles/sylar.dir/sylar/config.cpp.o: sylar/singleton.h
 CMakeFiles/sylar.dir/sylar/config.cpp.o: sylar/util.h
 CMakeFiles/sylar.dir/sylar/config.cpp.o: /usr/local/boost/include/boost/array.hpp
@@ -654,6 +656,8 @@ CMakeFiles/sylar.dir/sylar/config.cpp.o: /usr/local/yaml-cpp/include/yaml-cpp/ya
 CMakeFiles/sylar.dir/sylar/log.cpp.o: sylar/config.h
 CMakeFiles/sylar.dir/sylar/log.cpp.o: sylar/log.cpp
 CMakeFiles/sylar.dir/sylar/log.cpp.o: sylar/log.h
+CMakeFiles/sylar.dir/sylar/log.cpp.o: sylar/mutex.h
+CMakeFiles/sylar.dir/sylar/log.cpp.o: sylar/noncopyable.h
 CMakeFiles/sylar.dir/sylar/log.cpp.o: sylar/singleton.h
 CMakeFiles/sylar.dir/sylar/log.cpp.o: sylar/util.h
 CMakeFiles/sylar.dir/sylar/log.cpp.o: /usr/local/boost/include/boost/array.hpp
@@ -1301,7 +1305,13 @@ CMakeFiles/sylar.dir/sylar/log.cpp.o: /usr/local/yaml-cpp/include/yaml-cpp/stlem
 CMakeFiles/sylar.dir/sylar/log.cpp.o: /usr/local/yaml-cpp/include/yaml-cpp/traits.h
 CMakeFiles/sylar.dir/sylar/log.cpp.o: /usr/local/yaml-cpp/include/yaml-cpp/yaml.h
 
+CMakeFiles/sylar.dir/sylar/mutex.cpp.o: sylar/mutex.cpp
+CMakeFiles/sylar.dir/sylar/mutex.cpp.o: sylar/mutex.h
+CMakeFiles/sylar.dir/sylar/mutex.cpp.o: sylar/noncopyable.h
+
 CMakeFiles/sylar.dir/sylar/thread.cpp.o: sylar/log.h
+CMakeFiles/sylar.dir/sylar/thread.cpp.o: sylar/mutex.h
+CMakeFiles/sylar.dir/sylar/thread.cpp.o: sylar/noncopyable.h
 CMakeFiles/sylar.dir/sylar/thread.cpp.o: sylar/singleton.h
 CMakeFiles/sylar.dir/sylar/thread.cpp.o: sylar/thread.cpp
 CMakeFiles/sylar.dir/sylar/thread.cpp.o: sylar/thread.h

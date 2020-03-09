@@ -5,10 +5,11 @@
 namespace sylar
 {
 
+// 运行时参数
 static thread_local Thread* t_thread = nullptr;
 static thread_local std::string t_thread_name = "UNKNOWN";
 
-static sylar::Logger::ptr g_logger = SYLAR_LOG_NAME("system");
+// static sylar::Logger::ptr g_logger = SYLAR_LOG_NAME("system");
 
 Thread::Thread(std::function<void()> cb, const std::string name)
     :m_cb(cb)
@@ -22,12 +23,13 @@ Thread::Thread(std::function<void()> cb, const std::string name)
     int rt = pthread_create(&m_thread, nullptr, &Thread::run, this);
     if (rt)
     {
-    //     SYLAR_LOG_ERROR(g_logger) << "pthread_create thread failed, rt = " << rt
-    //         << ", name = " << m_name;
+        // SYLAR_LOG_ERROR(g_logger) << "pthread_create thread failed, rt = " << rt
+            // << ", name = " << m_name;
 
-    //     throw std::logic_error("pthread_create error");
+        throw std::logic_error("pthread_create error");
     }
 
+    m_semaphore.wait();
 }
 Thread::~Thread()
 {
@@ -44,8 +46,8 @@ void Thread::join()
         int rt = pthread_join(m_thread, nullptr);
         if (rt)
         {
-            SYLAR_LOG_ERROR(g_logger) << "pthread_join failed, rt = " << rt
-                << ", name = " << m_name;
+            // SYLAR_LOG_ERROR(g_logger) << "pthread_join failed, rt = " << rt
+                // << ", name = " << m_name;
             
             throw std::logic_error("pthread_join error");
         }
@@ -55,6 +57,10 @@ void Thread::join()
 
 void Thread::setName(std::string name)
 {
+    if (name.empty())
+    {
+        return;
+    }
     if (t_thread)
     {
         t_thread->m_name = name;
@@ -81,6 +87,8 @@ void* Thread::run(void* arg)
 
     std::function<void()> cb;
     cb.swap(thread->m_cb);
+
+    thread->m_semaphore.notify();   // 确保线程创建完成后，该线程是已经跑起来的
     cb();
 
     return 0;

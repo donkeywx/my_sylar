@@ -51,6 +51,8 @@ log.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
 util.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
+mutex.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
 singleton.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
 string
@@ -72,11 +74,25 @@ map
 set
 -
 
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
+noncopyable.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
+semaphore.h
+-
+pthread.h
+-
+stdint.h
+-
+
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
+
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
 memory
 -
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
+mutex.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
 pthread.h
 -
 string
