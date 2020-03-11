@@ -6,5 +6,8 @@
 #include "sylar/thread.h"
 #include "sylar/singleton.h"
 #include "sylar/util.h"
+#include "sylar/macro.h"
+#include "sylar/fiber.h"
+#include "sylar/mutex.h"
 
 #endif

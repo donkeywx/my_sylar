@@ -5,6 +5,7 @@ CMakeFiles/testLog.dir/tests/testLog.cpp.o: sylar/log.h
 CMakeFiles/testLog.dir/tests/testLog.cpp.o: sylar/mutex.h
 CMakeFiles/testLog.dir/tests/testLog.cpp.o: sylar/noncopyable.h
 CMakeFiles/testLog.dir/tests/testLog.cpp.o: sylar/singleton.h
+CMakeFiles/testLog.dir/tests/testLog.cpp.o: sylar/thread.h
 CMakeFiles/testLog.dir/tests/testLog.cpp.o: sylar/util.h
 CMakeFiles/testLog.dir/tests/testLog.cpp.o: tests/testLog.cpp
 

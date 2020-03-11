@@ -78,6 +78,23 @@ private:
     T& m_wrlock;
 };
 
+class SpinLock: public Noncopyable
+{
+public:
+    typedef ScopedLockImpl<SpinLock> Lock;
+
+    SpinLock(){pthread_spin_init(&spin, 0);}
+
+    ~SpinLock(){pthread_spin_destroy(&spin);}
+
+    void lock(){pthread_spin_lock(&spin);}
+
+    void unlock(){pthread_spin_unlock(&spin);}
+
+private:
+    pthread_spinlock_t spin;
+};
+
 class Mutex: public Noncopyable
 {
 public:
@@ -114,7 +131,7 @@ public:
 
     void wrlock(){pthread_rwlock_wrlock(&m_rwlock);}
 
-    void rdlokc(){pthread_rwlock_rdlock(&m_rwlock);}
+    void rdlock(){pthread_rwlock_rdlock(&m_rwlock);}
 
     void unlock(){pthread_rwlock_unlock(&m_rwlock);}
 private:

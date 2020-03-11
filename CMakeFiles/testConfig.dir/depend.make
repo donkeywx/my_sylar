@@ -6,6 +6,7 @@ CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/log.h
 CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/mutex.h
 CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/noncopyable.h
 CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/singleton.h
+CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/thread.h
 CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: sylar/util.h
 CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: tests/testConfig.cpp
 CMakeFiles/testConfig.dir/tests/testConfig.cpp.o: /usr/local/boost/include/boost/array.hpp

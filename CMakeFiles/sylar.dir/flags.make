@@ -18,3 +18,7 @@ CXX_INCLUDES = -I/usr/local/yaml-cpp/include -I/usr/local/boost/include
 
 # Custom defines: CMakeFiles/sylar.dir/sylar/mutex.cpp.o_DEFINES = __FILE__="sylar/mutex.cpp"
 
+# Custom defines: CMakeFiles/sylar.dir/sylar/macro.cpp.o_DEFINES = __FILE__="sylar/macro.cpp"
+
+# Custom defines: CMakeFiles/sylar.dir/sylar/fiber.cpp.o_DEFINES = __FILE__="sylar/fiber.cpp"
+

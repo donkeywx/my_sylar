@@ -114,6 +114,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testLog
+
+# Build rule for target.
+testLog: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testLog
+.PHONY : testLog
+
+# fast build rule for target.
+testLog/fast:
+	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/build
+.PHONY : testLog/fast
+
+#=============================================================================
 # Target rules for targets named testThread
 
 # Build rule for target.
@@ -125,19 +138,6 @@ testThread: cmake_check_build_system
 testThread/fast:
 	$(MAKE) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/build
 .PHONY : testThread/fast
-
-#=============================================================================
-# Target rules for targets named testConfig
-
-# Build rule for target.
-testConfig: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testConfig
-.PHONY : testConfig
-
-# fast build rule for target.
-testConfig/fast:
-	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/build
-.PHONY : testConfig/fast
 
 #=============================================================================
 # Target rules for targets named sylar
@@ -153,17 +153,43 @@ sylar/fast:
 .PHONY : sylar/fast
 
 #=============================================================================
-# Target rules for targets named testLog
+# Target rules for targets named testStack
 
 # Build rule for target.
-testLog: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testLog
-.PHONY : testLog
+testStack: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testStack
+.PHONY : testStack
 
 # fast build rule for target.
-testLog/fast:
-	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/build
-.PHONY : testLog/fast
+testStack/fast:
+	$(MAKE) -f CMakeFiles/testStack.dir/build.make CMakeFiles/testStack.dir/build
+.PHONY : testStack/fast
+
+#=============================================================================
+# Target rules for targets named testConfig
+
+# Build rule for target.
+testConfig: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testConfig
+.PHONY : testConfig
+
+# fast build rule for target.
+testConfig/fast:
+	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/build
+.PHONY : testConfig/fast
+
+#=============================================================================
+# Target rules for targets named testFiber
+
+# Build rule for target.
+testFiber: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testFiber
+.PHONY : testFiber
+
+# fast build rule for target.
+testFiber/fast:
+	$(MAKE) -f CMakeFiles/testFiber.dir/build.make CMakeFiles/testFiber.dir/build
+.PHONY : testFiber/fast
 
 sylar/config.o: sylar/config.cpp.o
 
@@ -192,6 +218,33 @@ sylar/config.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/config.cpp.s
 .PHONY : sylar/config.cpp.s
 
+sylar/fiber.o: sylar/fiber.cpp.o
+
+.PHONY : sylar/fiber.o
+
+# target to build an object file
+sylar/fiber.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber.cpp.o
+.PHONY : sylar/fiber.cpp.o
+
+sylar/fiber.i: sylar/fiber.cpp.i
+
+.PHONY : sylar/fiber.i
+
+# target to preprocess a source file
+sylar/fiber.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber.cpp.i
+.PHONY : sylar/fiber.cpp.i
+
+sylar/fiber.s: sylar/fiber.cpp.s
+
+.PHONY : sylar/fiber.s
+
+# target to generate assembly for a file
+sylar/fiber.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber.cpp.s
+.PHONY : sylar/fiber.cpp.s
+
 sylar/log.o: sylar/log.cpp.o
 
 .PHONY : sylar/log.o
@@ -218,6 +271,33 @@ sylar/log.s: sylar/log.cpp.s
 sylar/log.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/log.cpp.s
 .PHONY : sylar/log.cpp.s
+
+sylar/macro.o: sylar/macro.cpp.o
+
+.PHONY : sylar/macro.o
+
+# target to build an object file
+sylar/macro.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/macro.cpp.o
+.PHONY : sylar/macro.cpp.o
+
+sylar/macro.i: sylar/macro.cpp.i
+
+.PHONY : sylar/macro.i
+
+# target to preprocess a source file
+sylar/macro.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/macro.cpp.i
+.PHONY : sylar/macro.cpp.i
+
+sylar/macro.s: sylar/macro.cpp.s
+
+.PHONY : sylar/macro.s
+
+# target to generate assembly for a file
+sylar/macro.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/macro.cpp.s
+.PHONY : sylar/macro.cpp.s
 
 sylar/mutex.o: sylar/mutex.cpp.o
 
@@ -327,6 +407,33 @@ tests/testConfig.cpp.s:
 	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/tests/testConfig.cpp.s
 .PHONY : tests/testConfig.cpp.s
 
+tests/testFiber.o: tests/testFiber.cpp.o
+
+.PHONY : tests/testFiber.o
+
+# target to build an object file
+tests/testFiber.cpp.o:
+	$(MAKE) -f CMakeFiles/testFiber.dir/build.make CMakeFiles/testFiber.dir/tests/testFiber.cpp.o
+.PHONY : tests/testFiber.cpp.o
+
+tests/testFiber.i: tests/testFiber.cpp.i
+
+.PHONY : tests/testFiber.i
+
+# target to preprocess a source file
+tests/testFiber.cpp.i:
+	$(MAKE) -f CMakeFiles/testFiber.dir/build.make CMakeFiles/testFiber.dir/tests/testFiber.cpp.i
+.PHONY : tests/testFiber.cpp.i
+
+tests/testFiber.s: tests/testFiber.cpp.s
+
+.PHONY : tests/testFiber.s
+
+# target to generate assembly for a file
+tests/testFiber.cpp.s:
+	$(MAKE) -f CMakeFiles/testFiber.dir/build.make CMakeFiles/testFiber.dir/tests/testFiber.cpp.s
+.PHONY : tests/testFiber.cpp.s
+
 tests/testLog.o: tests/testLog.cpp.o
 
 .PHONY : tests/testLog.o
@@ -353,6 +460,33 @@ tests/testLog.s: tests/testLog.cpp.s
 tests/testLog.cpp.s:
 	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/tests/testLog.cpp.s
 .PHONY : tests/testLog.cpp.s
+
+tests/testStack.o: tests/testStack.cpp.o
+
+.PHONY : tests/testStack.o
+
+# target to build an object file
+tests/testStack.cpp.o:
+	$(MAKE) -f CMakeFiles/testStack.dir/build.make CMakeFiles/testStack.dir/tests/testStack.cpp.o
+.PHONY : tests/testStack.cpp.o
+
+tests/testStack.i: tests/testStack.cpp.i
+
+.PHONY : tests/testStack.i
+
+# target to preprocess a source file
+tests/testStack.cpp.i:
+	$(MAKE) -f CMakeFiles/testStack.dir/build.make CMakeFiles/testStack.dir/tests/testStack.cpp.i
+.PHONY : tests/testStack.cpp.i
+
+tests/testStack.s: tests/testStack.cpp.s
+
+.PHONY : tests/testStack.s
+
+# target to generate assembly for a file
+tests/testStack.cpp.s:
+	$(MAKE) -f CMakeFiles/testStack.dir/build.make CMakeFiles/testStack.dir/tests/testStack.cpp.s
+.PHONY : tests/testStack.cpp.s
 
 tests/testThread.o: tests/testThread.cpp.o
 
@@ -389,16 +523,24 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... testThread"
-	@echo "... testConfig"
-	@echo "... sylar"
 	@echo "... testLog"
+	@echo "... testThread"
+	@echo "... sylar"
+	@echo "... testStack"
+	@echo "... testConfig"
+	@echo "... testFiber"
 	@echo "... sylar/config.o"
 	@echo "... sylar/config.i"
 	@echo "... sylar/config.s"
+	@echo "... sylar/fiber.o"
+	@echo "... sylar/fiber.i"
+	@echo "... sylar/fiber.s"
 	@echo "... sylar/log.o"
 	@echo "... sylar/log.i"
 	@echo "... sylar/log.s"
+	@echo "... sylar/macro.o"
+	@echo "... sylar/macro.i"
+	@echo "... sylar/macro.s"
 	@echo "... sylar/mutex.o"
 	@echo "... sylar/mutex.i"
 	@echo "... sylar/mutex.s"
@@ -411,9 +553,15 @@ help:
 	@echo "... tests/testConfig.o"
 	@echo "... tests/testConfig.i"
 	@echo "... tests/testConfig.s"
+	@echo "... tests/testFiber.o"
+	@echo "... tests/testFiber.i"
+	@echo "... tests/testFiber.s"
 	@echo "... tests/testLog.o"
 	@echo "... tests/testLog.i"
 	@echo "... tests/testLog.s"
+	@echo "... tests/testStack.o"
+	@echo "... tests/testStack.i"
+	@echo "... tests/testStack.s"
 	@echo "... tests/testThread.o"
 	@echo "... tests/testThread.i"
 	@echo "... tests/testThread.s"

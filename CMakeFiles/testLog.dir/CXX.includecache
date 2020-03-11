@@ -11,6 +11,8 @@ util.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
 mutex.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
+thread.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
 singleton.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
 string
@@ -48,6 +50,18 @@ stdint.h
 memory
 -
 
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
+mutex.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
+pthread.h
+-
+string
+-
+functional
+-
+memory
+-
+
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
 pthread.h
 -
@@ -58,6 +72,12 @@ unistd.h
 sys/types.h
 -
 sys/syscall.h
+-
+vector
+-
+string
+-
+cxxabi.h
 -
 
 /home/wangk/code/cpp/sylar/code/my_sylar/tests/testLog.cpp

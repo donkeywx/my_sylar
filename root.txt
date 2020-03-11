@@ -1,22 +1,8 @@
-2020-03-09 21:25:15	8363	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 8363 this.id: 8363
-2020-03-09 21:34:19	9069	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9069 this.id: 9069
-2020-03-09 21:34:56	9167	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9167 this.id: 9167
-2020-03-09 21:34:56	9168	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9168 this.id: 9168
-2020-03-09 21:34:56	9169	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9169 this.id: 9169
-2020-03-09 21:34:56	9170	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9170 this.id: 9170
-2020-03-09 21:34:56	9171	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9171 this.id: 9171
-2020-03-09 21:34:56	9172	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9172 this.id: 9172
-2020-03-09 21:34:56	9173	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9173 this.id: 9173
-2020-03-09 21:34:56	9174	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9174 this.id: 9174
-2020-03-09 21:34:56	9175	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9175 this.id: 9175
-2020-03-09 21:34:56	9176	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9176 this.id: 9176
-2020-03-09 21:40:14	9708	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9708 this.id: 9708
-2020-03-09 21:40:14	9709	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9709 this.id: 9709
-2020-03-09 21:40:14	9711	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9711 this.id: 9711
-2020-03-09 21:40:14	9710	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9710 this.id: 9710
-2020-03-09 21:40:14	9712	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9712 this.id: 9712
-2020-03-09 21:40:14	9713	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9713 this.id: 9713
-2020-03-09 21:40:14	9714	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9714 this.id: 9714
-2020-03-09 21:40:14	9715	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9715 this.id: 9715
-2020-03-09 21:40:14	9716	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9716 this.id: 9716
-2020-03-09 21:40:14	9717	thread_name	0	[INFO]	[root]	tests/testThread.cpp:11	name: UNKNOWN this.name: UNKNOWN id: 9717 this.id: 9717
+2020-03-11 21:47:43	7078	UNKNOWN	0	[DEBUG]	[system]	sylar/fiber.cpp:45	Fiber: Fiber main
+2020-03-11 21:47:43	7078	UNKNOWN	0	[ERROR]	[system]	tests/testFiber.cpp:17	main begin
+2020-03-11 21:47:43	7078	UNKNOWN	0	[DEBUG]	[system]	sylar/fiber.cpp:74	Fiber::Fiber id = 1
+2020-03-11 21:47:43	7078	UNKNOWN	1	[INFO]	[system]	tests/testFiber.cpp:8	run_in_fiber start
+2020-03-11 21:47:43	7078	UNKNOWN	1	[INFO]	[system]	tests/testFiber.cpp:10	run_in_fiber end
+2020-03-11 21:47:43	7078	UNKNOWN	0	[ERROR]	[system]	tests/testFiber.cpp:22	main end
+2020-03-11 21:47:43	7078	UNKNOWN	0	[DEBUG]	[system]	sylar/fiber.cpp:101	Fiber::~Fiber id=1 total=1
+2020-03-11 21:47:43	7078	UNKNOWN	0	[DEBUG]	[system]	sylar/fiber.cpp:101	Fiber::~Fiber id=0 total=0

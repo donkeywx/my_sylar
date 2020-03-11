@@ -7,6 +7,7 @@ CMakeFiles/testConfig.dir/tests/testConfig.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
  /home/wangk/code/cpp/sylar/code/my_sylar/tests/testConfig.cpp
  /usr/local/boost/include/boost/array.hpp

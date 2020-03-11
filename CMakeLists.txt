@@ -1,4 +1,3 @@
-
 CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 PROJECT(sylar)
 
@@ -11,6 +10,8 @@ SET(LIB_SRC
     sylar/config.cpp
     sylar/thread.cpp
     sylar/mutex.cpp
+    sylar/macro.cpp
+    sylar/fiber.cpp
 )
 SET(LIB_LIB
     sylar
@@ -42,3 +43,13 @@ ADD_EXECUTABLE(testThread tests/testThread.cpp)
 ADD_DEPENDENCIES(testThread sylar)
 force_redefine_file_macro_for_sources(testThread)
 TARGET_LINK_LIBRARIES(testThread ${LIB_LIB})
+
+ADD_EXECUTABLE(testStack tests/testStack.cpp)
+ADD_DEPENDENCIES(testStack sylar)
+force_redefine_file_macro_for_sources(testStack)
+TARGET_LINK_LIBRARIES(testStack ${LIB_LIB})
+
+ADD_EXECUTABLE(testFiber tests/testFiber.cpp)
+ADD_DEPENDENCIES(testFiber sylar)
+force_redefine_file_macro_for_sources(testFiber)
+TARGET_LINK_LIBRARIES(testFiber ${LIB_LIB})

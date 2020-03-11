@@ -3,7 +3,9 @@
 
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/config.h
+CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/fiber.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/log.h
+CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/macro.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/mutex.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/noncopyable.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/singleton.h

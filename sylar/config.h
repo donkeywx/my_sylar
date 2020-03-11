@@ -15,6 +15,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include "log.h"
+#include "mutex.h"
 namespace sylar
 {
 
@@ -302,6 +303,7 @@ public:
     {
         try
         {
+            RWLock::ReadLock lock(m_rwLock);
             // return boost::lexical_cast<std::string>(m_val);
             return ToStr()(m_val);
         }
@@ -332,18 +334,25 @@ public:
         return false;
     }
 
-    T getVal() {return m_val;}
+    T getVal() 
+    {
+        RWLock::ReadLock lock(m_rwLock);
+        return m_val;
+    }
     void setValue(const T& v)
     {
-        if(v == m_val) 
         {
-            return;
+            RWLock::ReadLock lock(m_rwLock);
+            if(v == m_val) 
+            {
+                return;
+            }
+            for(auto& i : m_cbs)
+            {
+                i.second(m_val, v);
+            }
         }
-        for(auto& i : m_cbs)
-        {
-            i.second(m_val, v);
-        }
-
+        RWLock::WriteLock lock(m_rwLock);
         m_val = v;
     }
 
@@ -355,6 +364,7 @@ public:
      */
     uint64_t addListener(on_change_cb cb) 
     {
+        RWLock::WriteLock lock(m_rwLock);
         static uint64_t s_fun_id = 0;
         ++s_fun_id;
         m_cbs[s_fun_id] = cb;
@@ -367,6 +377,7 @@ public:
      */
     void delListener(uint64_t key) 
     {
+        RWLock::WriteLock lock(m_rwLock);
         m_cbs.erase(key);
     }
 
@@ -377,6 +388,7 @@ public:
      */
     on_change_cb getListener(uint64_t key) 
     {
+        RWLock::ReadLock lock(m_rwLock);
         auto it = m_cbs.find(key);
         return it == m_cbs.end() ? nullptr : it->second;
     }
@@ -386,6 +398,7 @@ public:
      */
     void clearListener() 
     {
+        RWLock::WriteLock lock(m_rwLock);
         m_cbs.clear();
     }
 private:
@@ -393,6 +406,8 @@ private:
 
     //变更回调函数组, uint64_t key,要求唯一，一般可以用hash
     std::map<uint64_t, on_change_cb> m_cbs;
+
+    RWLock m_rwLock;
 };
 
 class Config
@@ -405,6 +420,7 @@ public:
     static typename ConfigVar<T>::ptr Lookup(const std::string& name,
             const T& default_value, const std::string& description = "")
     {
+        RWLock::WriteLock lock(GetLock());
         auto it = GetDatas().find(name);
         if(it != GetDatas().end()) 
         {
@@ -443,6 +459,7 @@ public:
     template<class T>
     static typename ConfigVar<T>::ptr Lookup(const std::string& name)
     {
+        RWLock::ReadLock lock(GetLock());
         auto it = GetDatas().find(name);
         if(it == GetDatas().end()) 
         {
@@ -475,6 +492,8 @@ public:
 private:
     // 使用静态成员函数可以，解决静态成员变量初始化的顺序问题
     static ConfigVarMap& GetDatas();
+
+    static RWLock& GetLock();
 };
 
 }

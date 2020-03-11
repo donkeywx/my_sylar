@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/sylar.dir/sylar/config.cpp.o"
   "CMakeFiles/sylar.dir/sylar/thread.cpp.o"
   "CMakeFiles/sylar.dir/sylar/mutex.cpp.o"
+  "CMakeFiles/sylar.dir/sylar/macro.cpp.o"
+  "CMakeFiles/sylar.dir/sylar/fiber.cpp.o"
   "lib/libsylar.pdb"
   "lib/libsylar.so"
 )

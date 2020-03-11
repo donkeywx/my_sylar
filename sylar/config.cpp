@@ -6,8 +6,10 @@ namespace sylar
 static sylar::Logger::ptr g_logger = SYLAR_LOG_NAME("system");
 
 
-ConfigVarBase::ptr Config::LookupBase(const std::string& name) {
+ConfigVarBase::ptr Config::LookupBase(const std::string& name) 
+{
 
+    RWLock::ReadLock lock(GetLock());
     auto it = GetDatas().find(name);
     return it == GetDatas().end() ? nullptr : it->second;
 }
@@ -105,7 +107,7 @@ void Config::LoadFromConfDir(const std::string& path, bool force)
 
 void Config::Visit(std::function<void(ConfigVarBase::ptr)> cb) 
 {
-
+    RWLock::ReadLock lock(GetLock());
     ConfigVarMap& m = GetDatas();
     for(auto it = m.begin(); it != m.end(); ++it) 
     {
@@ -118,5 +120,11 @@ Config::ConfigVarMap& Config::GetDatas()
 {
     static ConfigVarMap s_datas;
     return s_datas;
+}
+
+RWLock& Config::GetLock()
+{
+    static RWLock s_mutex;
+    return s_mutex;
 }
 }
