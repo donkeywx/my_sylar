@@ -12,6 +12,7 @@ SET(LIB_SRC
     sylar/mutex.cpp
     sylar/macro.cpp
     sylar/fiber.cpp
+    sylar/scheduler.cpp
 )
 SET(LIB_LIB
     sylar
@@ -53,3 +54,8 @@ ADD_EXECUTABLE(testFiber tests/testFiber.cpp)
 ADD_DEPENDENCIES(testFiber sylar)
 force_redefine_file_macro_for_sources(testFiber)
 TARGET_LINK_LIBRARIES(testFiber ${LIB_LIB})
+
+ADD_EXECUTABLE(testScheduler tests/testScheduler.cpp)
+ADD_DEPENDENCIES(testScheduler sylar)
+force_redefine_file_macro_for_sources(testScheduler)
+TARGET_LINK_LIBRARIES(testScheduler ${LIB_LIB})

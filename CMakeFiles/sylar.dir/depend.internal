@@ -1975,6 +1975,17 @@ CMakeFiles/sylar.dir/sylar/mutex.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.cpp
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
+CMakeFiles/sylar.dir/sylar/scheduler.cpp.o
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/macro.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.cpp
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
 CMakeFiles/sylar.dir/sylar/thread.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h

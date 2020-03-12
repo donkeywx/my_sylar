@@ -23,6 +23,8 @@ sylar/fiber.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber.h
 sylar/mutex.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
+sylar/scheduler.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.h
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.h
 iostream
@@ -113,6 +115,22 @@ stdint.h
 -
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
+
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.h
+memory
+-
+vector
+-
+list
+-
+atomic
+-
+iostream
+-
+fiber.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber.h
+thread.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
 memory

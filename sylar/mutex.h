@@ -36,6 +36,11 @@ public:
     {
         m_mutex.unlock();
     }
+
+    void unlock()
+    {
+        m_mutex.unlock();
+    }
 private:
     T& m_mutex;
 };

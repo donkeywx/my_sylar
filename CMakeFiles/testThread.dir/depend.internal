@@ -9,6 +9,7 @@ CMakeFiles/testThread.dir/tests/testThread.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/macro.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h

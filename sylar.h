@@ -9,5 +9,6 @@
 #include "sylar/macro.h"
 #include "sylar/fiber.h"
 #include "sylar/mutex.h"
+#include "sylar/scheduler.h"
 
 #endif
