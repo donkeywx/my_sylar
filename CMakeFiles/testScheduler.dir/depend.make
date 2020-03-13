@@ -4,6 +4,7 @@
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/config.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/fiber.h
+CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/iomanager.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/log.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/macro.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/mutex.h

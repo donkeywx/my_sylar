@@ -4,6 +4,7 @@
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/config.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/fiber.h
+CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/iomanager.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/log.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/macro.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/mutex.h

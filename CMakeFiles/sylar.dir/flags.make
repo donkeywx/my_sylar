@@ -24,3 +24,5 @@ CXX_INCLUDES = -I/usr/local/yaml-cpp/include -I/usr/local/boost/include
 
 # Custom defines: CMakeFiles/sylar.dir/sylar/scheduler.cpp.o_DEFINES = __FILE__="sylar/scheduler.cpp"
 
+# Custom defines: CMakeFiles/sylar.dir/sylar/iomanager.cpp.o_DEFINES = __FILE__="sylar/iomanager.cpp"
+

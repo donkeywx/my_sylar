@@ -25,6 +25,8 @@ sylar/mutex.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
 sylar/scheduler.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.h
+sylar/iomanager.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/iomanager.h
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.h
 iostream
@@ -65,6 +67,8 @@ functional
 -
 ucontext.h
 -
+
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/iomanager.h
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
 util.h

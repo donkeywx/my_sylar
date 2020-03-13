@@ -13,6 +13,7 @@ SET(LIB_SRC
     sylar/macro.cpp
     sylar/fiber.cpp
     sylar/scheduler.cpp
+    sylar/iomanager.cpp
 )
 SET(LIB_LIB
     sylar
@@ -59,3 +60,8 @@ ADD_EXECUTABLE(testScheduler tests/testScheduler.cpp)
 ADD_DEPENDENCIES(testScheduler sylar)
 force_redefine_file_macro_for_sources(testScheduler)
 TARGET_LINK_LIBRARIES(testScheduler ${LIB_LIB})
+
+ADD_EXECUTABLE(testIomanager tests/testIomanager.cpp)
+ADD_DEPENDENCIES(testIomanager sylar)
+force_redefine_file_macro_for_sources(testIomanager)
+TARGET_LINK_LIBRARIES(testIomanager ${LIB_LIB})

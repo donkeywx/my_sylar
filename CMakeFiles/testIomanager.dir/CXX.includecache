@@ -170,9 +170,7 @@ string
 cxxabi.h
 -
 
-/home/wangk/code/cpp/sylar/code/my_sylar/tests/testStack.cpp
-iostream
--
+/home/wangk/code/cpp/sylar/code/my_sylar/tests/testIomanager.cpp
 ../sylar.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar.h
 

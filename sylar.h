@@ -10,5 +10,7 @@
 #include "sylar/fiber.h"
 #include "sylar/mutex.h"
 #include "sylar/scheduler.h"
+#include "sylar/iomanager.h"
+
 
 #endif

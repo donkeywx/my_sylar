@@ -64,6 +64,14 @@ functional
 ucontext.h
 -
 
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/iomanager.cpp
+iomanager.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/iomanager.h
+
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/iomanager.h
+scheduler.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.h
+
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.cpp
 log.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h

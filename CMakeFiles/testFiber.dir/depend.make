@@ -4,6 +4,7 @@
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/config.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/fiber.h
+CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/iomanager.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/log.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/macro.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/mutex.h
