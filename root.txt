@@ -1,9 +1,14 @@
-2020-03-15 18:31:01	7181	UNKNOWN	0	[DEBUG]	[system]	sylar/fiber.cpp:45	Fiber: Fiber main
-2020-03-15 18:31:01	7181	UNKNOWN	0	[DEBUG]	[system]	sylar/fiber.cpp:74	Fiber::Fiber id = 1
-2020-03-15 18:31:01	7182	_0	0	[DEBUG]	[system]	sylar/scheduler.cpp:136	 run
-2020-03-15 18:31:01	7182	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:45	Fiber: Fiber main
-2020-03-15 18:31:01	7181	UNKNOWN	1	[DEBUG]	[system]	sylar/scheduler.cpp:136	 run
-2020-03-15 18:31:01	7181	UNKNOWN	1	[DEBUG]	[system]	sylar/fiber.cpp:74	Fiber::Fiber id = 3
-2020-03-15 18:31:01	7181	UNKNOWN	3	[DEBUG]	[system]	sylar/iomanager.cpp:331	idle
-2020-03-15 18:31:01	7182	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:74	Fiber::Fiber id = 2
-2020-03-15 18:31:01	7182	_0	2	[DEBUG]	[system]	sylar/iomanager.cpp:331	idle
+2020-03-15 20:38:49	15156	UNKNOWN	0	[DEBUG]	[system]	sylar/fiber.cpp:45	Fiber: Fiber main
+2020-03-15 20:38:49	15156	UNKNOWN	0	[DEBUG]	[system]	sylar/fiber.cpp:74	Fiber::Fiber id = 1
+2020-03-15 20:38:49	15157	_0	0	[DEBUG]	[system]	sylar/scheduler.cpp:136	 run
+2020-03-15 20:38:49	15157	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:45	Fiber: Fiber main
+2020-03-15 20:38:49	15156	UNKNOWN	1	[DEBUG]	[system]	sylar/scheduler.cpp:136	 run
+2020-03-15 20:38:49	15157	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:74	Fiber::Fiber id = 2
+2020-03-15 20:38:49	15156	UNKNOWN	1	[DEBUG]	[system]	sylar/fiber.cpp:74	Fiber::Fiber id = 3
+2020-03-15 20:38:49	15157	_0	2	[DEBUG]	[system]	sylar/iomanager.cpp:331	idle
+2020-03-15 20:38:49	15156	UNKNOWN	3	[DEBUG]	[system]	sylar/iomanager.cpp:331	idle
+2020-03-15 20:38:50	15156	UNKNOWN	0	[DEBUG]	[system]	sylar/fiber.cpp:74	Fiber::Fiber id = 4
+2020-03-15 20:38:50	15156	UNKNOWN	4	[INFO]	[root]	tests/testIomanager.cpp:62	hello timer i=0
+2020-03-15 20:38:51	15157	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:74	Fiber::Fiber id = 5
+2020-03-15 20:38:51	15157	_0	5	[INFO]	[root]	tests/testIomanager.cpp:62	hello timer i=1
+2020-03-15 20:38:52	15156	UNKNOWN	4	[INFO]	[root]	tests/testIomanager.cpp:62	hello timer i=2

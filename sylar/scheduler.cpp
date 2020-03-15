@@ -220,7 +220,6 @@ void Scheduler::run() {
 
             ++m_idleThreadCount;
             idle_fiber->swapIn();
-            SYLAR_LOG_INFO(g_logger) << "wangkang";
             --m_idleThreadCount;
             if(idle_fiber->getState() != Fiber::TERM
                     && idle_fiber->getState() != Fiber::EXCEPT) {
@@ -241,13 +240,10 @@ bool Scheduler::stopping() {
 }
 
 void Scheduler::idle() {
-    SYLAR_LOG_INFO(g_logger) << "idle";
-    while(!stopping()) {
-        SYLAR_LOG_INFO(g_logger) << "yield start";
+    while(!stopping()) 
+    {
         sylar::Fiber::YieldToHold();
-        SYLAR_LOG_INFO(g_logger) << "yield end";
     }
-    SYLAR_LOG_INFO(g_logger) << "out";
 }
 
 void Scheduler::switchTo(int thread) {

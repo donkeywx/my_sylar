@@ -38,7 +38,7 @@ Timer::Timer(uint64_t next)
 }
 
 bool Timer::cancel() {
-    TimerManager::RWMutexType::WriteLock lock(m_manager->m_mutex);
+    TimerManager::RWMutexType::Lock lock(m_manager->m_mutex);
     if(m_cb) {
         m_cb = nullptr;
         auto it = m_manager->m_timers.find(shared_from_this());
@@ -49,7 +49,7 @@ bool Timer::cancel() {
 }
 
 bool Timer::refresh() {
-    TimerManager::RWMutexType::WriteLock lock(m_manager->m_mutex);
+    TimerManager::RWMutexType::Lock lock(m_manager->m_mutex);
     if(!m_cb) {
         return false;
     }
@@ -67,7 +67,7 @@ bool Timer::reset(uint64_t ms, bool from_now) {
     if(ms == m_ms && !from_now) {
         return true;
     }
-    TimerManager::RWMutexType::WriteLock lock(m_manager->m_mutex);
+    TimerManager::RWMutexType::Lock lock(m_manager->m_mutex);
     if(!m_cb) {
         return false;
     }
@@ -99,7 +99,7 @@ TimerManager::~TimerManager() {
 Timer::ptr TimerManager::addTimer(uint64_t ms, std::function<void()> cb
                                   ,bool recurring) {
     Timer::ptr timer(new Timer(ms, cb, recurring, this));
-    RWMutexType::WriteLock lock(m_mutex);
+    RWMutexType::Lock lock(m_mutex);
     addTimer(timer, lock);
     return timer;
 }
@@ -118,7 +118,7 @@ Timer::ptr TimerManager::addConditionTimer(uint64_t ms, std::function<void()> cb
 }
 
 uint64_t TimerManager::getNextTimer() {
-    RWMutexType::ReadLock lock(m_mutex);
+    RWMutexType::Lock lock(m_mutex);
     m_tickled = false;
     if(m_timers.empty()) {
         return ~0ull;
@@ -137,12 +137,12 @@ void TimerManager::listExpiredCb(std::vector<std::function<void()> >& cbs) {
     uint64_t now_ms = sylar::GetCurrentMS();
     std::vector<Timer::ptr> expired;
     {
-        RWMutexType::ReadLock lock(m_mutex);
+        RWMutexType::Lock lock(m_mutex);
         if(m_timers.empty()) {
             return;
         }
     }
-    RWMutexType::WriteLock lock(m_mutex);
+    RWMutexType::Lock lock(m_mutex);
     if(m_timers.empty()) {
         return;
     }
@@ -171,7 +171,7 @@ void TimerManager::listExpiredCb(std::vector<std::function<void()> >& cbs) {
     }
 }
 
-void TimerManager::addTimer(Timer::ptr val, RWMutexType::WriteLock& lock) {
+void TimerManager::addTimer(Timer::ptr val, RWMutexType::Lock& lock) {
     auto it = m_timers.insert(val).first;
     bool at_front = (it == m_timers.begin()) && !m_tickled;
     if(at_front) {
@@ -195,7 +195,7 @@ bool TimerManager::detectClockRollover(uint64_t now_ms) {
 }
 
 bool TimerManager::hasTimer() {
-    RWMutexType::ReadLock lock(m_mutex);
+    RWMutexType::Lock lock(m_mutex);
     return !m_timers.empty();
 }
 

@@ -82,7 +82,7 @@ class TimerManager {
 friend class Timer;
 public:
     /// 读写锁类型
-    typedef RWLock RWMutexType;
+    typedef Mutex RWMutexType;
 
     /**
      * @brief 构造函数
@@ -139,7 +139,7 @@ protected:
     /**
      * @brief 将定时器添加到管理器中
      */
-    void addTimer(Timer::ptr val, RWMutexType::WriteLock& lock);
+    void addTimer(Timer::ptr val, RWMutexType::Lock& lock);
 private:
     /**
      * @brief 检测服务器时间是否被调后了
