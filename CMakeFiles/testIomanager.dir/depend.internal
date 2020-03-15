@@ -13,6 +13,7 @@ CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/timer.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
  /home/wangk/code/cpp/sylar/code/my_sylar/tests/testIomanager.cpp
  /usr/local/boost/include/boost/array.hpp

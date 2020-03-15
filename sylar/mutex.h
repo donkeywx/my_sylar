@@ -58,6 +58,11 @@ public:
     {
         m_rdlock.unlock();
     }
+
+    void unlock()
+    {
+        m_rdlock.unlock();
+    }
 private:
 
     T& m_rdlock;
@@ -76,6 +81,11 @@ public:
     }
 
     ~WriteScopedLockImpl()
+    {
+        m_wrlock.unlock();
+    }
+
+    void unlock()
     {
         m_wrlock.unlock();
     }

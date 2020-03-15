@@ -12,6 +12,7 @@ CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/noncopyable.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/scheduler.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/singleton.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/thread.h
+CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/timer.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/util.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: tests/testStack.cpp
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: /usr/local/boost/include/boost/array.hpp

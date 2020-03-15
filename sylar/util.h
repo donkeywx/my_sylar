@@ -24,6 +24,16 @@ pid_t getThreadId();
 
 //　获取协程id
 uint32_t getFiberId();
+
+/**
+ * @brief 获取当前时间的毫秒
+ */
+uint64_t GetCurrentMS();
+
+/**
+ * @brief 获取当前时间的微秒
+ */
+uint64_t GetCurrentUS();
 }
 
 #endif

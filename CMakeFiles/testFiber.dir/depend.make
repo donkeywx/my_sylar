@@ -12,6 +12,7 @@ CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/noncopyable.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/scheduler.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/singleton.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/thread.h
+CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/timer.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/util.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: tests/testFiber.cpp
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: /usr/local/boost/include/boost/array.hpp

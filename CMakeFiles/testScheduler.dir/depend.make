@@ -12,6 +12,7 @@ CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/noncopyable.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/scheduler.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/singleton.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/thread.h
+CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/timer.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/util.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: tests/testScheduler.cpp
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: /usr/local/boost/include/boost/array.hpp

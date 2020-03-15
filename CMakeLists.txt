@@ -14,6 +14,7 @@ SET(LIB_SRC
     sylar/fiber.cpp
     sylar/scheduler.cpp
     sylar/iomanager.cpp
+    sylar/timer.cpp
 )
 SET(LIB_LIB
     sylar
