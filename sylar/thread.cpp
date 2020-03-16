@@ -91,6 +91,7 @@ void* Thread::run(void* arg)
     thread->m_semaphore.notify();   // 确保线程创建完成后，该线程是已经跑起来的
     cb();
 
+    SYLAR_LOG_ERROR(SYLAR_LOG_ROOT()) << "thread run end";
     return 0;
 }
 }

@@ -21,11 +21,12 @@ Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
         t_scheduler = this;
 
         m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0, true));
-        sylar::Thread::setName(m_name);
+        // sylar::Thread::setName(m_name);
 
         t_scheduler_fiber = m_rootFiber.get();
         m_rootThread = sylar::getThreadId();
         m_threadIds.push_back(m_rootThread);
+        SYLAR_LOG_INFO(g_logger) << "use_caller";
     } else {
         m_rootThread = -1;
     }
@@ -37,6 +38,8 @@ Scheduler::~Scheduler() {
     if(GetThis() == this) {
         t_scheduler = nullptr;
     }
+
+    SYLAR_LOG_INFO(g_logger) << "~Scheduler";
 }
 
 Scheduler* Scheduler::GetThis() {
@@ -56,6 +59,7 @@ void Scheduler::start() {
     SYLAR_ASSERT(m_threads.empty());
 
     m_threads.resize(m_threadCount);
+    SYLAR_LOG_INFO(g_logger)<< m_threadCount;
     for(size_t i = 0; i < m_threadCount; ++i) {
         m_threads[i].reset(new Thread(std::bind(&Scheduler::run, this)
                             , m_name + "_" + std::to_string(i)));
@@ -111,6 +115,7 @@ void Scheduler::stop() {
         //    m_rootFiber->call();
         //}
         if(!stopping()) {
+            SYLAR_LOG_DEBUG(g_logger) << "call";
             m_rootFiber->call();
         }
     }
@@ -220,6 +225,7 @@ void Scheduler::run() {
 
             ++m_idleThreadCount;
             idle_fiber->swapIn();
+            // SYLAR_LOG_DEBUG(g_logger) << "swap in end";
             --m_idleThreadCount;
             if(idle_fiber->getState() != Fiber::TERM
                     && idle_fiber->getState() != Fiber::EXCEPT) {
@@ -227,6 +233,8 @@ void Scheduler::run() {
             }
         }
     }
+
+    SYLAR_LOG_ERROR(g_logger) << "run end";
 }
 
 void Scheduler::tickle() {
