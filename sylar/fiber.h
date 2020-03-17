@@ -82,6 +82,8 @@ public:
     State getState() const { return m_state;}
 public:
 
+    static void Set(Fiber::ptr local);
+
     /**
      * @brief 设置当前线程的运行协程
      * @param[in] f 运行协程

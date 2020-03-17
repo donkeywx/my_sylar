@@ -24,6 +24,7 @@ Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
         // sylar::Thread::setName(m_name);
 
         t_scheduler_fiber = m_rootFiber.get();
+        // sylar::Fiber::Set(m_rootFiber);
         m_rootThread = sylar::getThreadId();
         m_threadIds.push_back(m_rootThread);
         SYLAR_LOG_INFO(g_logger) << "use_caller";

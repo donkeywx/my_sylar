@@ -30,6 +30,12 @@ public:
     }
 };
 
+void Fiber::Set(Fiber::ptr local)
+{
+    t_fiber = local.get();
+    t_threadFiber = local;
+}
+
 Fiber::Fiber()
 {
     m_state = EXEC;
