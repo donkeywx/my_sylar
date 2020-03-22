@@ -20,6 +20,8 @@ SET(LIB_SRC
     sylar/fdmanager.cpp
     sylar/address.cpp
     sylar/socket.cpp
+    sylar/bytearray.cpp
+    sylar/http/http.cpp
 )
 SET(LIB_LIB
     sylar
@@ -87,3 +89,13 @@ ADD_EXECUTABLE(testSocket tests/testSocket.cpp)
 ADD_DEPENDENCIES(testSocket sylar)
 force_redefine_file_macro_for_sources(testSocket)
 TARGET_LINK_LIBRARIES(testSocket ${LIB_LIB})
+
+ADD_EXECUTABLE(testByteArray tests/testByteArray.cpp)
+ADD_DEPENDENCIES(testByteArray sylar)
+force_redefine_file_macro_for_sources(testByteArray)
+TARGET_LINK_LIBRARIES(testByteArray ${LIB_LIB})
+
+ADD_EXECUTABLE(testHttp tests/testHttp.cpp)
+ADD_DEPENDENCIES(testHttp sylar)
+force_redefine_file_macro_for_sources(testHttp)
+TARGET_LINK_LIBRARIES(testHttp ${LIB_LIB})

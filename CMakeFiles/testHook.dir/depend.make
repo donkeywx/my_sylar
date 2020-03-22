@@ -3,9 +3,11 @@
 
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/address.h
+CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/bytearray.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/config.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/fiber.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/hook.h
+CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/http/http.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/iomanager.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/log.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/macro.h

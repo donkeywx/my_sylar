@@ -3,9 +3,11 @@
 
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/address.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/bytearray.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/config.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/fiber.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/hook.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/http.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/iomanager.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/log.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/macro.h

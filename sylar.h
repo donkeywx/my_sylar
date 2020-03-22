@@ -14,5 +14,7 @@
 #include "sylar/hook.h"
 #include "sylar/address.h"
 #include "sylar/socket.h"
+#include "sylar/bytearray.h"
+#include "sylar/http/http.h"
 
 #endif

@@ -4,9 +4,11 @@
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/address.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/bytearray.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/hook.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/iomanager.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/macro.h

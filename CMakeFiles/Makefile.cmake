@@ -45,9 +45,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/testHttp.dir/DependInfo.cmake"
   "CMakeFiles/testSocket.dir/DependInfo.cmake"
   "CMakeFiles/testAddress.dir/DependInfo.cmake"
   "CMakeFiles/testHook.dir/DependInfo.cmake"
+  "CMakeFiles/testByteArray.dir/DependInfo.cmake"
   "CMakeFiles/testIomanager.dir/DependInfo.cmake"
   "CMakeFiles/testScheduler.dir/DependInfo.cmake"
   "CMakeFiles/testLog.dir/DependInfo.cmake"

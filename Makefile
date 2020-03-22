@@ -114,6 +114,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testHttp
+
+# Build rule for target.
+testHttp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testHttp
+.PHONY : testHttp
+
+# fast build rule for target.
+testHttp/fast:
+	$(MAKE) -f CMakeFiles/testHttp.dir/build.make CMakeFiles/testHttp.dir/build
+.PHONY : testHttp/fast
+
+#=============================================================================
 # Target rules for targets named testSocket
 
 # Build rule for target.
@@ -151,6 +164,19 @@ testHook: cmake_check_build_system
 testHook/fast:
 	$(MAKE) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/build
 .PHONY : testHook/fast
+
+#=============================================================================
+# Target rules for targets named testByteArray
+
+# Build rule for target.
+testByteArray: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testByteArray
+.PHONY : testByteArray
+
+# fast build rule for target.
+testByteArray/fast:
+	$(MAKE) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/build
+.PHONY : testByteArray/fast
 
 #=============================================================================
 # Target rules for targets named testIomanager
@@ -283,6 +309,33 @@ sylar/address.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/address.cpp.s
 .PHONY : sylar/address.cpp.s
 
+sylar/bytearray.o: sylar/bytearray.cpp.o
+
+.PHONY : sylar/bytearray.o
+
+# target to build an object file
+sylar/bytearray.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/bytearray.cpp.o
+.PHONY : sylar/bytearray.cpp.o
+
+sylar/bytearray.i: sylar/bytearray.cpp.i
+
+.PHONY : sylar/bytearray.i
+
+# target to preprocess a source file
+sylar/bytearray.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/bytearray.cpp.i
+.PHONY : sylar/bytearray.cpp.i
+
+sylar/bytearray.s: sylar/bytearray.cpp.s
+
+.PHONY : sylar/bytearray.s
+
+# target to generate assembly for a file
+sylar/bytearray.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/bytearray.cpp.s
+.PHONY : sylar/bytearray.cpp.s
+
 sylar/config.o: sylar/config.cpp.o
 
 .PHONY : sylar/config.o
@@ -390,6 +443,33 @@ sylar/hook.s: sylar/hook.cpp.s
 sylar/hook.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/hook.cpp.s
 .PHONY : sylar/hook.cpp.s
+
+sylar/http/http.o: sylar/http/http.cpp.o
+
+.PHONY : sylar/http/http.o
+
+# target to build an object file
+sylar/http/http.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/http/http.cpp.o
+.PHONY : sylar/http/http.cpp.o
+
+sylar/http/http.i: sylar/http/http.cpp.i
+
+.PHONY : sylar/http/http.i
+
+# target to preprocess a source file
+sylar/http/http.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/http/http.cpp.i
+.PHONY : sylar/http/http.cpp.i
+
+sylar/http/http.s: sylar/http/http.cpp.s
+
+.PHONY : sylar/http/http.s
+
+# target to generate assembly for a file
+sylar/http/http.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/http/http.cpp.s
+.PHONY : sylar/http/http.cpp.s
 
 sylar/iomanager.o: sylar/iomanager.cpp.o
 
@@ -661,6 +741,33 @@ tests/testAddress.cpp.s:
 	$(MAKE) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/tests/testAddress.cpp.s
 .PHONY : tests/testAddress.cpp.s
 
+tests/testByteArray.o: tests/testByteArray.cpp.o
+
+.PHONY : tests/testByteArray.o
+
+# target to build an object file
+tests/testByteArray.cpp.o:
+	$(MAKE) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o
+.PHONY : tests/testByteArray.cpp.o
+
+tests/testByteArray.i: tests/testByteArray.cpp.i
+
+.PHONY : tests/testByteArray.i
+
+# target to preprocess a source file
+tests/testByteArray.cpp.i:
+	$(MAKE) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.i
+.PHONY : tests/testByteArray.cpp.i
+
+tests/testByteArray.s: tests/testByteArray.cpp.s
+
+.PHONY : tests/testByteArray.s
+
+# target to generate assembly for a file
+tests/testByteArray.cpp.s:
+	$(MAKE) -f CMakeFiles/testByteArray.dir/build.make CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.s
+.PHONY : tests/testByteArray.cpp.s
+
 tests/testConfig.o: tests/testConfig.cpp.o
 
 .PHONY : tests/testConfig.o
@@ -741,6 +848,33 @@ tests/testHook.s: tests/testHook.cpp.s
 tests/testHook.cpp.s:
 	$(MAKE) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/tests/testHook.cpp.s
 .PHONY : tests/testHook.cpp.s
+
+tests/testHttp.o: tests/testHttp.cpp.o
+
+.PHONY : tests/testHttp.o
+
+# target to build an object file
+tests/testHttp.cpp.o:
+	$(MAKE) -f CMakeFiles/testHttp.dir/build.make CMakeFiles/testHttp.dir/tests/testHttp.cpp.o
+.PHONY : tests/testHttp.cpp.o
+
+tests/testHttp.i: tests/testHttp.cpp.i
+
+.PHONY : tests/testHttp.i
+
+# target to preprocess a source file
+tests/testHttp.cpp.i:
+	$(MAKE) -f CMakeFiles/testHttp.dir/build.make CMakeFiles/testHttp.dir/tests/testHttp.cpp.i
+.PHONY : tests/testHttp.cpp.i
+
+tests/testHttp.s: tests/testHttp.cpp.s
+
+.PHONY : tests/testHttp.s
+
+# target to generate assembly for a file
+tests/testHttp.cpp.s:
+	$(MAKE) -f CMakeFiles/testHttp.dir/build.make CMakeFiles/testHttp.dir/tests/testHttp.cpp.s
+.PHONY : tests/testHttp.cpp.s
 
 tests/testIomanager.o: tests/testIomanager.cpp.o
 
@@ -911,10 +1045,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... testHttp"
 	@echo "... rebuild_cache"
 	@echo "... testSocket"
 	@echo "... testAddress"
 	@echo "... testHook"
+	@echo "... testByteArray"
 	@echo "... testIomanager"
 	@echo "... testScheduler"
 	@echo "... testLog"
@@ -926,6 +1062,9 @@ help:
 	@echo "... sylar/address.o"
 	@echo "... sylar/address.i"
 	@echo "... sylar/address.s"
+	@echo "... sylar/bytearray.o"
+	@echo "... sylar/bytearray.i"
+	@echo "... sylar/bytearray.s"
 	@echo "... sylar/config.o"
 	@echo "... sylar/config.i"
 	@echo "... sylar/config.s"
@@ -938,6 +1077,9 @@ help:
 	@echo "... sylar/hook.o"
 	@echo "... sylar/hook.i"
 	@echo "... sylar/hook.s"
+	@echo "... sylar/http/http.o"
+	@echo "... sylar/http/http.i"
+	@echo "... sylar/http/http.s"
 	@echo "... sylar/iomanager.o"
 	@echo "... sylar/iomanager.i"
 	@echo "... sylar/iomanager.s"
@@ -968,6 +1110,9 @@ help:
 	@echo "... tests/testAddress.o"
 	@echo "... tests/testAddress.i"
 	@echo "... tests/testAddress.s"
+	@echo "... tests/testByteArray.o"
+	@echo "... tests/testByteArray.i"
+	@echo "... tests/testByteArray.s"
 	@echo "... tests/testConfig.o"
 	@echo "... tests/testConfig.i"
 	@echo "... tests/testConfig.s"
@@ -977,6 +1122,9 @@ help:
 	@echo "... tests/testHook.o"
 	@echo "... tests/testHook.i"
 	@echo "... tests/testHook.s"
+	@echo "... tests/testHttp.o"
+	@echo "... tests/testHttp.i"
+	@echo "... tests/testHttp.s"
 	@echo "... tests/testIomanager.o"
 	@echo "... tests/testIomanager.i"
 	@echo "... tests/testIomanager.s"

@@ -396,6 +396,54 @@ CMakeFiles/sylar.dir/sylar/socket.cpp.o.provides: CMakeFiles/sylar.dir/sylar/soc
 CMakeFiles/sylar.dir/sylar/socket.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/socket.cpp.o
 
 
+CMakeFiles/sylar.dir/sylar/bytearray.cpp.o: CMakeFiles/sylar.dir/flags.make
+CMakeFiles/sylar.dir/sylar/bytearray.cpp.o: sylar/bytearray.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/sylar.dir/sylar/bytearray.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/bytearray.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/bytearray.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/bytearray.cpp
+
+CMakeFiles/sylar.dir/sylar/bytearray.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/bytearray.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/bytearray.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/sylar/bytearray.cpp > CMakeFiles/sylar.dir/sylar/bytearray.cpp.i
+
+CMakeFiles/sylar.dir/sylar/bytearray.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/bytearray.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/bytearray.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/sylar/bytearray.cpp -o CMakeFiles/sylar.dir/sylar/bytearray.cpp.s
+
+CMakeFiles/sylar.dir/sylar/bytearray.cpp.o.requires:
+
+.PHONY : CMakeFiles/sylar.dir/sylar/bytearray.cpp.o.requires
+
+CMakeFiles/sylar.dir/sylar/bytearray.cpp.o.provides: CMakeFiles/sylar.dir/sylar/bytearray.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/bytearray.cpp.o.provides.build
+.PHONY : CMakeFiles/sylar.dir/sylar/bytearray.cpp.o.provides
+
+CMakeFiles/sylar.dir/sylar/bytearray.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/bytearray.cpp.o
+
+
+CMakeFiles/sylar.dir/sylar/http/http.cpp.o: CMakeFiles/sylar.dir/flags.make
+CMakeFiles/sylar.dir/sylar/http/http.cpp.o: sylar/http/http.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/sylar.dir/sylar/http/http.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/http/http.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/http/http.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http.cpp
+
+CMakeFiles/sylar.dir/sylar/http/http.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/http/http.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/http/http.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http.cpp > CMakeFiles/sylar.dir/sylar/http/http.cpp.i
+
+CMakeFiles/sylar.dir/sylar/http/http.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/http/http.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/http/http.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http.cpp -o CMakeFiles/sylar.dir/sylar/http/http.cpp.s
+
+CMakeFiles/sylar.dir/sylar/http/http.cpp.o.requires:
+
+.PHONY : CMakeFiles/sylar.dir/sylar/http/http.cpp.o.requires
+
+CMakeFiles/sylar.dir/sylar/http/http.cpp.o.provides: CMakeFiles/sylar.dir/sylar/http/http.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/http/http.cpp.o.provides.build
+.PHONY : CMakeFiles/sylar.dir/sylar/http/http.cpp.o.provides
+
+CMakeFiles/sylar.dir/sylar/http/http.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/http/http.cpp.o
+
+
 # Object files for target sylar
 sylar_OBJECTS = \
 "CMakeFiles/sylar.dir/sylar/log.cpp.o" \
@@ -411,7 +459,9 @@ sylar_OBJECTS = \
 "CMakeFiles/sylar.dir/sylar/hook.cpp.o" \
 "CMakeFiles/sylar.dir/sylar/fdmanager.cpp.o" \
 "CMakeFiles/sylar.dir/sylar/address.cpp.o" \
-"CMakeFiles/sylar.dir/sylar/socket.cpp.o"
+"CMakeFiles/sylar.dir/sylar/socket.cpp.o" \
+"CMakeFiles/sylar.dir/sylar/bytearray.cpp.o" \
+"CMakeFiles/sylar.dir/sylar/http/http.cpp.o"
 
 # External object files for target sylar
 sylar_EXTERNAL_OBJECTS =
@@ -430,9 +480,11 @@ lib/libsylar.so: CMakeFiles/sylar.dir/sylar/hook.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/fdmanager.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/address.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/socket.cpp.o
+lib/libsylar.so: CMakeFiles/sylar.dir/sylar/bytearray.cpp.o
+lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/http.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/build.make
 lib/libsylar.so: CMakeFiles/sylar.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX shared library lib/libsylar.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX shared library lib/libsylar.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sylar.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -454,6 +506,8 @@ CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/hook.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/fdmanager.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/address.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/socket.cpp.o.requires
+CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/bytearray.cpp.o.requires
+CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/http.cpp.o.requires
 
 .PHONY : CMakeFiles/sylar.dir/requires
 

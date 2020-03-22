@@ -33,6 +33,10 @@ sylar/address.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/address.h
 sylar/socket.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/socket.h
+sylar/bytearray.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/bytearray.h
+sylar/http/http.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http.h
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/address.h
 memory
@@ -54,6 +58,20 @@ iostream
 vector
 -
 map
+-
+
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/bytearray.h
+memory
+-
+string
+-
+stdint.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+vector
 -
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.h
@@ -110,6 +128,22 @@ stdint.h
 time.h
 -
 unistd.h
+-
+
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http.h
+memory
+-
+string
+-
+map
+-
+vector
+-
+iostream
+-
+sstream
+-
+boost/lexical_cast.hpp
 -
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/iomanager.h

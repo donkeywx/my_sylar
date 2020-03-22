@@ -3,9 +3,11 @@
 
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/address.h
+CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/bytearray.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/config.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/fiber.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/hook.h
+CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/http/http.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/iomanager.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/log.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/macro.h

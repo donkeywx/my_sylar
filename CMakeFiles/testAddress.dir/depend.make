@@ -3,9 +3,11 @@
 
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/address.h
+CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/bytearray.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/config.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/fiber.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/hook.h
+CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/http/http.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/iomanager.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/log.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/macro.h

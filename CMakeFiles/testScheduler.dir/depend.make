@@ -3,9 +3,11 @@
 
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/address.h
+CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/bytearray.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/config.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/fiber.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/hook.h
+CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/http/http.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/iomanager.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/log.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/macro.h

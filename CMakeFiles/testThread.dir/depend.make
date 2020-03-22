@@ -3,9 +3,11 @@
 
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/address.h
+CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/bytearray.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/config.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/fiber.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/hook.h
+CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/http/http.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/iomanager.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/log.h
 CMakeFiles/testThread.dir/tests/testThread.cpp.o: sylar/macro.h

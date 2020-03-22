@@ -36,3 +36,7 @@ CXX_INCLUDES = -I/usr/local/yaml-cpp/include -I/usr/local/boost/include
 
 # Custom defines: CMakeFiles/sylar.dir/sylar/socket.cpp.o_DEFINES = __FILE__="sylar/socket.cpp"
 
+# Custom defines: CMakeFiles/sylar.dir/sylar/bytearray.cpp.o_DEFINES = __FILE__="sylar/bytearray.cpp"
+
+# Custom defines: CMakeFiles/sylar.dir/sylar/http/http.cpp.o_DEFINES = __FILE__="sylar/http/http.cpp"
+

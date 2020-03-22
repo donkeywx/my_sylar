@@ -3,9 +3,11 @@
 
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/address.h
+CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/bytearray.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/config.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/fiber.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/hook.h
+CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/http/http.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/iomanager.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/log.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/macro.h
