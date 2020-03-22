@@ -11,6 +11,8 @@
 #include "sylar/mutex.h"
 #include "sylar/scheduler.h"
 #include "sylar/iomanager.h"
+#include "sylar/hook.h"
+
 
 
 #endif

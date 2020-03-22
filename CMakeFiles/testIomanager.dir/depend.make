@@ -4,6 +4,7 @@
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/config.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/fiber.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/hook.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/iomanager.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/log.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/macro.h

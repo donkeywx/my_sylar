@@ -69,7 +69,7 @@ void test_stl()
     YAML::Node root = YAML::LoadFile("/home/wangk/code/cpp/sylar/code/my_sylar/tests/log.yaml");
     sylar::Config::LoadFromYaml(root);
 
-    std::map<std::string, int> map = g_map->getVal();
+    std::map<std::string, int> map = g_map->getValue();
     SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << map["name"] << " " << map["sex"];
     SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_int->toString();
     SYLAR_LOG_DEBUG(SYLAR_LOG_ROOT()) << "after: " << g_float->toString();

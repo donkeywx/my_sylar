@@ -334,7 +334,7 @@ public:
         return false;
     }
 
-    T getVal() 
+    T getValue() 
     {
         RWLock::ReadLock lock(m_rwLock);
         return m_val;

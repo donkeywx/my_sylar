@@ -114,6 +114,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testHook
+
+# Build rule for target.
+testHook: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testHook
+.PHONY : testHook
+
+# fast build rule for target.
+testHook/fast:
+	$(MAKE) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/build
+.PHONY : testHook/fast
+
+#=============================================================================
 # Target rules for targets named testIomanager
 
 # Build rule for target.
@@ -244,6 +257,33 @@ sylar/config.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/config.cpp.s
 .PHONY : sylar/config.cpp.s
 
+sylar/fdmanager.o: sylar/fdmanager.cpp.o
+
+.PHONY : sylar/fdmanager.o
+
+# target to build an object file
+sylar/fdmanager.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fdmanager.cpp.o
+.PHONY : sylar/fdmanager.cpp.o
+
+sylar/fdmanager.i: sylar/fdmanager.cpp.i
+
+.PHONY : sylar/fdmanager.i
+
+# target to preprocess a source file
+sylar/fdmanager.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fdmanager.cpp.i
+.PHONY : sylar/fdmanager.cpp.i
+
+sylar/fdmanager.s: sylar/fdmanager.cpp.s
+
+.PHONY : sylar/fdmanager.s
+
+# target to generate assembly for a file
+sylar/fdmanager.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fdmanager.cpp.s
+.PHONY : sylar/fdmanager.cpp.s
+
 sylar/fiber.o: sylar/fiber.cpp.o
 
 .PHONY : sylar/fiber.o
@@ -270,6 +310,33 @@ sylar/fiber.s: sylar/fiber.cpp.s
 sylar/fiber.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber.cpp.s
 .PHONY : sylar/fiber.cpp.s
+
+sylar/hook.o: sylar/hook.cpp.o
+
+.PHONY : sylar/hook.o
+
+# target to build an object file
+sylar/hook.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/hook.cpp.o
+.PHONY : sylar/hook.cpp.o
+
+sylar/hook.i: sylar/hook.cpp.i
+
+.PHONY : sylar/hook.i
+
+# target to preprocess a source file
+sylar/hook.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/hook.cpp.i
+.PHONY : sylar/hook.cpp.i
+
+sylar/hook.s: sylar/hook.cpp.s
+
+.PHONY : sylar/hook.s
+
+# target to generate assembly for a file
+sylar/hook.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/hook.cpp.s
+.PHONY : sylar/hook.cpp.s
 
 sylar/iomanager.o: sylar/iomanager.cpp.o
 
@@ -541,6 +608,33 @@ tests/testFiber.cpp.s:
 	$(MAKE) -f CMakeFiles/testFiber.dir/build.make CMakeFiles/testFiber.dir/tests/testFiber.cpp.s
 .PHONY : tests/testFiber.cpp.s
 
+tests/testHook.o: tests/testHook.cpp.o
+
+.PHONY : tests/testHook.o
+
+# target to build an object file
+tests/testHook.cpp.o:
+	$(MAKE) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/tests/testHook.cpp.o
+.PHONY : tests/testHook.cpp.o
+
+tests/testHook.i: tests/testHook.cpp.i
+
+.PHONY : tests/testHook.i
+
+# target to preprocess a source file
+tests/testHook.cpp.i:
+	$(MAKE) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/tests/testHook.cpp.i
+.PHONY : tests/testHook.cpp.i
+
+tests/testHook.s: tests/testHook.cpp.s
+
+.PHONY : tests/testHook.s
+
+# target to generate assembly for a file
+tests/testHook.cpp.s:
+	$(MAKE) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/tests/testHook.cpp.s
+.PHONY : tests/testHook.cpp.s
+
 tests/testIomanager.o: tests/testIomanager.cpp.o
 
 .PHONY : tests/testIomanager.o
@@ -684,6 +778,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... testHook"
 	@echo "... testIomanager"
 	@echo "... testScheduler"
 	@echo "... testLog"
@@ -695,9 +790,15 @@ help:
 	@echo "... sylar/config.o"
 	@echo "... sylar/config.i"
 	@echo "... sylar/config.s"
+	@echo "... sylar/fdmanager.o"
+	@echo "... sylar/fdmanager.i"
+	@echo "... sylar/fdmanager.s"
 	@echo "... sylar/fiber.o"
 	@echo "... sylar/fiber.i"
 	@echo "... sylar/fiber.s"
+	@echo "... sylar/hook.o"
+	@echo "... sylar/hook.i"
+	@echo "... sylar/hook.s"
 	@echo "... sylar/iomanager.o"
 	@echo "... sylar/iomanager.i"
 	@echo "... sylar/iomanager.s"
@@ -728,6 +829,9 @@ help:
 	@echo "... tests/testFiber.o"
 	@echo "... tests/testFiber.i"
 	@echo "... tests/testFiber.s"
+	@echo "... tests/testHook.o"
+	@echo "... tests/testHook.i"
+	@echo "... tests/testHook.s"
 	@echo "... tests/testIomanager.o"
 	@echo "... tests/testIomanager.i"
 	@echo "... tests/testIomanager.s"

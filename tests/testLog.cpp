@@ -30,11 +30,11 @@ int main(int argc, char** argv) {
     SYLAR_LOG_FMT_ERROR(logger, "test macro fmt error %s", "aa");
 
     // SYLAR_LOG_NAME(name)
-    auto l = sylar::LoggerMgr::getInstance()->getLogger("xx");
+    auto l = sylar::LoggerMgr::GetInstance()->getLogger("xx");
     SYLAR_LOG_ERROR(l) << "xxx";
 
     // SYLAR_LOG_ROOT();
-    auto root = sylar::LoggerMgr::getInstance()->getRoot();
+    auto root = sylar::LoggerMgr::GetInstance()->getRoot();
     SYLAR_LOG_ERROR(root) << "root";
     return 0;
 }

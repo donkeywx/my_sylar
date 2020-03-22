@@ -3,7 +3,8 @@ PROJECT(sylar)
 
 SET(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 SET(CMAKE_VERBOSE_MAKEFILE ON)
-SET(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -O0 -g -fsanitize=address -std=c++11 -Wall -Wno-builtin-macro-redefined -Wno-deprecated -Werror -Wno-unused-function") 
+# fsanitize=address
+SET(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -O0 -g -std=c++11 -Wall -Wno-builtin-macro-redefined -Wno-deprecated -Werror -Wno-unused-function") 
 SET(LIB_SRC
     sylar/log.cpp
     sylar/util.cpp
@@ -15,11 +16,14 @@ SET(LIB_SRC
     sylar/scheduler.cpp
     sylar/iomanager.cpp
     sylar/timer.cpp
+    sylar/hook.cpp
+    sylar/fdmanager.cpp
 )
 SET(LIB_LIB
     sylar
     pthread
-    yaml-cpp)
+    yaml-cpp
+    dl)
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
@@ -66,3 +70,8 @@ ADD_EXECUTABLE(testIomanager tests/testIomanager.cpp)
 ADD_DEPENDENCIES(testIomanager sylar)
 force_redefine_file_macro_for_sources(testIomanager)
 TARGET_LINK_LIBRARIES(testIomanager ${LIB_LIB})
+
+ADD_EXECUTABLE(testHook tests/testHook.cpp)
+ADD_DEPENDENCIES(testHook sylar)
+force_redefine_file_macro_for_sources(testHook)
+TARGET_LINK_LIBRARIES(testHook ${LIB_LIB})

@@ -52,7 +52,7 @@ logs: # log为数组
 
 # class:
 #     person:
-#         name: wangkang
+#         name: donkey
 #         sex: true
 #         age: 31
 #     map:

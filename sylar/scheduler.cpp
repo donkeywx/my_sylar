@@ -1,4 +1,5 @@
 #include "scheduler.h"
+#include "hook.h"
 #include "log.h"
 #include "macro.h"
 
@@ -24,7 +25,7 @@ Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
         // sylar::Thread::setName(m_name);
 
         t_scheduler_fiber = m_rootFiber.get();
-        // sylar::Fiber::Set(m_rootFiber);
+        sylar::Fiber::Set(m_rootFiber);
         m_rootThread = sylar::getThreadId();
         m_threadIds.push_back(m_rootThread);
         SYLAR_LOG_INFO(g_logger) << "use_caller";
@@ -140,7 +141,7 @@ void Scheduler::setThis() {
 
 void Scheduler::run() {
     SYLAR_LOG_DEBUG(g_logger) << m_name << " run";
-
+    set_hook_enable(true);
     setThis();
     if(sylar::getThreadId() != m_rootThread) {
         t_scheduler_fiber = Fiber::GetThis().get();

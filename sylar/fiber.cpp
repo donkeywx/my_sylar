@@ -56,7 +56,7 @@ Fiber::Fiber(std::function<void()> cb, size_t stackSize, bool useCaller)
 {
     s_fiber_count++;
 
-    m_stackSize = stackSize ? stackSize : g_fiber_stack_size->getVal();
+    m_stackSize = stackSize ? stackSize : g_fiber_stack_size->getValue();
 
     m_stack = MallocStackAllocator::Alloc(m_stackSize);
 

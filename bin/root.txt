@@ -1,0 +1,27 @@
+2020-03-22 16:43:54	15244	UNKNOWN	0	[DEBUG]	[system]	sylar/fiber.cpp:51	Fiber: Fiber main
+2020-03-22 16:43:54	15244	UNKNOWN	0	[DEBUG]	[system]	sylar/fiber.cpp:80	Fiber::Fiber id = 1
+2020-03-22 16:43:54	15244	UNKNOWN	1	[DEBUG]	[system]	sylar/fiber.cpp:107	Fiber::~Fiber id=0 total=1
+2020-03-22 16:43:54	15244	UNKNOWN	1	[INFO]	[system]	sylar/scheduler.cpp:31	use_caller
+2020-03-22 16:43:54	15244	UNKNOWN	1	[INFO]	[system]	sylar/scheduler.cpp:64	1
+2020-03-22 16:43:54	15245	_0	0	[DEBUG]	[system]	sylar/scheduler.cpp:143	 run
+2020-03-22 16:43:54	15245	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:51	Fiber: Fiber main
+2020-03-22 16:43:54	15244	UNKNOWN	1	[INFO]	[root]	tests/testHook.cpp:16	test_sleep
+2020-03-22 16:43:54	15245	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:80	Fiber::Fiber id = 2
+2020-03-22 16:43:54	15244	UNKNOWN	1	[DEBUG]	[system]	sylar/scheduler.cpp:120	call
+2020-03-22 16:43:54	15245	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:80	Fiber::Fiber id = 3
+2020-03-22 16:43:54	15245	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:80	Fiber::Fiber id = 4
+2020-03-22 16:43:54	15245	_0	2	[DEBUG]	[system]	sylar/iomanager.cpp:331	idle
+2020-03-22 16:43:56	15245	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:80	Fiber::Fiber id = 5
+2020-03-22 16:43:56	15245	_0	3	[INFO]	[root]	tests/testHook.cpp:9	sleep 2
+2020-03-22 16:43:56	15245	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:107	Fiber::~Fiber id=3 total=5
+2020-03-22 16:43:57	15245	_0	4	[INFO]	[root]	tests/testHook.cpp:14	sleep 3
+2020-03-22 16:43:57	15245	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:107	Fiber::~Fiber id=4 total=4
+2020-03-22 16:43:57	15245	_0	2	[INFO]	[system]	sylar/iomanager.cpp:341	name= idle stopping exit
+2020-03-22 16:43:57	15245	_0	0	[INFO]	[system]	sylar/scheduler.cpp:224	idle fiber term
+2020-03-22 16:43:57	15245	_0	0	[ERROR]	[system]	sylar/scheduler.cpp:239	run end
+2020-03-22 16:43:57	15245	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:107	Fiber::~Fiber id=5 total=3
+2020-03-22 16:43:57	15245	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:107	Fiber::~Fiber id=2 total=2
+2020-03-22 16:43:57	15245	_0	0	[ERROR]	[root]	sylar/thread.cpp:94	thread run end
+2020-03-22 16:43:57	15245	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:107	Fiber::~Fiber id=0 total=1
+2020-03-22 16:43:57	15244	UNKNOWN	1	[INFO]	[system]	sylar/scheduler.cpp:44	~Scheduler
+2020-03-22 16:43:57	15244	UNKNOWN	1	[DEBUG]	[system]	sylar/fiber.cpp:107	Fiber::~Fiber id=1 total=0
