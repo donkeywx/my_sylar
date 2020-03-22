@@ -13,6 +13,6 @@
 #include "sylar/iomanager.h"
 #include "sylar/hook.h"
 #include "sylar/address.h"
-
+#include "sylar/socket.h"
 
 #endif

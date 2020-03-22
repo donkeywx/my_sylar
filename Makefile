@@ -59,17 +59,6 @@ CMAKE_BINARY_DIR = /home/wangk/code/cpp/sylar/code/my_sylar
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -80,6 +69,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -112,6 +112,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named testSocket
+
+# Build rule for target.
+testSocket: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testSocket
+.PHONY : testSocket
+
+# fast build rule for target.
+testSocket/fast:
+	$(MAKE) -f CMakeFiles/testSocket.dir/build.make CMakeFiles/testSocket.dir/build
+.PHONY : testSocket/fast
 
 #=============================================================================
 # Target rules for targets named testAddress
@@ -513,6 +526,33 @@ sylar/scheduler.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/scheduler.cpp.s
 .PHONY : sylar/scheduler.cpp.s
 
+sylar/socket.o: sylar/socket.cpp.o
+
+.PHONY : sylar/socket.o
+
+# target to build an object file
+sylar/socket.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/socket.cpp.o
+.PHONY : sylar/socket.cpp.o
+
+sylar/socket.i: sylar/socket.cpp.i
+
+.PHONY : sylar/socket.i
+
+# target to preprocess a source file
+sylar/socket.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/socket.cpp.i
+.PHONY : sylar/socket.cpp.i
+
+sylar/socket.s: sylar/socket.cpp.s
+
+.PHONY : sylar/socket.s
+
+# target to generate assembly for a file
+sylar/socket.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/socket.cpp.s
+.PHONY : sylar/socket.cpp.s
+
 sylar/thread.o: sylar/thread.cpp.o
 
 .PHONY : sylar/thread.o
@@ -783,6 +823,33 @@ tests/testScheduler.cpp.s:
 	$(MAKE) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.s
 .PHONY : tests/testScheduler.cpp.s
 
+tests/testSocket.o: tests/testSocket.cpp.o
+
+.PHONY : tests/testSocket.o
+
+# target to build an object file
+tests/testSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/testSocket.dir/build.make CMakeFiles/testSocket.dir/tests/testSocket.cpp.o
+.PHONY : tests/testSocket.cpp.o
+
+tests/testSocket.i: tests/testSocket.cpp.i
+
+.PHONY : tests/testSocket.i
+
+# target to preprocess a source file
+tests/testSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/testSocket.dir/build.make CMakeFiles/testSocket.dir/tests/testSocket.cpp.i
+.PHONY : tests/testSocket.cpp.i
+
+tests/testSocket.s: tests/testSocket.cpp.s
+
+.PHONY : tests/testSocket.s
+
+# target to generate assembly for a file
+tests/testSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/testSocket.dir/build.make CMakeFiles/testSocket.dir/tests/testSocket.cpp.s
+.PHONY : tests/testSocket.cpp.s
+
 tests/testStack.o: tests/testStack.cpp.o
 
 .PHONY : tests/testStack.o
@@ -843,8 +910,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... testSocket"
 	@echo "... testAddress"
 	@echo "... testHook"
 	@echo "... testIomanager"
@@ -885,6 +953,9 @@ help:
 	@echo "... sylar/scheduler.o"
 	@echo "... sylar/scheduler.i"
 	@echo "... sylar/scheduler.s"
+	@echo "... sylar/socket.o"
+	@echo "... sylar/socket.i"
+	@echo "... sylar/socket.s"
 	@echo "... sylar/thread.o"
 	@echo "... sylar/thread.i"
 	@echo "... sylar/thread.s"
@@ -915,6 +986,9 @@ help:
 	@echo "... tests/testScheduler.o"
 	@echo "... tests/testScheduler.i"
 	@echo "... tests/testScheduler.s"
+	@echo "... tests/testSocket.o"
+	@echo "... tests/testSocket.i"
+	@echo "... tests/testSocket.s"
 	@echo "... tests/testStack.o"
 	@echo "... tests/testStack.i"
 	@echo "... tests/testStack.s"

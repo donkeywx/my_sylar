@@ -1,6 +1,12 @@
-2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:8	begin
-2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:12	end
-2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:19	0 - 127.0.0.1:3080
-2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:19	1 - 127.0.0.1:3080
-2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:19	2 - 127.0.0.1:3080
-2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:24	127.0.0.1:4080
+2020-03-22 17:54:08	24524	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:52	Fiber::Fiber main
+2020-03-22 17:54:08	24524	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=1
+2020-03-22 17:54:08	24524	UNKNOW	0	[INFO]	[system]	sylar/scheduler.cpp:31	use_caller
+2020-03-22 17:54:08	24524	UNKNOW	0	[INFO]	[system]	sylar/scheduler.cpp:64	0
+2020-03-22 17:54:08	24524	UNKNOW	0	[INFO]	[system]	sylar/scheduler.cpp:85	0x7ffda1c8a978 stopped
+2020-03-22 17:54:08	24524	UNKNOW	0	[DEBUG]	[system]	sylar/scheduler.cpp:120	call
+2020-03-22 17:54:08	24524	UNKNOW	1	[DEBUG]	[system]	sylar/scheduler.cpp:143	 run
+2020-03-22 17:54:08	24524	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=2
+2020-03-22 17:54:08	24524	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=3
+2020-03-22 17:54:08	24524	UNKNOW	3	[INFO]	[root]	tests/testSocket.cpp:57	get address: 180.101.49.12:80
+2020-03-22 17:54:08	24524	UNKNOW	3	[INFO]	[root]	tests/testSocket.cpp:68	connect 180.101.49.12:80 connected
+2020-03-22 17:54:10	24524	UNKNOW	3	[INFO]	[root]	tests/testSocket.cpp:91	i=10000000 used: 0.21117 us

@@ -13,6 +13,7 @@ CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/mutex.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/noncopyable.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/scheduler.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/singleton.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/socket.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/thread.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/timer.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/util.h

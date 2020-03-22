@@ -4,6 +4,7 @@
 CMakeFiles/sylar.dir/sylar/address.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/address.cpp
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/address.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/endian.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
@@ -2677,6 +2678,23 @@ CMakeFiles/sylar.dir/sylar/scheduler.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
+CMakeFiles/sylar.dir/sylar/socket.cpp.o
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/address.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fdmanager.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/hook.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/iomanager.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/macro.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/socket.cpp
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/socket.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/timer.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
 CMakeFiles/sylar.dir/sylar/thread.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h

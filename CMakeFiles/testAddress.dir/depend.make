@@ -13,6 +13,7 @@ CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/mutex.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/noncopyable.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/scheduler.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/singleton.h
+CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/socket.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/thread.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/timer.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/util.h

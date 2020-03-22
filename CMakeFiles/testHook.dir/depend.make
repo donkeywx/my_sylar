@@ -13,6 +13,7 @@ CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/mutex.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/noncopyable.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/scheduler.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/singleton.h
+CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/socket.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/thread.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/timer.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/util.h

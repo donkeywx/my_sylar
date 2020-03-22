@@ -13,6 +13,7 @@ CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/mutex.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/noncopyable.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/scheduler.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/singleton.h
+CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/socket.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/thread.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/timer.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/util.h
