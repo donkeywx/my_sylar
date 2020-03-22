@@ -8,6 +8,10 @@ CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/config.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/fiber.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/hook.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/http.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/http11_common.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/http11_parser.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/httpclient_parser.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/iomanager.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/log.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/macro.h

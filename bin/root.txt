@@ -1,0 +1,27 @@
+2020-03-22 18:46:30	30578	UNKNOW	0	[ERROR]	[root]	tests/testHttpParse.cpp:14	execute rt=60has_error=0 is_finished=1 total=70 content_length=10
+2020-03-22 18:46:30	30578	UNKNOW	0	[INFO]	[root]	tests/testHttpParse.cpp:20	POST / HTTP/1.1
+connection: close
+Content-Length: 10
+Host: www.sylar.top
+
+
+2020-03-22 18:46:30	30578	UNKNOW	0	[INFO]	[root]	tests/testHttpParse.cpp:21	1234567890
+2020-03-22 18:46:30	30578	UNKNOW	0	[INFO]	[root]	tests/testHttpParse.cpp:58	--------------
+2020-03-22 18:46:30	30578	UNKNOW	0	[ERROR]	[root]	tests/testHttpParse.cpp:43	execute rt=300 has_error=0 is_finished=1 total=384 content_length=81 tmp[s]=<
+2020-03-22 18:46:30	30578	UNKNOW	0	[INFO]	[root]	tests/testHttpParse.cpp:52	HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: max-age=86400
+Content-Length: 81
+Content-Type: text/html
+Date: Tue, 04 Jun 2019 15:43:56 GMT
+ETag: "51-47cf7e6ee8400"
+Expires: Wed, 05 Jun 2019 15:43:56 GMT
+Last-Modified: Tue, 12 Jan 2010 13:48:00 GMT
+Server: Apache
+connection: close
+
+
+2020-03-22 18:46:30	30578	UNKNOW	0	[INFO]	[root]	tests/testHttpParse.cpp:53	<html>
+<meta http-equiv="refresh" content="0;url=http://www.baidu.com/">
+</html>
+

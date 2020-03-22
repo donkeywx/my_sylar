@@ -7,6 +7,7 @@
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testByteArray.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testIomanager.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testScheduler.dir
+/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testHttpParse.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testLog.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testThread.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/sylar.dir

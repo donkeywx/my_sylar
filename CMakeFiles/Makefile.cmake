@@ -52,6 +52,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/testByteArray.dir/DependInfo.cmake"
   "CMakeFiles/testIomanager.dir/DependInfo.cmake"
   "CMakeFiles/testScheduler.dir/DependInfo.cmake"
+  "CMakeFiles/testHttpParse.dir/DependInfo.cmake"
   "CMakeFiles/testLog.dir/DependInfo.cmake"
   "CMakeFiles/testThread.dir/DependInfo.cmake"
   "CMakeFiles/sylar.dir/DependInfo.cmake"

@@ -4,7 +4,7 @@ PROJECT(sylar)
 SET(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 # fsanitize=address
-SET(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -O0 -g -std=c++11 -Wall -Wno-builtin-macro-redefined -Wno-deprecated -Werror -Wno-unused-function") 
+SET(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -O0 -g -std=c++11 -Wall -Wno-unused-const-variable -Wno-builtin-macro-redefined -Wno-deprecated -Werror -Wno-unused-function") 
 SET(LIB_SRC
     sylar/log.cpp
     sylar/util.cpp
@@ -22,6 +22,9 @@ SET(LIB_SRC
     sylar/socket.cpp
     sylar/bytearray.cpp
     sylar/http/http.cpp
+    sylar/http/http_parser.cpp
+    sylar/http/http11_parser.cc
+    sylar/http/httpclient_parser.cc
 )
 SET(LIB_LIB
     sylar
@@ -99,3 +102,8 @@ ADD_EXECUTABLE(testHttp tests/testHttp.cpp)
 ADD_DEPENDENCIES(testHttp sylar)
 force_redefine_file_macro_for_sources(testHttp)
 TARGET_LINK_LIBRARIES(testHttp ${LIB_LIB})
+
+ADD_EXECUTABLE(testHttpParse tests/testHttpParse.cpp)
+ADD_DEPENDENCIES(testHttpParse sylar)
+force_redefine_file_macro_for_sources(testHttpParse)
+TARGET_LINK_LIBRARIES(testHttpParse ${LIB_LIB})

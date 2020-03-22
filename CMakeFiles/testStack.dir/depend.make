@@ -8,6 +8,10 @@ CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/config.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/fiber.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/hook.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/http/http.h
+CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/http/http11_common.h
+CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/http/http11_parser.h
+CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/http/httpclient_parser.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/iomanager.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/log.h
 CMakeFiles/testStack.dir/tests/testStack.cpp.o: sylar/macro.h

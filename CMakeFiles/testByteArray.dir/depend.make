@@ -8,6 +8,10 @@ CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/config.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/fiber.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/hook.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/http/http.h
+CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/http/http11_common.h
+CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/http/http11_parser.h
+CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/http/httpclient_parser.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/iomanager.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/log.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/macro.h

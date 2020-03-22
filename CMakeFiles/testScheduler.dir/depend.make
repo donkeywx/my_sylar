@@ -8,6 +8,10 @@ CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/config.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/fiber.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/hook.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/http/http.h
+CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/http/http11_common.h
+CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/http/http11_parser.h
+CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/http/httpclient_parser.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/iomanager.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/log.h
 CMakeFiles/testScheduler.dir/tests/testScheduler.cpp.o: sylar/macro.h

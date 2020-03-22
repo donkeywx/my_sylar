@@ -8,6 +8,10 @@ CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/config.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/fiber.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/hook.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/http.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/http11_common.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/http11_parser.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/httpclient_parser.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/iomanager.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/log.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/macro.h

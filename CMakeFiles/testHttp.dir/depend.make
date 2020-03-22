@@ -8,6 +8,10 @@ CMakeFiles/testHttp.dir/tests/testHttp.cpp.o: sylar/config.h
 CMakeFiles/testHttp.dir/tests/testHttp.cpp.o: sylar/fiber.h
 CMakeFiles/testHttp.dir/tests/testHttp.cpp.o: sylar/hook.h
 CMakeFiles/testHttp.dir/tests/testHttp.cpp.o: sylar/http/http.h
+CMakeFiles/testHttp.dir/tests/testHttp.cpp.o: sylar/http/http11_common.h
+CMakeFiles/testHttp.dir/tests/testHttp.cpp.o: sylar/http/http11_parser.h
+CMakeFiles/testHttp.dir/tests/testHttp.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testHttp.dir/tests/testHttp.cpp.o: sylar/http/httpclient_parser.h
 CMakeFiles/testHttp.dir/tests/testHttp.cpp.o: sylar/iomanager.h
 CMakeFiles/testHttp.dir/tests/testHttp.cpp.o: sylar/log.h
 CMakeFiles/testHttp.dir/tests/testHttp.cpp.o: sylar/macro.h

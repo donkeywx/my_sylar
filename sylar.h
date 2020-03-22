@@ -16,5 +16,5 @@
 #include "sylar/socket.h"
 #include "sylar/bytearray.h"
 #include "sylar/http/http.h"
-
+#include "sylar/http/http_parser.h"
 #endif
