@@ -18,6 +18,7 @@ SET(LIB_SRC
     sylar/timer.cpp
     sylar/hook.cpp
     sylar/fdmanager.cpp
+    sylar/address.cpp
 )
 SET(LIB_LIB
     sylar
@@ -75,3 +76,8 @@ ADD_EXECUTABLE(testHook tests/testHook.cpp)
 ADD_DEPENDENCIES(testHook sylar)
 force_redefine_file_macro_for_sources(testHook)
 TARGET_LINK_LIBRARIES(testHook ${LIB_LIB})
+
+ADD_EXECUTABLE(testAddress tests/testAddress.cpp)
+ADD_DEPENDENCIES(testAddress sylar)
+force_redefine_file_macro_for_sources(testAddress)
+TARGET_LINK_LIBRARIES(testAddress ${LIB_LIB})

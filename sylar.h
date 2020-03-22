@@ -12,7 +12,7 @@
 #include "sylar/scheduler.h"
 #include "sylar/iomanager.h"
 #include "sylar/hook.h"
-
+#include "sylar/address.h"
 
 
 #endif

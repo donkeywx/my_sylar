@@ -114,6 +114,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testAddress
+
+# Build rule for target.
+testAddress: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testAddress
+.PHONY : testAddress
+
+# fast build rule for target.
+testAddress/fast:
+	$(MAKE) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/build
+.PHONY : testAddress/fast
+
+#=============================================================================
 # Target rules for targets named testHook
 
 # Build rule for target.
@@ -229,6 +242,33 @@ testFiber: cmake_check_build_system
 testFiber/fast:
 	$(MAKE) -f CMakeFiles/testFiber.dir/build.make CMakeFiles/testFiber.dir/build
 .PHONY : testFiber/fast
+
+sylar/address.o: sylar/address.cpp.o
+
+.PHONY : sylar/address.o
+
+# target to build an object file
+sylar/address.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/address.cpp.o
+.PHONY : sylar/address.cpp.o
+
+sylar/address.i: sylar/address.cpp.i
+
+.PHONY : sylar/address.i
+
+# target to preprocess a source file
+sylar/address.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/address.cpp.i
+.PHONY : sylar/address.cpp.i
+
+sylar/address.s: sylar/address.cpp.s
+
+.PHONY : sylar/address.s
+
+# target to generate assembly for a file
+sylar/address.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/address.cpp.s
+.PHONY : sylar/address.cpp.s
 
 sylar/config.o: sylar/config.cpp.o
 
@@ -554,6 +594,33 @@ sylar/util.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/util.cpp.s
 .PHONY : sylar/util.cpp.s
 
+tests/testAddress.o: tests/testAddress.cpp.o
+
+.PHONY : tests/testAddress.o
+
+# target to build an object file
+tests/testAddress.cpp.o:
+	$(MAKE) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/tests/testAddress.cpp.o
+.PHONY : tests/testAddress.cpp.o
+
+tests/testAddress.i: tests/testAddress.cpp.i
+
+.PHONY : tests/testAddress.i
+
+# target to preprocess a source file
+tests/testAddress.cpp.i:
+	$(MAKE) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/tests/testAddress.cpp.i
+.PHONY : tests/testAddress.cpp.i
+
+tests/testAddress.s: tests/testAddress.cpp.s
+
+.PHONY : tests/testAddress.s
+
+# target to generate assembly for a file
+tests/testAddress.cpp.s:
+	$(MAKE) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/tests/testAddress.cpp.s
+.PHONY : tests/testAddress.cpp.s
+
 tests/testConfig.o: tests/testConfig.cpp.o
 
 .PHONY : tests/testConfig.o
@@ -778,6 +845,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... testAddress"
 	@echo "... testHook"
 	@echo "... testIomanager"
 	@echo "... testScheduler"
@@ -787,6 +855,9 @@ help:
 	@echo "... testStack"
 	@echo "... testConfig"
 	@echo "... testFiber"
+	@echo "... sylar/address.o"
+	@echo "... sylar/address.i"
+	@echo "... sylar/address.s"
 	@echo "... sylar/config.o"
 	@echo "... sylar/config.i"
 	@echo "... sylar/config.s"
@@ -823,6 +894,9 @@ help:
 	@echo "... sylar/util.o"
 	@echo "... sylar/util.i"
 	@echo "... sylar/util.s"
+	@echo "... tests/testAddress.o"
+	@echo "... tests/testAddress.i"
+	@echo "... tests/testAddress.s"
 	@echo "... tests/testConfig.o"
 	@echo "... tests/testConfig.i"
 	@echo "... tests/testConfig.s"

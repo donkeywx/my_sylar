@@ -63,13 +63,50 @@ CMAKE_SOURCE_DIR = /home/wangk/code/cpp/sylar/code/my_sylar
 CMAKE_BINARY_DIR = /home/wangk/code/cpp/sylar/code/my_sylar
 
 #=============================================================================
+# Target rules for target CMakeFiles/testAddress.dir
+
+# All Build rule for target.
+CMakeFiles/testAddress.dir/all: CMakeFiles/sylar.dir/all
+	$(MAKE) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/depend
+	$(MAKE) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=15,16 "Built target testAddress"
+.PHONY : CMakeFiles/testAddress.dir/all
+
+# Include target in all.
+all: CMakeFiles/testAddress.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/testAddress.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 16
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testAddress.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 0
+.PHONY : CMakeFiles/testAddress.dir/rule
+
+# Convenience name for target.
+testAddress: CMakeFiles/testAddress.dir/rule
+
+.PHONY : testAddress
+
+# clean rule for target.
+CMakeFiles/testAddress.dir/clean:
+	$(MAKE) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/clean
+.PHONY : CMakeFiles/testAddress.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/testAddress.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/testHook.dir
 
 # All Build rule for target.
 CMakeFiles/testHook.dir/all: CMakeFiles/sylar.dir/all
 	$(MAKE) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/depend
 	$(MAKE) -f CMakeFiles/testHook.dir/build.make CMakeFiles/testHook.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=18,19 "Built target testHook"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=21,22 "Built target testHook"
 .PHONY : CMakeFiles/testHook.dir/all
 
 # Include target in all.
@@ -79,7 +116,7 @@ all: CMakeFiles/testHook.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testHook.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testHook.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 0
 .PHONY : CMakeFiles/testHook.dir/rule
@@ -106,7 +143,7 @@ clean: CMakeFiles/testHook.dir/clean
 CMakeFiles/testIomanager.dir/all: CMakeFiles/sylar.dir/all
 	$(MAKE) -f CMakeFiles/testIomanager.dir/build.make CMakeFiles/testIomanager.dir/depend
 	$(MAKE) -f CMakeFiles/testIomanager.dir/build.make CMakeFiles/testIomanager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=20,21 "Built target testIomanager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=23,24 "Built target testIomanager"
 .PHONY : CMakeFiles/testIomanager.dir/all
 
 # Include target in all.
@@ -116,7 +153,7 @@ all: CMakeFiles/testIomanager.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testIomanager.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testIomanager.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 0
 .PHONY : CMakeFiles/testIomanager.dir/rule
@@ -143,7 +180,7 @@ clean: CMakeFiles/testIomanager.dir/clean
 CMakeFiles/testScheduler.dir/all: CMakeFiles/sylar.dir/all
 	$(MAKE) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/depend
 	$(MAKE) -f CMakeFiles/testScheduler.dir/build.make CMakeFiles/testScheduler.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=24,25 "Built target testScheduler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=27,28 "Built target testScheduler"
 .PHONY : CMakeFiles/testScheduler.dir/all
 
 # Include target in all.
@@ -153,7 +190,7 @@ all: CMakeFiles/testScheduler.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testScheduler.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testScheduler.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 0
 .PHONY : CMakeFiles/testScheduler.dir/rule
@@ -180,7 +217,7 @@ clean: CMakeFiles/testScheduler.dir/clean
 CMakeFiles/testLog.dir/all: CMakeFiles/sylar.dir/all
 	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/depend
 	$(MAKE) -f CMakeFiles/testLog.dir/build.make CMakeFiles/testLog.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=22,23 "Built target testLog"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=25,26 "Built target testLog"
 .PHONY : CMakeFiles/testLog.dir/all
 
 # Include target in all.
@@ -190,7 +227,7 @@ all: CMakeFiles/testLog.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testLog.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testLog.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 0
 .PHONY : CMakeFiles/testLog.dir/rule
@@ -217,7 +254,7 @@ clean: CMakeFiles/testLog.dir/clean
 CMakeFiles/testThread.dir/all: CMakeFiles/sylar.dir/all
 	$(MAKE) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/depend
 	$(MAKE) -f CMakeFiles/testThread.dir/build.make CMakeFiles/testThread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=28,29 "Built target testThread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=31,32 "Built target testThread"
 .PHONY : CMakeFiles/testThread.dir/all
 
 # Include target in all.
@@ -227,7 +264,7 @@ all: CMakeFiles/testThread.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testThread.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testThread.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 0
 .PHONY : CMakeFiles/testThread.dir/rule
@@ -254,7 +291,7 @@ clean: CMakeFiles/testThread.dir/clean
 CMakeFiles/sylar.dir/all:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/depend
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target sylar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target sylar"
 .PHONY : CMakeFiles/sylar.dir/all
 
 # Include target in all.
@@ -264,7 +301,7 @@ all: CMakeFiles/sylar.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sylar.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sylar.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 0
 .PHONY : CMakeFiles/sylar.dir/rule
@@ -291,7 +328,7 @@ clean: CMakeFiles/sylar.dir/clean
 CMakeFiles/testStack.dir/all: CMakeFiles/sylar.dir/all
 	$(MAKE) -f CMakeFiles/testStack.dir/build.make CMakeFiles/testStack.dir/depend
 	$(MAKE) -f CMakeFiles/testStack.dir/build.make CMakeFiles/testStack.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=26,27 "Built target testStack"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=29,30 "Built target testStack"
 .PHONY : CMakeFiles/testStack.dir/all
 
 # Include target in all.
@@ -301,7 +338,7 @@ all: CMakeFiles/testStack.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testStack.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testStack.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 0
 .PHONY : CMakeFiles/testStack.dir/rule
@@ -328,7 +365,7 @@ clean: CMakeFiles/testStack.dir/clean
 CMakeFiles/testConfig.dir/all: CMakeFiles/sylar.dir/all
 	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/depend
 	$(MAKE) -f CMakeFiles/testConfig.dir/build.make CMakeFiles/testConfig.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=14,15 "Built target testConfig"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=17,18 "Built target testConfig"
 .PHONY : CMakeFiles/testConfig.dir/all
 
 # Include target in all.
@@ -338,7 +375,7 @@ all: CMakeFiles/testConfig.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testConfig.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testConfig.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 0
 .PHONY : CMakeFiles/testConfig.dir/rule
@@ -365,7 +402,7 @@ clean: CMakeFiles/testConfig.dir/clean
 CMakeFiles/testFiber.dir/all: CMakeFiles/sylar.dir/all
 	$(MAKE) -f CMakeFiles/testFiber.dir/build.make CMakeFiles/testFiber.dir/depend
 	$(MAKE) -f CMakeFiles/testFiber.dir/build.make CMakeFiles/testFiber.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=16,17 "Built target testFiber"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=19,20 "Built target testFiber"
 .PHONY : CMakeFiles/testFiber.dir/all
 
 # Include target in all.
@@ -375,7 +412,7 @@ all: CMakeFiles/testFiber.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testFiber.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testFiber.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles 0
 .PHONY : CMakeFiles/testFiber.dir/rule

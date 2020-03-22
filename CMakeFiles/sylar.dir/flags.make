@@ -32,3 +32,5 @@ CXX_INCLUDES = -I/usr/local/yaml-cpp/include -I/usr/local/boost/include
 
 # Custom defines: CMakeFiles/sylar.dir/sylar/fdmanager.cpp.o_DEFINES = __FILE__="sylar/fdmanager.cpp"
 
+# Custom defines: CMakeFiles/sylar.dir/sylar/address.cpp.o_DEFINES = __FILE__="sylar/address.cpp"
+

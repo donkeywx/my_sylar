@@ -1,25 +1,6 @@
-2020-03-22 17:04:36	17872	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:52	Fiber::Fiber main
-2020-03-22 17:04:36	17872	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=1
-2020-03-22 17:04:36	17872	UNKNOW	0	[INFO]	[system]	sylar/scheduler.cpp:31	use_caller
-2020-03-22 17:04:36	17872	UNKNOW	0	[INFO]	[system]	sylar/scheduler.cpp:64	0
-2020-03-22 17:04:36	17872	UNKNOW	0	[INFO]	[root]	tests/testHook.cpp:16	test_sleep
-2020-03-22 17:04:36	17872	UNKNOW	0	[INFO]	[system]	sylar/scheduler.cpp:85	0x7ffc73debff8 stopped
-2020-03-22 17:04:36	17872	UNKNOW	0	[DEBUG]	[system]	sylar/scheduler.cpp:120	call
-2020-03-22 17:04:36	17872	UNKNOW	1	[DEBUG]	[system]	sylar/scheduler.cpp:143	 run
-2020-03-22 17:04:36	17872	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=2
-2020-03-22 17:04:36	17872	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=3
-2020-03-22 17:04:36	17872	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=4
-2020-03-22 17:04:36	17872	UNKNOW	2	[DEBUG]	[system]	sylar/iomanager.cpp:331	idle
-2020-03-22 17:04:38	17872	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=5
-2020-03-22 17:04:38	17872	UNKNOW	3	[INFO]	[root]	tests/testHook.cpp:9	sleep 2
-2020-03-22 17:04:38	17872	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:95	Fiber::~Fiber id=3 total=5
-2020-03-22 17:04:39	17872	UNKNOW	4	[INFO]	[root]	tests/testHook.cpp:14	sleep 3
-2020-03-22 17:04:39	17872	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:95	Fiber::~Fiber id=4 total=4
-2020-03-22 17:04:39	17872	UNKNOW	2	[INFO]	[system]	sylar/iomanager.cpp:341	name= idle stopping exit
-2020-03-22 17:04:39	17872	UNKNOW	1	[INFO]	[system]	sylar/scheduler.cpp:224	idle fiber term
-2020-03-22 17:04:39	17872	UNKNOW	1	[ERROR]	[system]	sylar/scheduler.cpp:239	run end
-2020-03-22 17:04:39	17872	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:95	Fiber::~Fiber id=5 total=3
-2020-03-22 17:04:39	17872	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:95	Fiber::~Fiber id=2 total=2
-2020-03-22 17:04:39	17872	UNKNOW	0	[INFO]	[system]	sylar/scheduler.cpp:44	~Scheduler
-2020-03-22 17:04:39	17872	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:95	Fiber::~Fiber id=1 total=1
-2020-03-22 17:04:39	17872	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:95	Fiber::~Fiber id=0 total=0
+2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:8	begin
+2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:12	end
+2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:19	0 - 127.0.0.1:3080
+2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:19	1 - 127.0.0.1:3080
+2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:19	2 - 127.0.0.1:3080
+2020-03-22 17:40:45	22859	UNKNOW	0	[INFO]	[root]	tests/testAddress.cpp:24	127.0.0.1:4080
