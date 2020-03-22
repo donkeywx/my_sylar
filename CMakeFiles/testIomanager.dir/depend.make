@@ -11,7 +11,10 @@ CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/http.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/http11_common.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/http11_parser.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/http_server.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/http_session.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/httpclient_parser.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/http/servlet.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/iomanager.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/log.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/macro.h
@@ -20,6 +23,9 @@ CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/noncopyable.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/scheduler.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/singleton.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/socket.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/socket_stream.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/stream.h
+CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/tcpserver.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/thread.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/timer.h
 CMakeFiles/testIomanager.dir/tests/testIomanager.cpp.o: sylar/util.h

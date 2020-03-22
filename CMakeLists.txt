@@ -20,11 +20,19 @@ SET(LIB_SRC
     sylar/fdmanager.cpp
     sylar/address.cpp
     sylar/socket.cpp
+    sylar/tcpserver.cpp
+    sylar/stream.cpp
+    sylar/socket_stream.cpp
     sylar/bytearray.cpp
     sylar/http/http.cpp
     sylar/http/http_parser.cpp
     sylar/http/http11_parser.cc
     sylar/http/httpclient_parser.cc
+    sylar/http/http_session.cpp
+    sylar/http/http_server.cpp
+    sylar/http/servlet.cpp
+    #sylar/http/servlets/config_servlet.cpp
+    #sylar/http/servlets/status_servlet.cpp
 )
 SET(LIB_LIB
     sylar
@@ -107,3 +115,13 @@ ADD_EXECUTABLE(testHttpParse tests/testHttpParse.cpp)
 ADD_DEPENDENCIES(testHttpParse sylar)
 force_redefine_file_macro_for_sources(testHttpParse)
 TARGET_LINK_LIBRARIES(testHttpParse ${LIB_LIB})
+
+ADD_EXECUTABLE(testHttpServer tests/testHttpServer.cpp)
+ADD_DEPENDENCIES(testHttpServer sylar)
+force_redefine_file_macro_for_sources(testHttpServer)
+TARGET_LINK_LIBRARIES(testHttpServer ${LIB_LIB})
+
+ADD_EXECUTABLE(testTcpServer tests/testTcpServer.cpp)
+ADD_DEPENDENCIES(testTcpServer sylar)
+force_redefine_file_macro_for_sources(testTcpServer)
+TARGET_LINK_LIBRARIES(testTcpServer ${LIB_LIB})

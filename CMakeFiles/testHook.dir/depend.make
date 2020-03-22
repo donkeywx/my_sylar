@@ -11,7 +11,10 @@ CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/http/http.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/http/http11_common.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/http/http11_parser.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/http/http_server.h
+CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/http/http_session.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/http/httpclient_parser.h
+CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/http/servlet.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/iomanager.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/log.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/macro.h
@@ -20,6 +23,9 @@ CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/noncopyable.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/scheduler.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/singleton.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/socket.h
+CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/socket_stream.h
+CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/stream.h
+CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/tcpserver.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/thread.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/timer.h
 CMakeFiles/testHook.dir/tests/testHook.cpp.o: sylar/util.h

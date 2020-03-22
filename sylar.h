@@ -12,9 +12,14 @@
 #include "sylar/scheduler.h"
 #include "sylar/iomanager.h"
 #include "sylar/hook.h"
+#include "sylar/stream.h"
 #include "sylar/address.h"
 #include "sylar/socket.h"
+#include "sylar/tcpserver.h"
 #include "sylar/bytearray.h"
 #include "sylar/http/http.h"
 #include "sylar/http/http_parser.h"
+#include "sylar/http/http_session.h"
+#include "sylar/http/http_server.h"
+
 #endif

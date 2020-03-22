@@ -12,7 +12,10 @@ CMakeFiles/testSocket.dir/tests/testSocket.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http11_common.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http11_parser.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_parser.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_server.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_session.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/httpclient_parser.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/servlet.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/iomanager.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/macro.h
@@ -21,6 +24,9 @@ CMakeFiles/testSocket.dir/tests/testSocket.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/socket.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/socket_stream.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/stream.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/tcpserver.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/timer.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h

@@ -36,6 +36,12 @@ uint64_t GetCurrentMS();
  */
 uint64_t GetCurrentUS();
 
+template<class T>
+const char* TypeToName() {
+    static const char* s_name = abi::__cxa_demangle(typeid(T).name(), nullptr, nullptr, nullptr);
+    return s_name;
+}
+
 class FSUtil {
 public:
     static void ListAllFile(std::vector<std::string>& files

@@ -11,7 +11,10 @@ CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/http.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/http11_common.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/http11_parser.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/http_server.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/http_session.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/httpclient_parser.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/http/servlet.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/iomanager.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/log.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/macro.h
@@ -20,6 +23,9 @@ CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/noncopyable.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/scheduler.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/singleton.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/socket.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/socket_stream.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/stream.h
+CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/tcpserver.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/thread.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/timer.h
 CMakeFiles/testSocket.dir/tests/testSocket.cpp.o: sylar/util.h

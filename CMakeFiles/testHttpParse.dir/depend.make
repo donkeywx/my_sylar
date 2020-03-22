@@ -11,7 +11,10 @@ CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/http/http.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/http/http11_common.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/http/http11_parser.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/http/http_server.h
+CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/http/http_session.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/http/httpclient_parser.h
+CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/http/servlet.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/iomanager.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/log.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/macro.h
@@ -20,6 +23,9 @@ CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/noncopyable.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/scheduler.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/singleton.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/socket.h
+CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/socket_stream.h
+CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/stream.h
+CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/tcpserver.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/thread.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/timer.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/util.h

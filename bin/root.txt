@@ -25,3 +25,26 @@ connection: close
 <meta http-equiv="refresh" content="0;url=http://www.baidu.com/">
 </html>
 
+2020-03-22 21:04:42	9573	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:52	Fiber::Fiber main
+2020-03-22 21:04:42	9573	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=1
+2020-03-22 21:04:42	9573	UNKNOW	0	[INFO]	[system]	sylar/scheduler.cpp:31	use_caller
+2020-03-22 21:04:42	9573	UNKNOW	0	[INFO]	[system]	sylar/scheduler.cpp:64	0
+2020-03-22 21:04:42	9573	UNKNOW	0	[INFO]	[system]	sylar/scheduler.cpp:64	3
+2020-03-22 21:04:42	9574	worker_0	0	[DEBUG]	[system]	sylar/scheduler.cpp:143	worker run
+2020-03-22 21:04:42	9574	worker_0	0	[DEBUG]	[system]	sylar/fiber.cpp:52	Fiber::Fiber main
+2020-03-22 21:04:42	9575	worker_1	0	[DEBUG]	[system]	sylar/scheduler.cpp:143	worker run
+2020-03-22 21:04:42	9574	worker_0	0	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=2
+2020-03-22 21:04:42	9575	worker_1	0	[DEBUG]	[system]	sylar/fiber.cpp:52	Fiber::Fiber main
+2020-03-22 21:04:42	9574	worker_0	2	[DEBUG]	[system]	sylar/iomanager.cpp:331	idle
+2020-03-22 21:04:42	9576	worker_2	0	[DEBUG]	[system]	sylar/scheduler.cpp:143	worker run
+2020-03-22 21:04:42	9576	worker_2	0	[DEBUG]	[system]	sylar/fiber.cpp:52	Fiber::Fiber main
+2020-03-22 21:04:42	9573	UNKNOW	0	[INFO]	[system]	sylar/scheduler.cpp:85	0x7ffe9e93dc48 stopped
+2020-03-22 21:04:42	9575	worker_1	0	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=3
+2020-03-22 21:04:42	9573	UNKNOW	0	[DEBUG]	[system]	sylar/scheduler.cpp:120	call
+2020-03-22 21:04:42	9575	worker_1	3	[DEBUG]	[system]	sylar/iomanager.cpp:331	idle
+2020-03-22 21:04:42	9576	worker_2	0	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=4
+2020-03-22 21:04:42	9573	UNKNOW	1	[DEBUG]	[system]	sylar/scheduler.cpp:143	main run
+2020-03-22 21:04:42	9576	worker_2	4	[DEBUG]	[system]	sylar/iomanager.cpp:331	idle
+2020-03-22 21:04:42	9573	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=5
+2020-03-22 21:04:42	9573	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:75	Fiber::Fiber id=6
+2020-03-22 21:04:42	9573	UNKNOW	6	[INFO]	[system]	sylar/tcpserver.cpp:71	type=http name=sylar/1.0.0 ssl=0 server bind success: [Socket sock=10 is_connected=0 family=2 type=1 protocol=0 local_address=0.0.0.0:8020]

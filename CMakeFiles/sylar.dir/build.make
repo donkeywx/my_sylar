@@ -396,9 +396,81 @@ CMakeFiles/sylar.dir/sylar/socket.cpp.o.provides: CMakeFiles/sylar.dir/sylar/soc
 CMakeFiles/sylar.dir/sylar/socket.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/socket.cpp.o
 
 
+CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o: CMakeFiles/sylar.dir/flags.make
+CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o: sylar/tcpserver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/tcpserver.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/tcpserver.cpp
+
+CMakeFiles/sylar.dir/sylar/tcpserver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/tcpserver.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/tcpserver.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/sylar/tcpserver.cpp > CMakeFiles/sylar.dir/sylar/tcpserver.cpp.i
+
+CMakeFiles/sylar.dir/sylar/tcpserver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/tcpserver.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/tcpserver.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/sylar/tcpserver.cpp -o CMakeFiles/sylar.dir/sylar/tcpserver.cpp.s
+
+CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o.requires:
+
+.PHONY : CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o.requires
+
+CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o.provides: CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o.provides.build
+.PHONY : CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o.provides
+
+CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o
+
+
+CMakeFiles/sylar.dir/sylar/stream.cpp.o: CMakeFiles/sylar.dir/flags.make
+CMakeFiles/sylar.dir/sylar/stream.cpp.o: sylar/stream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/sylar.dir/sylar/stream.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/stream.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/stream.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/stream.cpp
+
+CMakeFiles/sylar.dir/sylar/stream.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/stream.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/stream.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/sylar/stream.cpp > CMakeFiles/sylar.dir/sylar/stream.cpp.i
+
+CMakeFiles/sylar.dir/sylar/stream.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/stream.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/stream.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/sylar/stream.cpp -o CMakeFiles/sylar.dir/sylar/stream.cpp.s
+
+CMakeFiles/sylar.dir/sylar/stream.cpp.o.requires:
+
+.PHONY : CMakeFiles/sylar.dir/sylar/stream.cpp.o.requires
+
+CMakeFiles/sylar.dir/sylar/stream.cpp.o.provides: CMakeFiles/sylar.dir/sylar/stream.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/stream.cpp.o.provides.build
+.PHONY : CMakeFiles/sylar.dir/sylar/stream.cpp.o.provides
+
+CMakeFiles/sylar.dir/sylar/stream.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/stream.cpp.o
+
+
+CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o: CMakeFiles/sylar.dir/flags.make
+CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o: sylar/socket_stream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/socket_stream.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/socket_stream.cpp
+
+CMakeFiles/sylar.dir/sylar/socket_stream.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/socket_stream.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/socket_stream.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/sylar/socket_stream.cpp > CMakeFiles/sylar.dir/sylar/socket_stream.cpp.i
+
+CMakeFiles/sylar.dir/sylar/socket_stream.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/socket_stream.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/socket_stream.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/sylar/socket_stream.cpp -o CMakeFiles/sylar.dir/sylar/socket_stream.cpp.s
+
+CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o.requires:
+
+.PHONY : CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o.requires
+
+CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o.provides: CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o.provides.build
+.PHONY : CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o.provides
+
+CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o
+
+
 CMakeFiles/sylar.dir/sylar/bytearray.cpp.o: CMakeFiles/sylar.dir/flags.make
 CMakeFiles/sylar.dir/sylar/bytearray.cpp.o: sylar/bytearray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/sylar.dir/sylar/bytearray.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/sylar.dir/sylar/bytearray.cpp.o"
 	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/bytearray.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/bytearray.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/bytearray.cpp
 
 CMakeFiles/sylar.dir/sylar/bytearray.cpp.i: cmake_force
@@ -422,7 +494,7 @@ CMakeFiles/sylar.dir/sylar/bytearray.cpp.o.provides.build: CMakeFiles/sylar.dir/
 
 CMakeFiles/sylar.dir/sylar/http/http.cpp.o: CMakeFiles/sylar.dir/flags.make
 CMakeFiles/sylar.dir/sylar/http/http.cpp.o: sylar/http/http.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/sylar.dir/sylar/http/http.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/sylar.dir/sylar/http/http.cpp.o"
 	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/http/http.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/http/http.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http.cpp
 
 CMakeFiles/sylar.dir/sylar/http/http.cpp.i: cmake_force
@@ -446,7 +518,7 @@ CMakeFiles/sylar.dir/sylar/http/http.cpp.o.provides.build: CMakeFiles/sylar.dir/
 
 CMakeFiles/sylar.dir/sylar/http/http_parser.cpp.o: CMakeFiles/sylar.dir/flags.make
 CMakeFiles/sylar.dir/sylar/http/http_parser.cpp.o: sylar/http/http_parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/sylar.dir/sylar/http/http_parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/sylar.dir/sylar/http/http_parser.cpp.o"
 	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/http/http_parser.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/http/http_parser.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_parser.cpp
 
 CMakeFiles/sylar.dir/sylar/http/http_parser.cpp.i: cmake_force
@@ -470,7 +542,7 @@ CMakeFiles/sylar.dir/sylar/http/http_parser.cpp.o.provides.build: CMakeFiles/syl
 
 CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o: CMakeFiles/sylar.dir/flags.make
 CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o: sylar/http/http11_parser.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o"
 	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/http/http11_parser.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http11_parser.cc
 
 CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.i: cmake_force
@@ -494,7 +566,7 @@ CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o.provides.build: CMakeFiles/sy
 
 CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o: CMakeFiles/sylar.dir/flags.make
 CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o: sylar/http/httpclient_parser.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o"
 	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/http/httpclient_parser.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/httpclient_parser.cc
 
 CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.i: cmake_force
@@ -516,6 +588,78 @@ CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o.provides: CMakeFiles/syla
 CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o.provides.build: CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o
 
 
+CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o: CMakeFiles/sylar.dir/flags.make
+CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o: sylar/http/http_session.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/http/http_session.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_session.cpp
+
+CMakeFiles/sylar.dir/sylar/http/http_session.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/http/http_session.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/http/http_session.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_session.cpp > CMakeFiles/sylar.dir/sylar/http/http_session.cpp.i
+
+CMakeFiles/sylar.dir/sylar/http/http_session.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/http/http_session.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/http/http_session.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_session.cpp -o CMakeFiles/sylar.dir/sylar/http/http_session.cpp.s
+
+CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o.requires:
+
+.PHONY : CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o.requires
+
+CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o.provides: CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o.provides.build
+.PHONY : CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o.provides
+
+CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o
+
+
+CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o: CMakeFiles/sylar.dir/flags.make
+CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o: sylar/http/http_server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/http/http_server.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_server.cpp
+
+CMakeFiles/sylar.dir/sylar/http/http_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/http/http_server.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/http/http_server.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_server.cpp > CMakeFiles/sylar.dir/sylar/http/http_server.cpp.i
+
+CMakeFiles/sylar.dir/sylar/http/http_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/http/http_server.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/http/http_server.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_server.cpp -o CMakeFiles/sylar.dir/sylar/http/http_server.cpp.s
+
+CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o.requires:
+
+.PHONY : CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o.requires
+
+CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o.provides: CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o.provides.build
+.PHONY : CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o.provides
+
+CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o
+
+
+CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o: CMakeFiles/sylar.dir/flags.make
+CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o: sylar/http/servlet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/http/servlet.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/servlet.cpp
+
+CMakeFiles/sylar.dir/sylar/http/servlet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/http/servlet.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/http/servlet.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/servlet.cpp > CMakeFiles/sylar.dir/sylar/http/servlet.cpp.i
+
+CMakeFiles/sylar.dir/sylar/http/servlet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/http/servlet.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/http/servlet.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/servlet.cpp -o CMakeFiles/sylar.dir/sylar/http/servlet.cpp.s
+
+CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o.requires:
+
+.PHONY : CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o.requires
+
+CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o.provides: CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o.provides.build
+.PHONY : CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o.provides
+
+CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o
+
+
 # Object files for target sylar
 sylar_OBJECTS = \
 "CMakeFiles/sylar.dir/sylar/log.cpp.o" \
@@ -532,11 +676,17 @@ sylar_OBJECTS = \
 "CMakeFiles/sylar.dir/sylar/fdmanager.cpp.o" \
 "CMakeFiles/sylar.dir/sylar/address.cpp.o" \
 "CMakeFiles/sylar.dir/sylar/socket.cpp.o" \
+"CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o" \
+"CMakeFiles/sylar.dir/sylar/stream.cpp.o" \
+"CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o" \
 "CMakeFiles/sylar.dir/sylar/bytearray.cpp.o" \
 "CMakeFiles/sylar.dir/sylar/http/http.cpp.o" \
 "CMakeFiles/sylar.dir/sylar/http/http_parser.cpp.o" \
 "CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o" \
-"CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o"
+"CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o" \
+"CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o" \
+"CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o" \
+"CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o"
 
 # External object files for target sylar
 sylar_EXTERNAL_OBJECTS =
@@ -555,14 +705,20 @@ lib/libsylar.so: CMakeFiles/sylar.dir/sylar/hook.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/fdmanager.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/address.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/socket.cpp.o
+lib/libsylar.so: CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o
+lib/libsylar.so: CMakeFiles/sylar.dir/sylar/stream.cpp.o
+lib/libsylar.so: CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/bytearray.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/http.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/http_parser.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o
+lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o
+lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o
+lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/build.make
 lib/libsylar.so: CMakeFiles/sylar.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX shared library lib/libsylar.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX shared library lib/libsylar.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sylar.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -584,11 +740,17 @@ CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/hook.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/fdmanager.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/address.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/socket.cpp.o.requires
+CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o.requires
+CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/stream.cpp.o.requires
+CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/bytearray.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/http.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/http_parser.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o.requires
+CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o.requires
+CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o.requires
+CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o.requires
 
 .PHONY : CMakeFiles/sylar.dir/requires
 

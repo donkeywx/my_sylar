@@ -11,7 +11,10 @@ CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/http/http.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/http/http11_common.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/http/http11_parser.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/http/http_server.h
+CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/http/http_session.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/http/httpclient_parser.h
+CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/http/servlet.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/iomanager.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/log.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/macro.h
@@ -20,6 +23,9 @@ CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/noncopyable.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/scheduler.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/singleton.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/socket.h
+CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/socket_stream.h
+CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/stream.h
+CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/tcpserver.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/thread.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/timer.h
 CMakeFiles/testAddress.dir/tests/testAddress.cpp.o: sylar/util.h

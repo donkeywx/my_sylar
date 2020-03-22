@@ -11,7 +11,10 @@ CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/http/http.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/http/http11_common.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/http/http11_parser.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/http/http_parser.h
+CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/http/http_server.h
+CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/http/http_session.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/http/httpclient_parser.h
+CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/http/servlet.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/iomanager.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/log.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/macro.h
@@ -20,6 +23,9 @@ CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/noncopyable.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/scheduler.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/singleton.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/socket.h
+CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/socket_stream.h
+CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/stream.h
+CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/tcpserver.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/thread.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/timer.h
 CMakeFiles/testFiber.dir/tests/testFiber.cpp.o: sylar/util.h

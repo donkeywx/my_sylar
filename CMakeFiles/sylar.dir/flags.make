@@ -36,6 +36,12 @@ CXX_INCLUDES = -I/usr/local/yaml-cpp/include -I/usr/local/boost/include
 
 # Custom defines: CMakeFiles/sylar.dir/sylar/socket.cpp.o_DEFINES = __FILE__="sylar/socket.cpp"
 
+# Custom defines: CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o_DEFINES = __FILE__="sylar/tcpserver.cpp"
+
+# Custom defines: CMakeFiles/sylar.dir/sylar/stream.cpp.o_DEFINES = __FILE__="sylar/stream.cpp"
+
+# Custom defines: CMakeFiles/sylar.dir/sylar/socket_stream.cpp.o_DEFINES = __FILE__="sylar/socket_stream.cpp"
+
 # Custom defines: CMakeFiles/sylar.dir/sylar/bytearray.cpp.o_DEFINES = __FILE__="sylar/bytearray.cpp"
 
 # Custom defines: CMakeFiles/sylar.dir/sylar/http/http.cpp.o_DEFINES = __FILE__="sylar/http/http.cpp"
@@ -45,4 +51,10 @@ CXX_INCLUDES = -I/usr/local/yaml-cpp/include -I/usr/local/boost/include
 # Custom defines: CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o_DEFINES = __FILE__="sylar/http/http11_parser.cc"
 
 # Custom defines: CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o_DEFINES = __FILE__="sylar/http/httpclient_parser.cc"
+
+# Custom defines: CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o_DEFINES = __FILE__="sylar/http/http_session.cpp"
+
+# Custom defines: CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o_DEFINES = __FILE__="sylar/http/http_server.cpp"
+
+# Custom defines: CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o_DEFINES = __FILE__="sylar/http/servlet.cpp"
 
