@@ -20,8 +20,8 @@
 #define SYLAR_LOG_LEVEL(logger, level) \
     if (logger->getLevel() <= level) \
         sylar::LogEventWrap(sylar::LogEvent::ptr (new sylar::LogEvent(logger, level, \
-                            __FILE__, __LINE__, 0, sylar::getThreadId(), \
-                            sylar::getFiberId(), time(0), sylar::Thread::GetName()))).getSS()
+                            __FILE__, __LINE__, 0, sylar::GetThreadId(), \
+                            sylar::GetFiberId(), time(0), sylar::Thread::GetName()))).getSS()
 
 #define SYLAR_LOG_DEBUG(logger) SYLAR_LOG_LEVEL(logger, sylar::LogLevel::DEBUG)
 #define SYLAR_LOG_INFO(logger) SYLAR_LOG_LEVEL(logger, sylar::LogLevel::INFO)
@@ -34,8 +34,8 @@
 #define SYLAR_LOG_FMT_LEVEL(logger, level, fmt, ...) \
     if(logger->getLevel() <= level) \
         sylar::LogEventWrap(sylar::LogEvent::ptr(new sylar::LogEvent(logger, level, \
-                        __FILE__, __LINE__, 0, sylar::getThreadId(),\
-                        sylar::getFiberId(), time(0), sylar::Thread::GetName()))).getEvent()->format(fmt, __VA_ARGS__) // __VA_ARGS__ 传递上层函数的可变参数
+                        __FILE__, __LINE__, 0, sylar::GetThreadId(),\
+                        sylar::GetFiberId(), time(0), sylar::Thread::GetName()))).getEvent()->format(fmt, __VA_ARGS__) // __VA_ARGS__ 传递上层函数的可变参数
 #define SYLAR_LOG_FMT_DEBUG(logger, fmt, ...)   SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::DEBUG, fmt, __VA_ARGS__)
 #define SYLAR_LOG_FMT_INFO(logger, fmt, ...)    SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::INFO, fmt, __VA_ARGS__)
 #define SYLAR_LOG_FMT_WARN(logger, fmt, ...)    SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::WARN, fmt, __VA_ARGS__)

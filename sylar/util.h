@@ -20,10 +20,10 @@ std::string Backtrace2String(int size = 64, int skip = 2, const std::string&pref
 
 
 // 获取线程id
-pid_t getThreadId();
+pid_t GetThreadId();
 
 //　获取协程id
-uint32_t getFiberId();
+uint32_t GetFiberId();
 
 /**
  * @brief 获取当前时间的毫秒

@@ -69,12 +69,16 @@ singleton.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber.cpp
 fiber.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber.h
-log.h
-/home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
 config.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.h
 macro.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/macro.h
+log.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
+scheduler.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/scheduler.h
+util.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
 atomic
 -
 
@@ -257,13 +261,9 @@ util.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
 mutex.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
-pthread.h
--
-string
+memory
 -
 functional
--
-memory
 -
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/timer.cpp

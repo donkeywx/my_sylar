@@ -80,12 +80,12 @@ std::string Backtrace2String(int size, int skip, const std::string&prefix)
     return ss.str();
 }
 
-pid_t getThreadId()
+pid_t GetThreadId()
 {
     return syscall(SYS_gettid);
 }
 
-uint32_t getFiberId()
+uint32_t GetFiberId()
 {
     return sylar::Fiber::GetFiberId();
 }

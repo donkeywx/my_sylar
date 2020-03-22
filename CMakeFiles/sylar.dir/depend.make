@@ -669,6 +669,7 @@ CMakeFiles/sylar.dir/sylar/fiber.cpp.o: sylar/log.h
 CMakeFiles/sylar.dir/sylar/fiber.cpp.o: sylar/macro.h
 CMakeFiles/sylar.dir/sylar/fiber.cpp.o: sylar/mutex.h
 CMakeFiles/sylar.dir/sylar/fiber.cpp.o: sylar/noncopyable.h
+CMakeFiles/sylar.dir/sylar/fiber.cpp.o: sylar/scheduler.h
 CMakeFiles/sylar.dir/sylar/fiber.cpp.o: sylar/singleton.h
 CMakeFiles/sylar.dir/sylar/fiber.cpp.o: sylar/thread.h
 CMakeFiles/sylar.dir/sylar/fiber.cpp.o: sylar/util.h

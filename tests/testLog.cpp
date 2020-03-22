@@ -12,7 +12,7 @@ int main(int argc, char** argv) {
 
     // 没打印一句日志，都会产生一个event对象。
     sylar::LogEvent::ptr event(new sylar::LogEvent(logger, sylar::LogLevel::ERROR, __FILE__, __LINE__, 0, 
-    sylar::getThreadId(),sylar::getFiberId(), time(0), "thread_name"));
+    sylar::GetThreadId(),sylar::GetFiberId(), time(0), "thread_name"));
 
     event->getSS() << "hello fuck";
     // event->format("adsf%d", 1);

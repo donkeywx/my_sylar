@@ -14,7 +14,7 @@ void func1()
 
         SYLAR_LOG_INFO(g_logger) << "name: " << sylar::Thread::GetName()
                                 << " this.name: " << sylar::Thread::GetThis()->getName()
-                                << " id: " << sylar::getThreadId()
+                                << " id: " << sylar::GetThreadId()
                                 << " this.id: " << sylar::Thread::GetThis()->getId();
     }
     // // sleep(1);

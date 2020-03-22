@@ -85,13 +85,9 @@ memory
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
 mutex.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
-pthread.h
--
-string
+memory
 -
 functional
--
-memory
 -
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h

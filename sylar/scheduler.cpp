@@ -25,8 +25,8 @@ Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
         // sylar::Thread::setName(m_name);
 
         t_scheduler_fiber = m_rootFiber.get();
-        sylar::Fiber::Set(m_rootFiber);
-        m_rootThread = sylar::getThreadId();
+        // sylar::Fiber::Set(m_rootFiber);
+        m_rootThread = sylar::GetThreadId();
         m_threadIds.push_back(m_rootThread);
         SYLAR_LOG_INFO(g_logger) << "use_caller";
     } else {
@@ -143,7 +143,7 @@ void Scheduler::run() {
     SYLAR_LOG_DEBUG(g_logger) << m_name << " run";
     set_hook_enable(true);
     setThis();
-    if(sylar::getThreadId() != m_rootThread) {
+    if(sylar::GetThreadId() != m_rootThread) {
         t_scheduler_fiber = Fiber::GetThis().get();
     }
 
@@ -159,7 +159,7 @@ void Scheduler::run() {
             MutexType::Lock lock(m_mutex);
             auto it = m_fibers.begin();
             while(it != m_fibers.end()) {
-                if(it->thread != -1 && it->thread != sylar::getThreadId()) {
+                if(it->thread != -1 && it->thread != sylar::GetThreadId()) {
                     ++it;
                     tickle_me = true;
                     continue;
@@ -259,7 +259,7 @@ void Scheduler::idle() {
 void Scheduler::switchTo(int thread) {
     SYLAR_ASSERT(Scheduler::GetThis() != nullptr);
     if(Scheduler::GetThis() == this) {
-        if(thread == -1 || thread == sylar::getThreadId()) {
+        if(thread == -1 || thread == sylar::GetThreadId()) {
             return;
         }
     }
