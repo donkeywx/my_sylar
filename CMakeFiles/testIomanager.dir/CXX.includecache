@@ -117,6 +117,8 @@ mutex.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber.h
+noncopyable.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
 memory
 -
 functional

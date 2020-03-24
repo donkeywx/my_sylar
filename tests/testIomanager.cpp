@@ -68,6 +68,7 @@ void test_timer() {
             {
                 s_timer->reset(2000, true);
                 s_timer->cancel();
+                // SYLAR_LOG_INFO(g_logger) << 
             }
         }
     , true);

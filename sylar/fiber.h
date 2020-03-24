@@ -1,6 +1,7 @@
 #ifndef __SYLAR_FIBER_H__
 #define __SYLAR_FIBER_H__
 
+#include "noncopyable.h"
 #include <memory>
 #include <functional>
 #include <ucontext.h>
@@ -12,7 +13,8 @@ class Scheduler;
 /**
  * @brief 协程类
  */
-class Fiber : public std::enable_shared_from_this<Fiber> {
+class Fiber : public Noncopyable, public std::enable_shared_from_this<Fiber>
+{
 friend class Scheduler;
 public:
     typedef std::shared_ptr<Fiber> ptr;

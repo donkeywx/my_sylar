@@ -20,7 +20,8 @@ namespace sylar {
  * @details 封装的是N-M的协程调度器
  *          内部有一个线程池,支持协程在线程池里面切换
  */
-class Scheduler {
+class Scheduler: public Noncopyable
+{
 public:
     typedef std::shared_ptr<Scheduler> ptr;
     typedef Mutex MutexType;

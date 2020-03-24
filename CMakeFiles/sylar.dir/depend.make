@@ -6607,8 +6607,10 @@ CMakeFiles/sylar.dir/sylar/thread.cpp.o: sylar/thread.cpp
 CMakeFiles/sylar.dir/sylar/thread.cpp.o: sylar/thread.h
 CMakeFiles/sylar.dir/sylar/thread.cpp.o: sylar/util.h
 
+CMakeFiles/sylar.dir/sylar/timer.cpp.o: sylar/log.h
 CMakeFiles/sylar.dir/sylar/timer.cpp.o: sylar/mutex.h
 CMakeFiles/sylar.dir/sylar/timer.cpp.o: sylar/noncopyable.h
+CMakeFiles/sylar.dir/sylar/timer.cpp.o: sylar/singleton.h
 CMakeFiles/sylar.dir/sylar/timer.cpp.o: sylar/thread.h
 CMakeFiles/sylar.dir/sylar/timer.cpp.o: sylar/timer.cpp
 CMakeFiles/sylar.dir/sylar/timer.cpp.o: sylar/timer.h

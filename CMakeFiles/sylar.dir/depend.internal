@@ -6608,8 +6608,10 @@ CMakeFiles/sylar.dir/sylar/thread.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
 CMakeFiles/sylar.dir/sylar/timer.cpp.o
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/mutex.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/singleton.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/timer.cpp
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/timer.h

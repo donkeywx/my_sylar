@@ -5,20 +5,23 @@
 #include "timer.h"
 
 
-namespace sylar {
+namespace sylar
+{
 
 /**
  * @brief 基于Epoll的IO协程调度器
  */
-class IOManager : public Scheduler, public TimerManager {
+class IOManager : public Scheduler, public TimerManager
+{
 public:
     typedef std::shared_ptr<IOManager> ptr;
-    typedef RWLock RWMutexType;
+    typedef Mutex RWMutexType;
 
     /**
      * @brief IO事件
      */
-    enum Event {
+    enum Event
+    {
         /// 无事件
         NONE    = 0x0,
         /// 读事件(EPOLLIN)
@@ -26,55 +29,6 @@ public:
         /// 写事件(EPOLLOUT)
         WRITE   = 0x4,
     };
-private:
-    /**
-     * @brief Socket事件上线文类
-     */
-    struct FdContext {
-        typedef Mutex MutexType;
-        /**
-         * @brief 事件上线文类
-         */
-        struct EventContext {
-            /// 事件执行的调度器
-            Scheduler* scheduler = nullptr;
-            /// 事件协程
-            Fiber::ptr fiber;
-            /// 事件的回调函数
-            std::function<void()> cb;
-        };
-
-        /**
-         * @brief 获取事件上下文类
-         * @param[in] event 事件类型
-         * @return 返回对应事件的上线文
-         */
-        EventContext& getContext(Event event);
-
-        /**
-         * @brief 重置事件上下文
-         * @param[in, out] ctx 待重置的上下文类
-         */
-        void resetContext(EventContext& ctx);
-
-        /**
-         * @brief 触发事件
-         * @param[in] event 事件类型
-         */
-        void triggerEvent(Event event);
-
-        /// 读事件上下文
-        EventContext read;
-        /// 写事件上下文
-        EventContext write;
-        /// 事件关联的句柄
-        int fd = 0;
-        /// 当前的事件
-        Event events = NONE;
-        /// 事件的Mutex
-        MutexType mutex;
-    };
-
 public:
     /**
      * @brief 构造函数
@@ -143,6 +97,56 @@ protected:
      */
     bool stopping(uint64_t& timeout);
 private:
+    /**
+     * @brief Socket事件上下文类
+     */
+    struct FdContext
+    {
+        typedef Mutex MutexType;
+        /**
+         * @brief 事件上下文类
+         */
+        struct EventContext
+        {
+            /// 事件执行的调度器
+            Scheduler* scheduler = nullptr;
+            /// 事件协程
+            Fiber::ptr fiber;
+            /// 事件的回调函数
+            std::function<void()> cb;
+        };
+
+        /**
+         * @brief 获取事件上下文类
+         * @param[in] event 事件类型
+         * @return 返回对应事件的上线文
+         */
+        EventContext& getContext(Event event);
+
+        /**
+         * @brief 重置事件上下文
+         * @param[in, out] ctx 待重置的上下文类
+         */
+        void resetContext(EventContext& ctx);
+
+        /**
+         * @brief 触发事件
+         * @param[in] event 事件类型
+         */
+        void triggerEvent(Event event);
+
+        /// 读事件上下文
+        EventContext read;
+        /// 写事件上下文
+        EventContext write;
+        /// 事件关联的句柄
+        int fd = 0;
+        /// 当前的事件
+        Event events = NONE;
+        /// 事件的Mutex
+        MutexType mutex;
+    };
+private:
     /// epoll 文件句柄
     int m_epfd = 0;
     /// pipe 文件句柄
@@ -153,6 +157,7 @@ private:
     RWMutexType m_mutex;
     /// socket事件上下文的容器
     std::vector<FdContext*> m_fdContexts;
+    const uint32_t MAX_FD = 65535;
 };
 
 }

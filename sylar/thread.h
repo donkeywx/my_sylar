@@ -10,7 +10,8 @@ namespace sylar {
 /**
  * @brief 线程类
  */
-class Thread : Noncopyable {
+class Thread : public Noncopyable
+{
 public:
     /// 线程智能指针类型
     typedef std::shared_ptr<Thread> ptr;

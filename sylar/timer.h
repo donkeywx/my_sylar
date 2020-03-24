@@ -7,13 +7,14 @@
 #include "mutex.h"
 #include "thread.h"
 
-namespace sylar {
+namespace sylar
+{
 
 class TimerManager;
 /**
  * @brief 定时器
  */
-class Timer : public std::enable_shared_from_this<Timer>
+class Timer : public Noncopyable, public std::enable_shared_from_this<Timer>
 {
 public:
     /// 定时器的智能指针类型
@@ -90,7 +91,6 @@ private:
  */
 class TimerManager
 {
-// friend Timer;
 public:
     /// 读写锁类型
     typedef Mutex RWMutexType;
