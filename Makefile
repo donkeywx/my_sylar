@@ -969,6 +969,33 @@ sylar/timer.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/timer.cpp.s
 .PHONY : sylar/timer.cpp.s
 
+sylar/uri.o: sylar/uri.cc.o
+
+.PHONY : sylar/uri.o
+
+# target to build an object file
+sylar/uri.cc.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/uri.cc.o
+.PHONY : sylar/uri.cc.o
+
+sylar/uri.i: sylar/uri.cc.i
+
+.PHONY : sylar/uri.i
+
+# target to preprocess a source file
+sylar/uri.cc.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/uri.cc.i
+.PHONY : sylar/uri.cc.i
+
+sylar/uri.s: sylar/uri.cc.s
+
+.PHONY : sylar/uri.s
+
+# target to generate assembly for a file
+sylar/uri.cc.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/uri.cc.s
+.PHONY : sylar/uri.cc.s
+
 sylar/util.o: sylar/util.cpp.o
 
 .PHONY : sylar/util.o
@@ -1497,6 +1524,9 @@ help:
 	@echo "... sylar/timer.o"
 	@echo "... sylar/timer.i"
 	@echo "... sylar/timer.s"
+	@echo "... sylar/uri.o"
+	@echo "... sylar/uri.i"
+	@echo "... sylar/uri.s"
 	@echo "... sylar/util.o"
 	@echo "... sylar/util.i"
 	@echo "... sylar/util.s"

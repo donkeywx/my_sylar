@@ -1,0 +1,29 @@
+2020-03-24 19:25:00	3986	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=1
+2020-03-24 19:25:00	3986	UNKNOW	1	[INFO]	[system]	sylar/scheduler.cpp:67	1
+2020-03-24 19:25:00	3987	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:60	Fiber::Fiber main
+2020-03-24 19:25:00	3987	_0	0	[DEBUG]	[system]	sylar/scheduler.cpp:144	 run
+2020-03-24 19:25:00	3986	UNKNOW	1	[INFO]	[system]	sylar/scheduler.cpp:72	0
+2020-03-24 19:25:00	3987	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=2
+2020-03-24 19:25:00	3987	_0	2	[DEBUG]	[system]	sylar/iomanager.cpp:331	idle
+2020-03-24 19:25:00	3986	UNKNOW	1	[DEBUG]	[system]	sylar/scheduler.cpp:144	 run
+2020-03-24 19:25:00	3986	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=3
+2020-03-24 19:25:00	3986	UNKNOW	3	[DEBUG]	[system]	sylar/iomanager.cpp:331	idle
+2020-03-24 19:25:01	3986	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=4
+2020-03-24 19:25:01	3986	UNKNOW	4	[INFO]	[root]	tests/testIomanager.cpp:66	hello timer i=0
+2020-03-24 19:25:02	3987	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=5
+2020-03-24 19:25:02	3987	_0	5	[INFO]	[root]	tests/testIomanager.cpp:66	hello timer i=1
+2020-03-24 19:25:03	3986	UNKNOW	4	[INFO]	[root]	tests/testIomanager.cpp:66	hello timer i=2
+2020-03-24 19:25:03	3986	UNKNOW	3	[INFO]	[system]	sylar/iomanager.cpp:341	name= idle stopping exit
+2020-03-24 19:25:03	3987	_0	2	[INFO]	[system]	sylar/iomanager.cpp:341	name= idle stopping exit
+2020-03-24 19:25:03	3987	_0	0	[INFO]	[system]	sylar/scheduler.cpp:224	idle fiber term
+2020-03-24 19:25:03	3987	_0	0	[ERROR]	[system]	sylar/scheduler.cpp:238	run end
+2020-03-24 19:25:03	3986	UNKNOW	1	[INFO]	[system]	sylar/scheduler.cpp:224	idle fiber term
+2020-03-24 19:25:03	3986	UNKNOW	1	[ERROR]	[system]	sylar/scheduler.cpp:238	run end
+2020-03-24 19:25:03	3987	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:108	Fiber::~Fiber id=5 total=4
+2020-03-24 19:25:03	3986	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:108	Fiber::~Fiber id=4 total=3
+2020-03-24 19:25:03	3987	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:108	Fiber::~Fiber id=2 total=2
+2020-03-24 19:25:03	3987	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:108	Fiber::~Fiber id=0 total=1
+2020-03-24 19:25:03	3986	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:108	Fiber::~Fiber id=3 total=1
+2020-03-24 19:25:03	3986	UNKNOW	1	[ERROR]	[system]	sylar/fiber.cpp:290	back
+2020-03-24 19:25:03	3986	UNKNOW	1	[ERROR]	[system]	sylar/scheduler.cpp:118	call end
+2020-03-24 19:25:03	3986	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:108	Fiber::~Fiber id=1 total=0

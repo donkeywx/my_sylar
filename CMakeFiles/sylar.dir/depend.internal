@@ -6614,6 +6614,10 @@ CMakeFiles/sylar.dir/sylar/timer.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/timer.cpp
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/timer.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h
+CMakeFiles/sylar.dir/sylar/uri.cc.o
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/address.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/uri.cc
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/uri.h
 CMakeFiles/sylar.dir/sylar/util.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h

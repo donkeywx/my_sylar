@@ -13,11 +13,26 @@ class TimerManager;
 /**
  * @brief 定时器
  */
-class Timer : public std::enable_shared_from_this<Timer> {
-friend class TimerManager;
+class Timer : public std::enable_shared_from_this<Timer>
+{
 public:
     /// 定时器的智能指针类型
     typedef std::shared_ptr<Timer> ptr;
+
+    /**
+     * @brief 构造函数
+     * @param[in] ms 定时器执行间隔时间
+     * @param[in] cb 回调函数
+     * @param[in] recurring 是否循环
+     * @param[in] manager 定时器管理器
+     */
+    Timer(uint64_t ms, std::function<void()> cb,
+          bool recurring, TimerManager* manager);
+    /**
+     * @brief 构造函数
+     * @param[in] next 执行的时间戳(毫秒)
+     */
+    Timer(uint64_t next);
 
     /**
      * @brief 取消定时器
@@ -35,21 +50,28 @@ public:
      * @param[in] from_now 是否从当前时间开始计算
      */
     bool reset(uint64_t ms, bool from_now);
-private:
+
     /**
-     * @brief 构造函数
-     * @param[in] ms 定时器执行间隔时间
-     * @param[in] cb 回调函数
-     * @param[in] recurring 是否循环
-     * @param[in] manager 定时器管理器
+     * @brief 定时器比较仿函数
      */
-    Timer(uint64_t ms, std::function<void()> cb,
-          bool recurring, TimerManager* manager);
-    /**
-     * @brief 构造函数
-     * @param[in] next 执行的时间戳(毫秒)
-     */
-    Timer(uint64_t next);
+    struct Comparator
+    {
+        /**
+         * @brief 比较定时器的智能指针的大小(按执行时间排序)
+         * @param[in] lhs 定时器智能指针
+         * @param[in] rhs 定时器智能指针
+         */
+        bool operator()(const Timer::ptr& lhs, const Timer::ptr& rhs) const;
+    };
+
+    void setRecurring(bool recurring){m_recurring = recurring;}
+    bool getRecurring(){return m_recurring;}
+    void setMs(uint64_t ms){m_ms = ms;}
+    uint64_t getMs(){return m_ms;}
+    void setNext(uint64_t next){m_next = next;}
+    uint64_t getNext(){return m_next;}
+    void setCb(std::function<void()> cb){m_cb = cb;}
+    std::function<void()> getCb(){return m_cb;}
 private:
     /// 是否循环定时器
     bool m_recurring = false;
@@ -61,25 +83,14 @@ private:
     std::function<void()> m_cb;
     /// 定时器管理器
     TimerManager* m_manager = nullptr;
-private:
-    /**
-     * @brief 定时器比较仿函数
-     */
-    struct Comparator {
-        /**
-         * @brief 比较定时器的智能指针的大小(按执行时间排序)
-         * @param[in] lhs 定时器智能指针
-         * @param[in] rhs 定时器智能指针
-         */
-        bool operator()(const Timer::ptr& lhs, const Timer::ptr& rhs) const;
-    };
 };
 
 /**
  * @brief 定时器管理器
  */
-class TimerManager {
-friend class Timer;
+class TimerManager
+{
+// friend Timer;
 public:
     /// 读写锁类型
     typedef Mutex RWMutexType;
@@ -93,6 +104,11 @@ public:
      * @brief 析构函数
      */
     virtual ~TimerManager();
+
+    /**
+     * @brief 将定时器添加到管理器中
+     */
+    void addTimer(Timer::ptr val);
 
     /**
      * @brief 添加定时器
@@ -113,7 +129,8 @@ public:
     Timer::ptr addConditionTimer(uint64_t ms, std::function<void()> cb
                         ,std::weak_ptr<void> weak_cond
                         ,bool recurring = false);
-
+                        
+    bool deleteTimer(Timer::ptr val);
     /**
      * @brief 到最近一个定时器执行的时间间隔(毫秒)
      */
@@ -136,10 +153,6 @@ protected:
      */
     virtual void onTimerInsertedAtFront() = 0;
 
-    /**
-     * @brief 将定时器添加到管理器中
-     */
-    void addTimer(Timer::ptr val, RWMutexType::Lock& lock);
 private:
     /**
      * @brief 检测服务器时间是否被调后了

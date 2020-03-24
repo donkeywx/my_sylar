@@ -3,8 +3,8 @@ PROJECT(sylar)
 
 SET(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 SET(CMAKE_VERBOSE_MAKEFILE ON)
-# fsanitize=address
-SET(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -O0 -g -std=c++11 -Wall -Wno-unused-const-variable -Wno-builtin-macro-redefined -Wno-deprecated -Werror -Wno-unused-function") 
+# -fsanitize=address
+SET(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -O0 -g  -std=c++11 -Wall -Wno-unused-const-variable -Wno-builtin-macro-redefined -Wno-deprecated -Werror -Wno-unused-function") 
 SET(LIB_SRC
     sylar/log.cpp
     sylar/util.cpp
@@ -24,6 +24,8 @@ SET(LIB_SRC
     sylar/stream.cpp
     sylar/socket_stream.cpp
     sylar/bytearray.cpp
+    sylar/uri.cc
+    #sylar/zlib_stream.cpp
     sylar/http/http.cpp
     sylar/http/http_parser.cpp
     sylar/http/http11_parser.cc
@@ -31,8 +33,7 @@ SET(LIB_SRC
     sylar/http/http_session.cpp
     sylar/http/http_server.cpp
     sylar/http/servlet.cpp
-    #sylar/http/servlets/config_servlet.cpp
-    #sylar/http/servlets/status_servlet.cpp
+    #sylar/http/http_connection.cpp
 )
 SET(LIB_LIB
     sylar
@@ -125,3 +126,8 @@ ADD_EXECUTABLE(testTcpServer tests/testTcpServer.cpp)
 ADD_DEPENDENCIES(testTcpServer sylar)
 force_redefine_file_macro_for_sources(testTcpServer)
 TARGET_LINK_LIBRARIES(testTcpServer ${LIB_LIB})
+
+#ADD_EXECUTABLE(testConnection tests/testConnection.cpp)
+#ADD_DEPENDENCIES(testConnection sylar)
+#force_redefine_file_macro_for_sources(testConnection)
+#TARGET_LINK_LIBRARIES(testConnection ${LIB_LIB})

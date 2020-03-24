@@ -578,6 +578,22 @@ mutex.h
 thread.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.h
 
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/uri.cc
+uri.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/uri.h
+sstream
+-
+
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/uri.h
+memory
+-
+string
+-
+stdint.h
+-
+address.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/address.h
+
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.cpp
 util.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.h

@@ -28,6 +28,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/wangk/code/cpp/sylar/code/my_sylar/sylar/tcpserver.cpp" "/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/sylar.dir/sylar/tcpserver.cpp.o"
   "/home/wangk/code/cpp/sylar/code/my_sylar/sylar/thread.cpp" "/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/sylar.dir/sylar/thread.cpp.o"
   "/home/wangk/code/cpp/sylar/code/my_sylar/sylar/timer.cpp" "/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/sylar.dir/sylar/timer.cpp.o"
+  "/home/wangk/code/cpp/sylar/code/my_sylar/sylar/uri.cc" "/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/sylar.dir/sylar/uri.cc.o"
   "/home/wangk/code/cpp/sylar/code/my_sylar/sylar/util.cpp" "/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/sylar.dir/sylar/util.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")

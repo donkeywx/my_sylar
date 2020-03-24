@@ -154,8 +154,10 @@ extern "C" {
     HOOK_FUN(XX);
 #undef XX
 
-unsigned int sleep(unsigned int seconds) {
-    if(!sylar::t_hook_enable) {
+unsigned int sleep(unsigned int seconds)
+{
+    if(!sylar::t_hook_enable)
+    {
         return sleep_f(seconds);
     }
 

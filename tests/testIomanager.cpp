@@ -12,7 +12,8 @@ sylar::Logger::ptr g_logger = SYLAR_LOG_ROOT();
 
 int sock = 0;
 
-void test_fiber() {
+void test_fiber()
+{
     SYLAR_LOG_INFO(g_logger) << "test_fiber sock=" << sock;
 
     //sleep(3);
@@ -47,7 +48,8 @@ void test_fiber() {
 
 }
 
-void test1() {
+void test1()
+{
     std::cout << "EPOLLIN=" << EPOLLIN
               << " EPOLLOUT=" << EPOLLOUT << std::endl;
     sylar::IOManager iom(2, false);
@@ -57,17 +59,22 @@ void test1() {
 sylar::Timer::ptr s_timer;
 void test_timer() {
     sylar::IOManager iom(2);
-    s_timer = iom.addTimer(1000, [](){
-        static int i = 0;
-        SYLAR_LOG_INFO(g_logger) << "hello timer i=" << i;
-        if(++i == 3) {
-            s_timer->reset(2000, true);
-            //s_timer->cancel();
+    s_timer = iom.addTimer(
+        1000, []()
+        {
+            static int i = 0;
+            SYLAR_LOG_INFO(g_logger) << "hello timer i=" << i;
+            if(++i == 3)
+            {
+                s_timer->reset(2000, true);
+                s_timer->cancel();
+            }
         }
-    }, true);
+    , true);
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
+{
     //test1();
     test_timer();
     return 0;

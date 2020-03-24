@@ -7,14 +7,14 @@ void test_fiber() {
     SYLAR_LOG_INFO(g_logger) << "test in fiber s_count=" << s_count;
 
     // sleep(1);
-    // if(--s_count >= 0) {
-    //     sylar::Scheduler::GetThis()->schedule(&test_fiber, sylar::getThreadId());
-    // }
+    if(--s_count >= 0) {
+        sylar::Scheduler::GetThis()->schedule(&test_fiber, sylar::GetThreadId());
+    }
 }
 
 int main(int argc, char** argv) {
     SYLAR_LOG_INFO(g_logger) << "main";
-    sylar::Scheduler sc(1, false, "test");
+    sylar::Scheduler sc(1, true, "test");
     SYLAR_LOG_DEBUG(g_logger) << "start";
     sc.start();
     SYLAR_LOG_INFO(g_logger) << "schedule";

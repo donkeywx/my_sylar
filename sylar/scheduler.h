@@ -49,11 +49,6 @@ public:
     static Scheduler* GetThis();
 
     /**
-     * @brief 返回当前协程调度器的调度协程
-     */
-    static Fiber* GetMainFiber();
-
-    /**
      * @brief 启动协程调度器
      */
     void start();

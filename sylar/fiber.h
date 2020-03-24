@@ -97,7 +97,8 @@ public:
      */
     State getState() const { return m_state;}
 public:
-
+    // 为当前线程创建主协程，主协程用于调度
+    static void CreateScheFiber(Fiber::ptr shceFiber);
     /**
      * @brief 设置当前线程的运行协程
      * @param[in] f 运行协程
