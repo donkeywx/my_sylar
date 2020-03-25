@@ -72,7 +72,8 @@ FdManager::FdManager() {
     m_datas.resize(64);
 }
 
-FdCtx::ptr FdManager::get(int fd, bool auto_create) {
+FdCtx::ptr FdManager::get(int fd, bool auto_create)
+{
     if(fd == -1) {
         return nullptr;
     }

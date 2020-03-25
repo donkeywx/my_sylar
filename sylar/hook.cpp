@@ -65,11 +65,13 @@ struct _HookIniter {
 
 static _HookIniter s_hook_initer;
 
-bool is_hook_enable() {
+bool is_hook_enable()
+{
     return t_hook_enable;
 }
 
-void set_hook_enable(bool flag) {
+void set_hook_enable(bool flag)
+{
     t_hook_enable = flag;
 }
 
@@ -163,28 +165,34 @@ unsigned int sleep(unsigned int seconds)
 
     sylar::Fiber::ptr fiber = sylar::Fiber::GetThis();
     sylar::IOManager* iom = sylar::IOManager::GetThis();
-    iom->addTimer(seconds * 1000, std::bind((void(sylar::Scheduler::*)
+    SYLAR_LOG_ERROR(g_logger) << sylar::Fiber::GetFiberId();
+    iom->addTimer(seconds * 1000, std::bind(
+        (void(sylar::Scheduler::*)
             (sylar::Fiber::ptr, int thread))&sylar::IOManager::schedule
             ,iom, fiber, -1));
     sylar::Fiber::YieldToHold();
     return 0;
 }
 
-int usleep(useconds_t usec) {
-    if(!sylar::t_hook_enable) {
+int usleep(useconds_t usec)
+{
+    if(!sylar::t_hook_enable)
+    {
         return usleep_f(usec);
     }
     sylar::Fiber::ptr fiber = sylar::Fiber::GetThis();
     sylar::IOManager* iom = sylar::IOManager::GetThis();
-    iom->addTimer(usec / 1000, std::bind((void(sylar::Scheduler::*)
-            (sylar::Fiber::ptr, int thread))&sylar::IOManager::schedule
+    iom->addTimer(usec / 1000, std::bind(
+        (void(sylar::Scheduler::*)(sylar::Fiber::ptr, int thread))&sylar::IOManager::schedule
             ,iom, fiber, -1));
     sylar::Fiber::YieldToHold();
     return 0;
 }
 
-int nanosleep(const struct timespec *req, struct timespec *rem) {
-    if(!sylar::t_hook_enable) {
+int nanosleep(const struct timespec *req, struct timespec *rem)
+{
+    if(!sylar::t_hook_enable)
+    {
         return nanosleep_f(req, rem);
     }
 
@@ -198,24 +206,30 @@ int nanosleep(const struct timespec *req, struct timespec *rem) {
     return 0;
 }
 
-int socket(int domain, int type, int protocol) {
-    if(!sylar::t_hook_enable) {
+int socket(int domain, int type, int protocol)
+{
+    if(!sylar::t_hook_enable)
+    {
         return socket_f(domain, type, protocol);
     }
     int fd = socket_f(domain, type, protocol);
-    if(fd == -1) {
+    if(fd == -1)
+    {
         return fd;
     }
     sylar::FdMgr::GetInstance()->get(fd, true);
     return fd;
 }
 
-int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen, uint64_t timeout_ms) {
-    if(!sylar::t_hook_enable) {
+int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen, uint64_t timeout_ms)
+{
+    if(!sylar::t_hook_enable)
+    {
         return connect_f(fd, addr, addrlen);
     }
     sylar::FdCtx::ptr ctx = sylar::FdMgr::GetInstance()->get(fd);
-    if(!ctx || ctx->isClose()) {
+    if(!ctx || ctx->isClose())
+    {
         errno = EBADF;
         return -1;
     }

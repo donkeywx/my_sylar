@@ -92,6 +92,7 @@ IOManager::IOManager(size_t threads, bool use_caller, const std::string& name)
 
 IOManager::~IOManager()
 {
+    SYLAR_LOG_ERROR(g_logger) << "~IO";
     stop();
     close(m_epfd);
     close(m_tickleFds[0]);
@@ -115,13 +116,16 @@ int IOManager::addEvent(int fd, Event event, std::function<void()> cb)
     }
     FdContext* fd_ctx = nullptr;
 
-    RWMutexType::Lock lock(m_mutex);
-    if((int)m_fdContexts.size() <= fd)
     {
-        contextResize(fd * 1.5);    // 扩增fd的1.5倍
+        RWMutexType::Lock lock(m_mutex);
+        if((int)m_fdContexts.size() <= fd)
+        {
+            contextResize(fd * 1.5);    // 扩增fd的1.5倍
+        }
+        fd_ctx = m_fdContexts[fd];
     }
-    fd_ctx = m_fdContexts[fd];
 
+    FdContext::MutexType::Lock lock(fd_ctx->mutex);
     // 检测event的合法性
     if(SYLAR_UNLIKELY(fd_ctx->events & event))
     {
@@ -169,15 +173,17 @@ int IOManager::addEvent(int fd, Event event, std::function<void()> cb)
 
 bool IOManager::delEvent(int fd, Event event)
 {
-    RWMutexType::Lock lock(m_mutex);
-    if((int)m_fdContexts.size() <= fd)
+    FdContext* fd_ctx = nullptr;
     {
-        return false;
+        RWMutexType::Lock lock(m_mutex);
+        if((int)m_fdContexts.size() <= fd)
+        {
+            return false;
+        }
+        fd_ctx = m_fdContexts[fd];
     }
-    FdContext* fd_ctx = m_fdContexts[fd];
-    lock.unlock();
 
-    FdContext::MutexType::Lock lock2(fd_ctx->mutex);
+    FdContext::MutexType::Lock lock(fd_ctx->mutex);
     if(SYLAR_UNLIKELY(!(fd_ctx->events & event)))
     {
         return false;
@@ -190,7 +196,8 @@ bool IOManager::delEvent(int fd, Event event)
     epevent.data.ptr = fd_ctx;
 
     int rt = epoll_ctl(m_epfd, op, fd, &epevent);
-    if(rt) {
+    if(rt)
+    {
         SYLAR_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ", "
             << (EpollCtlOp)op << ", " << fd << ", " << (EPOLL_EVENTS)epevent.events << "):"
             << rt << " (" << errno << ") (" << strerror(errno) << ")";
@@ -204,16 +211,21 @@ bool IOManager::delEvent(int fd, Event event)
     return true;
 }
 
-bool IOManager::cancelEvent(int fd, Event event) {
-    RWMutexType::Lock lock(m_mutex);
-    if((int)m_fdContexts.size() <= fd) {
-        return false;
+bool IOManager::cancelEvent(int fd, Event event)
+{
+    FdContext* fd_ctx = nullptr;
+    {
+        RWMutexType::Lock lock(m_mutex);
+        if((int)m_fdContexts.size() <= fd)
+        {
+            return false;
+        }
+        fd_ctx = m_fdContexts[fd];
     }
-    FdContext* fd_ctx = m_fdContexts[fd];
-    lock.unlock();
 
-    FdContext::MutexType::Lock lock2(fd_ctx->mutex);
-    if(SYLAR_UNLIKELY(!(fd_ctx->events & event))) {
+    FdContext::MutexType::Lock lock(fd_ctx->mutex);
+    if(SYLAR_UNLIKELY(!(fd_ctx->events & event)))
+    {
         return false;
     }
 
@@ -224,7 +236,8 @@ bool IOManager::cancelEvent(int fd, Event event) {
     epevent.data.ptr = fd_ctx;
 
     int rt = epoll_ctl(m_epfd, op, fd, &epevent);
-    if(rt) {
+    if(rt)
+    {
         SYLAR_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ", "
             << (EpollCtlOp)op << ", " << fd << ", " << (EPOLL_EVENTS)epevent.events << "):"
             << rt << " (" << errno << ") (" << strerror(errno) << ")";
@@ -236,15 +249,21 @@ bool IOManager::cancelEvent(int fd, Event event) {
     return true;
 }
 
-bool IOManager::cancelAll(int fd) {
-    RWMutexType::Lock lock(m_mutex);
-    if((int)m_fdContexts.size() <= fd) {
-        return false;
+bool IOManager::cancelAll(int fd)
+{
+    FdContext* fd_ctx = nullptr;
+    {
+        RWMutexType::Lock lock(m_mutex);
+        if((int)m_fdContexts.size() <= fd)
+        {
+            return false;
+        }
+        fd_ctx = m_fdContexts[fd];
     }
-    FdContext* fd_ctx = m_fdContexts[fd];
 
-    FdContext::MutexType::Lock lock2(fd_ctx->mutex);
-    if(!fd_ctx->events) {
+    FdContext::MutexType::Lock lock(fd_ctx->mutex);
+    if(!fd_ctx->events)
+    {
         return false;
     }
 
@@ -254,18 +273,21 @@ bool IOManager::cancelAll(int fd) {
     epevent.data.ptr = fd_ctx;
 
     int rt = epoll_ctl(m_epfd, op, fd, &epevent);
-    if(rt) {
+    if(rt)
+    {
         SYLAR_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ", "
             << (EpollCtlOp)op << ", " << fd << ", " << (EPOLL_EVENTS)epevent.events << "):"
             << rt << " (" << errno << ") (" << strerror(errno) << ")";
         return false;
     }
 
-    if(fd_ctx->events & READ) {
+    if(fd_ctx->events & READ)
+    {
         fd_ctx->triggerEvent(READ);
         --m_pendingEventCount;
     }
-    if(fd_ctx->events & WRITE) {
+    if(fd_ctx->events & WRITE)
+    {
         fd_ctx->triggerEvent(WRITE);
         --m_pendingEventCount;
     }
@@ -274,7 +296,8 @@ bool IOManager::cancelAll(int fd) {
     return true;
 }
 
-IOManager* IOManager::GetThis() {
+IOManager* IOManager::GetThis()
+{
     return dynamic_cast<IOManager*>(Scheduler::GetThis());
 }
 
@@ -293,13 +316,15 @@ IOManager::FdContext::EventContext& IOManager::FdContext::getContext(IOManager::
     throw std::invalid_argument("getContext invalid event");
 }
 
-void IOManager::FdContext::resetContext(EventContext& ctx) {
+void IOManager::FdContext::resetContext(EventContext& ctx)
+{
     ctx.scheduler = nullptr;
     ctx.fiber.reset();
     ctx.cb = nullptr;
 }
 
-void IOManager::FdContext::triggerEvent(IOManager::Event event) {
+void IOManager::FdContext::triggerEvent(IOManager::Event event)
+{
     //SYLAR_LOG_INFO(g_logger) << "fd=" << fd
     //    << " triggerEvent event=" << event
     //    << " events=" << events;
@@ -309,9 +334,12 @@ void IOManager::FdContext::triggerEvent(IOManager::Event event) {
     //}
     events = (Event)(events & ~event);
     EventContext& ctx = getContext(event);
-    if(ctx.cb) {
+    if(ctx.cb)
+    {
         ctx.scheduler->schedule(&ctx.cb);
-    } else {
+    }
+    else
+    {
         ctx.scheduler->schedule(&ctx.fiber);
     }
     ctx.scheduler = nullptr;
@@ -337,15 +365,18 @@ void IOManager::contextResize(size_t size)
     }
 }
 
-void IOManager::tickle() {
-    if(!hasIdleThreads()) {
+void IOManager::tickle()
+{
+    if(!hasIdleThreads())
+    {
         return;
     }
     int rt = write(m_tickleFds[1], "T", 1);
     SYLAR_ASSERT(rt == 1);
 }
 
-bool IOManager::stopping(uint64_t& timeout) {
+bool IOManager::stopping(uint64_t& timeout)
+{
     timeout = getNextTimer();
     return timeout == ~0ull
         && m_pendingEventCount == 0
@@ -353,12 +384,14 @@ bool IOManager::stopping(uint64_t& timeout) {
 
 }
 
-bool IOManager::stopping() {
+bool IOManager::stopping()
+{
     uint64_t timeout = 0;
     return stopping(timeout);
 }
 
-void IOManager::idle() {
+void IOManager::idle()
+{
     SYLAR_LOG_DEBUG(g_logger) << "idle";
     const uint64_t MAX_EVNETS = 256;
     epoll_event* events = new epoll_event[MAX_EVNETS]();
