@@ -239,15 +239,18 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
     }
 
     if(ctx->getUserNonblock()) {
+        SYLAR_LOG_ERROR(g_logger) << "non block";
         return connect_f(fd, addr, addrlen);
     }
 
+    SYLAR_LOG_ERROR(g_logger) << "start connect";
     int n = connect_f(fd, addr, addrlen);
     if(n == 0) {
         return 0;
     } else if(n != -1 || errno != EINPROGRESS) {
         return n;
     }
+    SYLAR_LOG_ERROR(g_logger) << "end connect: " << n ;
 
     sylar::IOManager* iom = sylar::IOManager::GetThis();
     sylar::Timer::ptr timer;
@@ -260,15 +263,18 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
                 if(!t || t->cancelled) {
                     return;
                 }
+                SYLAR_LOG_ERROR(g_logger) << "time out";
                 t->cancelled = ETIMEDOUT;
                 iom->cancelEvent(fd, sylar::IOManager::WRITE);
         }, winfo);
     }
 
     int rt = iom->addEvent(fd, sylar::IOManager::WRITE);
+    SYLAR_LOG_ERROR(g_logger) << rt;
     if(rt == 0) {
         sylar::Fiber::YieldToHold();
         if(timer) {
+            SYLAR_LOG_ERROR(g_logger) << "i am back";
             timer->cancel();
         }
         if(tinfo->cancelled) {
@@ -296,7 +302,7 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
 }
 
 int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen) {
-    return connect_with_timeout(sockfd, addr, addrlen, sylar::s_connect_timeout);
+    return connect_with_timeout(sockfd, addr, addrlen, 1);
 }
 
 int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {

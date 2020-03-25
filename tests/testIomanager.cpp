@@ -22,7 +22,7 @@ void test_fiber()
     //sylar::IOManager::GetThis()->cancelAll(sock);
 
     sock = socket(AF_INET, SOCK_STREAM, 0);
-    fcntl(sock, F_SETFL, O_NONBLOCK);    
+    // fcntl(sock, F_SETFL, O_NONBLOCK);    
 
     sockaddr_in addr;
     memset(&addr, 0, sizeof(addr));

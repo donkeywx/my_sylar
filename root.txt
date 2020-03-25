@@ -1,26 +1,15 @@
-2020-03-25 17:25:10	15049	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=1
-2020-03-25 17:25:10	15049	UNKNOW	1	[INFO]	[system]	sylar/scheduler.cpp:67	0
-2020-03-25 17:25:10	15049	UNKNOW	1	[ERROR]	[root]	tests/testHook.cpp:7	1
-2020-03-25 17:25:10	15049	UNKNOW	1	[INFO]	[root]	tests/testHook.cpp:17	test_sleep
-2020-03-25 17:25:10	15049	UNKNOW	1	[ERROR]	[system]	sylar/iomanager.cpp:95	~IO
-2020-03-25 17:25:10	15049	UNKNOW	1	[INFO]	[system]	sylar/scheduler.cpp:85	0x7ffcec4f5a38 stopped
-2020-03-25 17:25:10	15049	UNKNOW	1	[DEBUG]	[system]	sylar/scheduler.cpp:144	 run
-2020-03-25 17:25:10	15049	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=2
-2020-03-25 17:25:10	15049	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=3
-2020-03-25 17:25:10	15049	UNKNOW	3	[ERROR]	[root]	sylar/hook.cpp:168	3
-2020-03-25 17:25:10	15049	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=4
-2020-03-25 17:25:10	15049	UNKNOW	4	[ERROR]	[root]	sylar/hook.cpp:168	4
-2020-03-25 17:25:10	15049	UNKNOW	2	[DEBUG]	[system]	sylar/iomanager.cpp:395	idle
-2020-03-25 17:25:12	15049	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=5
-2020-03-25 17:25:12	15049	UNKNOW	3	[INFO]	[root]	tests/testHook.cpp:10	sleep 2
-2020-03-25 17:25:12	15049	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:108	Fiber::~Fiber id=3 total=4
-2020-03-25 17:25:13	15049	UNKNOW	4	[INFO]	[root]	tests/testHook.cpp:15	sleep 3
-2020-03-25 17:25:13	15049	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:108	Fiber::~Fiber id=4 total=3
-2020-03-25 17:25:13	15049	UNKNOW	2	[INFO]	[system]	sylar/iomanager.cpp:405	name= idle stopping exit
-2020-03-25 17:25:13	15049	UNKNOW	1	[INFO]	[system]	sylar/scheduler.cpp:224	idle fiber term
-2020-03-25 17:25:13	15049	UNKNOW	1	[ERROR]	[system]	sylar/scheduler.cpp:238	run end
-2020-03-25 17:25:13	15049	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:108	Fiber::~Fiber id=5 total=2
-2020-03-25 17:25:13	15049	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:108	Fiber::~Fiber id=2 total=1
-2020-03-25 17:25:13	15049	UNKNOW	1	[ERROR]	[system]	sylar/fiber.cpp:290	back
-2020-03-25 17:25:13	15049	UNKNOW	1	[ERROR]	[system]	sylar/scheduler.cpp:118	call end
-2020-03-25 17:25:13	15049	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:108	Fiber::~Fiber id=1 total=0
+2020-03-25 21:02:01	7889	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=1
+2020-03-25 21:02:01	7889	UNKNOW	1	[INFO]	[system]	sylar/scheduler.cpp:67	1
+2020-03-25 21:02:01	7889	UNKNOW	1	[INFO]	[system]	sylar/scheduler.cpp:72	0
+2020-03-25 21:02:01	7890	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:60	Fiber::Fiber main
+2020-03-25 21:02:01	7890	_0	0	[DEBUG]	[system]	sylar/scheduler.cpp:144	 run
+2020-03-25 21:02:01	7889	UNKNOW	1	[ERROR]	[system]	sylar/iomanager.cpp:95	~IO
+2020-03-25 21:02:01	7890	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=2
+2020-03-25 21:02:01	7889	UNKNOW	1	[DEBUG]	[system]	sylar/scheduler.cpp:144	 run
+2020-03-25 21:02:01	7890	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=3
+2020-03-25 21:02:01	7889	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=4
+2020-03-25 21:02:01	7889	UNKNOW	4	[DEBUG]	[system]	sylar/iomanager.cpp:395	idle
+2020-03-25 21:02:01	7890	_0	3	[INFO]	[system]	sylar/tcpserver.cpp:71	type=tcp name=sylar/1.0.0 ssl=0 server bind success: [Socket sock=9 is_connected=0 family=2 type=1 protocol=0 local_address=0.0.0.0:8033]
+2020-03-25 21:02:01	7890	_0	2	[DEBUG]	[system]	sylar/iomanager.cpp:395	idle
+2020-03-25 21:02:07	7890	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=5
+2020-03-25 21:02:07	7890	_0	5	[INFO]	[system]	sylar/tcpserver.cpp:118	handleClient: [Socket sock=10 is_connected=1 family=2 type=1 protocol=0 local_address=127.0.0.1:8033 remote_address=127.0.0.1:50056]
