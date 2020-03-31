@@ -19,7 +19,8 @@ namespace http {
 /**
  * @brief HTTPSession封装
  */
-class HttpSession : public SocketStream {
+class HttpSession : public SocketStream
+{
 public:
     /// 智能指针类型定义
     typedef std::shared_ptr<HttpSession> ptr;

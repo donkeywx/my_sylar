@@ -158,8 +158,10 @@ void Scheduler::run()
         {
             MutexType::Lock lock(m_mutex);
             auto it = m_fibers.begin();
-            while(it != m_fibers.end()) {
-                if(it->thread != -1 && it->thread != sylar::GetThreadId()) {
+            while(it != m_fibers.end())
+            {
+                if(it->thread != -1 && it->thread != sylar::GetThreadId())
+                {
                     ++it;
                     tickle_me = true;
                     continue;
@@ -238,7 +240,8 @@ void Scheduler::run()
     SYLAR_LOG_ERROR(g_logger) << "run end";
 }
 
-void Scheduler::tickle() {
+void Scheduler::tickle()
+{
     SYLAR_LOG_INFO(g_logger) << "tickle";
 }
 

@@ -6,14 +6,16 @@
 #include "thread.h"
 #include "singleton.h"
 
-namespace sylar {
+namespace sylar
+{
 
 /**
  * @brief 文件句柄上下文类
  * @details 管理文件句柄类型(是否socket)
  *          是否阻塞,是否关闭,读/写超时时间
  */
-class FdCtx : public std::enable_shared_from_this<FdCtx> {
+class FdCtx : public std::enable_shared_from_this<FdCtx>
+{
 public:
     typedef std::shared_ptr<FdCtx> ptr;
     /**
@@ -102,7 +104,8 @@ private:
 /**
  * @brief 文件句柄管理类
  */
-class FdManager {
+class FdManager
+{
 public:
     typedef Mutex RWMutexType;
     /**
@@ -116,7 +119,7 @@ public:
      * @param[in] auto_create 是否自动创建
      * @return 返回对应文件句柄类FdCtx::ptr
      */
-    FdCtx::ptr get(int fd, bool auto_create = false);
+    FdCtx::ptr get(int fd, bool auto_create = true);
 
     /**
      * @brief 删除文件句柄类

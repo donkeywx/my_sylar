@@ -26,16 +26,19 @@ static uint32_t CountBytes(T value) {
 }
 
 Address::ptr Address::LookupAny(const std::string& host,
-                                int family, int type, int protocol) {
+                                int family, int type, int protocol)
+{
     std::vector<Address::ptr> result;
-    if(Lookup(result, host, family, type, protocol)) {
+    if(Lookup(result, host, family, type, protocol))
+    {
         return result[0];
     }
     return nullptr;
 }
 
 IPAddress::ptr Address::LookupAnyIPAddress(const std::string& host,
-                                int family, int type, int protocol) {
+                                int family, int type, int protocol)
+{
     std::vector<Address::ptr> result;
     if(Lookup(result, host, family, type, protocol)) {
         //for(auto& i : result) {

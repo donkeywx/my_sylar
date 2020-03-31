@@ -18,8 +18,10 @@ bool SocketStream::isConnected() const {
     return m_socket && m_socket->isConnected();
 }
 
-int SocketStream::read(void* buffer, size_t length) {
-    if(!isConnected()) {
+int SocketStream::read(void* buffer, size_t length)
+{
+    if(!isConnected())
+    {
         return -1;
     }
     return m_socket->recv(buffer, length);
@@ -58,8 +60,10 @@ int SocketStream::write(ByteArray::ptr ba, size_t length) {
     return rt;
 }
 
-void SocketStream::close() {
-    if(m_socket) {
+void SocketStream::close()
+{
+    if(m_socket)
+    {
         m_socket->close();
     }
 }

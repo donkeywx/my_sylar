@@ -1,15 +1,35 @@
-2020-03-25 21:02:01	7889	UNKNOW	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=1
-2020-03-25 21:02:01	7889	UNKNOW	1	[INFO]	[system]	sylar/scheduler.cpp:67	1
-2020-03-25 21:02:01	7889	UNKNOW	1	[INFO]	[system]	sylar/scheduler.cpp:72	0
-2020-03-25 21:02:01	7890	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:60	Fiber::Fiber main
-2020-03-25 21:02:01	7890	_0	0	[DEBUG]	[system]	sylar/scheduler.cpp:144	 run
-2020-03-25 21:02:01	7889	UNKNOW	1	[ERROR]	[system]	sylar/iomanager.cpp:95	~IO
-2020-03-25 21:02:01	7890	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=2
-2020-03-25 21:02:01	7889	UNKNOW	1	[DEBUG]	[system]	sylar/scheduler.cpp:144	 run
-2020-03-25 21:02:01	7890	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=3
-2020-03-25 21:02:01	7889	UNKNOW	1	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=4
-2020-03-25 21:02:01	7889	UNKNOW	4	[DEBUG]	[system]	sylar/iomanager.cpp:395	idle
-2020-03-25 21:02:01	7890	_0	3	[INFO]	[system]	sylar/tcpserver.cpp:71	type=tcp name=sylar/1.0.0 ssl=0 server bind success: [Socket sock=9 is_connected=0 family=2 type=1 protocol=0 local_address=0.0.0.0:8033]
-2020-03-25 21:02:01	7890	_0	2	[DEBUG]	[system]	sylar/iomanager.cpp:395	idle
-2020-03-25 21:02:07	7890	_0	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=5
-2020-03-25 21:02:07	7890	_0	5	[INFO]	[system]	sylar/tcpserver.cpp:118	handleClient: [Socket sock=10 is_connected=1 family=2 type=1 protocol=0 local_address=127.0.0.1:8033 remote_address=127.0.0.1:50056]
+2020-03-31 20:08:55	27593	main	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=1
+2020-03-31 20:08:55	27593	main	1	[INFO]	[system]	sylar/scheduler.cpp:67	0
+2020-03-31 20:08:55	27593	main	1	[INFO]	[system]	sylar/scheduler.cpp:67	3
+2020-03-31 20:08:55	27594	worker_0	0	[DEBUG]	[system]	sylar/fiber.cpp:60	Fiber::Fiber main
+2020-03-31 20:08:55	27594	worker_0	0	[DEBUG]	[system]	sylar/scheduler.cpp:144	worker run
+2020-03-31 20:08:55	27593	main	1	[INFO]	[system]	sylar/scheduler.cpp:72	0
+2020-03-31 20:08:55	27594	worker_0	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=2
+2020-03-31 20:08:55	27593	main	1	[INFO]	[system]	sylar/scheduler.cpp:72	1
+2020-03-31 20:08:55	27595	worker_1	0	[DEBUG]	[system]	sylar/fiber.cpp:60	Fiber::Fiber main
+2020-03-31 20:08:55	27595	worker_1	0	[DEBUG]	[system]	sylar/scheduler.cpp:144	worker run
+2020-03-31 20:08:55	27595	worker_1	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=3
+2020-03-31 20:08:55	27593	main	1	[INFO]	[system]	sylar/scheduler.cpp:72	2
+2020-03-31 20:08:55	27596	worker_2	0	[DEBUG]	[system]	sylar/fiber.cpp:60	Fiber::Fiber main
+2020-03-31 20:08:55	27596	worker_2	0	[DEBUG]	[system]	sylar/scheduler.cpp:144	worker run
+2020-03-31 20:08:55	27593	main	1	[ERROR]	[system]	sylar/iomanager.cpp:95	~IO
+2020-03-31 20:08:55	27594	worker_0	2	[DEBUG]	[system]	sylar/iomanager.cpp:395	idle
+2020-03-31 20:08:55	27595	worker_1	3	[DEBUG]	[system]	sylar/iomanager.cpp:395	idle
+2020-03-31 20:08:55	27593	main	1	[INFO]	[system]	sylar/scheduler.cpp:85	0x7ffe94b67588 stopped
+2020-03-31 20:08:55	27596	worker_2	0	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=4
+2020-03-31 20:08:55	27593	main	1	[DEBUG]	[system]	sylar/scheduler.cpp:144	main run
+2020-03-31 20:08:55	27593	main	1	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=5
+2020-03-31 20:08:55	27596	worker_2	4	[DEBUG]	[system]	sylar/iomanager.cpp:395	idle
+2020-03-31 20:08:55	27593	main	1	[DEBUG]	[system]	sylar/fiber.cpp:83	Fiber::Fiber id=6
+2020-03-31 20:08:55	27593	main	6	[INFO]	[system]	sylar/tcpserver.cpp:71	type=http name=sylar/1.0.0 ssl=0 server bind success: [Socket sock=10 is_connected=0 family=2 type=1 protocol=0 local_address=0.0.0.0:8020]
+2020-03-31 20:09:32	27593	main	7	[INFO]	[system]	sylar/http/http_server.cpp:32	handleClient [Socket sock=11 is_connected=1 family=2 type=1 protocol=0 local_address=127.0.0.1:8020 remote_address=127.0.0.1:38688]
+2020-03-31 20:09:32	27593	main	8	[INFO]	[system]	sylar/http/http_server.cpp:32	handleClient [Socket sock=12 is_connected=1 family=2 type=1 protocol=0 local_address=127.0.0.1:8020 remote_address=127.0.0.1:38692]
+2020-03-31 20:09:32	27593	main	7	[INFO]	[system]	sylar/http/servlet.cpp:130	http requsest uri is: /sylarx/*
+2020-03-31 20:09:32	27593	main	7	[ERROR]	[root]	tests/testHttpServer.cpp:53	do this servlet
+2020-03-31 20:09:45	27593	main	8	[INFO]	[root]	sylar/http/http_session.cpp:35	read=0
+2020-03-31 20:09:45	27593	main	9	[INFO]	[system]	sylar/http/http_server.cpp:32	handleClient [Socket sock=12 is_connected=1 family=2 type=1 protocol=0 local_address=127.0.0.1:8020 remote_address=127.0.0.1:38696]
+2020-03-31 20:09:45	27593	main	7	[INFO]	[system]	sylar/http/servlet.cpp:130	http requsest uri is: /sylarx/
+2020-03-31 20:09:45	27593	main	7	[ERROR]	[root]	tests/testHttpServer.cpp:53	do this servlet
+2020-03-31 20:09:50	27593	main	7	[INFO]	[system]	sylar/http/servlet.cpp:130	http requsest uri is: /syl
+2020-03-31 20:10:06	27593	main	9	[INFO]	[root]	sylar/http/http_session.cpp:35	read=0
+2020-03-31 20:10:06	27593	main	7	[INFO]	[root]	sylar/http/http_session.cpp:35	read=0

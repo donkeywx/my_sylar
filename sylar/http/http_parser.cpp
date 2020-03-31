@@ -29,7 +29,8 @@ static uint64_t s_http_request_max_body_size = 0;
 static uint64_t s_http_response_buffer_size = 0;
 static uint64_t s_http_response_max_body_size = 0;
 
-uint64_t HttpRequestParser::GetHttpRequestBufferSize() {
+uint64_t HttpRequestParser::GetHttpRequestBufferSize()
+{
     return s_http_request_buffer_size;
 }
 

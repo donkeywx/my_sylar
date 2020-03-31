@@ -65,14 +65,16 @@ public:
      * @param[in] thread 协程执行的线程id,-1标识任意线程
      */
     template<class FiberOrCb>
-    void schedule(FiberOrCb fc, int thread = -1) {
+    void schedule(FiberOrCb fc, int thread = -1)
+    {
         bool need_tickle = false;
         {
             MutexType::Lock lock(m_mutex);
             need_tickle = scheduleNoLock(fc, thread);
         }
 
-        if(need_tickle) {
+        if(need_tickle)
+        {
             tickle();
         }
     }

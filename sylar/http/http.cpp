@@ -275,7 +275,8 @@ std::string HttpResponse::getHeader(const std::string& key, const std::string& d
     return it == m_headers.end() ? def : it->second;
 }
 
-void HttpResponse::setHeader(const std::string& key, const std::string& val) {
+void HttpResponse::setHeader(const std::string& key, const std::string& val)
+{
     m_headers[key] = val;
 }
 

@@ -6,32 +6,36 @@ static sylar::Logger::ptr g_logger = SYLAR_LOG_ROOT();
 
 
 sylar::IOManager::ptr worker;
-void run() {
+void run()
+{
     g_logger->setLevel(sylar::LogLevel::INFO);
     //sylar::http::HttpServer::ptr server(new sylar::http::HttpServer(true, worker.get(), sylar::IOManager::GetThis()));
     sylar::http::HttpServer::ptr server(new sylar::http::HttpServer(true));
     sylar::Address::ptr addr = sylar::Address::LookupAnyIPAddress("0.0.0.0:8020");
-    while(!server->bind(addr)) {
+    while(!server->listen(addr))
+    {
         sleep(2);
     }
     auto sd = server->getServletDispatch();
-    sd->addServlet("/sylar/xx", [](sylar::http::HttpRequest::ptr req
-                ,sylar::http::HttpResponse::ptr rsp
-                ,sylar::http::HttpSession::ptr session) {
-            rsp->setBody(req->toString());
-            return 0;
-    });
+//     sd->addServlet("/sylar/xx", [](sylar::http::HttpRequest::ptr req
+//                 ,sylar::http::HttpResponse::ptr rsp
+//                 ,sylar::http::HttpSession::ptr session) {
+//             rsp->setBody(req->toString());
+//             return 0;
+//     });
 
-    sd->addGlobServlet("/sylar/*", [](sylar::http::HttpRequest::ptr req
-                ,sylar::http::HttpResponse::ptr rsp
-                ,sylar::http::HttpSession::ptr session) {
-            rsp->setBody("Glob:\r\n" + req->toString());
-            return 0;
-    });
+//     sd->addGlobServlet("/sylar/*", [](sylar::http::HttpRequest::ptr req
+//                 ,sylar::http::HttpResponse::ptr rsp
+//                 ,sylar::http::HttpSession::ptr session) {
+//             rsp->setBody("Glob:\r\n" + req->toString());
+//             return 0;
+//     });
 
-    sd->addGlobServlet("/sylarx/*", [](sylar::http::HttpRequest::ptr req
-                ,sylar::http::HttpResponse::ptr rsp
-                ,sylar::http::HttpSession::ptr session) {
+    sd->addGlobServlet("/sylarx/*", 
+        [](sylar::http::HttpRequest::ptr req
+            ,sylar::http::HttpResponse::ptr rsp
+            ,sylar::http::HttpSession::ptr session)
+        {
             rsp->setBody(XX(<html>
 <head><title>404 Not Found</title></head>
 <body>
@@ -46,13 +50,15 @@ void run() {
 <!-- a padding to disable MSIE and Chrome friendly error page -->
 <!-- a padding to disable MSIE and Chrome friendly error page -->
 ));
+            SYLAR_LOG_ERROR(g_logger) << "do this servlet";
             return 0;
-    });
+        });
 
     server->start();
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
+{
     sylar::IOManager iom(1, true, "main");
     worker.reset(new sylar::IOManager(3, false, "worker"));
     iom.schedule(run);

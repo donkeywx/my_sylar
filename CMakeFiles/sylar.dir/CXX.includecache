@@ -283,6 +283,8 @@ http_session.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_session.h
 http_parser.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_parser.h
+../log.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/http_session.h
 ../socket_stream.h
@@ -315,6 +317,8 @@ servlet.h
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/servlet.h
 fnmatch.h
 -
+../log.h
+/home/wangk/code/cpp/sylar/code/my_sylar/sylar/log.h
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/http/servlet.h
 memory

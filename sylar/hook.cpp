@@ -83,22 +83,27 @@ struct timer_info {
 
 template<typename OriginFun, typename... Args>
 static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,
-        uint32_t event, int timeout_so, Args&&... args) {
-    if(!sylar::t_hook_enable) {
+        uint32_t event, int timeout_so, Args&&... args)
+{
+    if(!sylar::t_hook_enable)
+    {
         return fun(fd, std::forward<Args>(args)...);
     }
 
     sylar::FdCtx::ptr ctx = sylar::FdMgr::GetInstance()->get(fd);
-    if(!ctx) {
+    if(!ctx)
+    {
         return fun(fd, std::forward<Args>(args)...);
     }
 
-    if(ctx->isClose()) {
+    if(ctx->isClose())
+    {
         errno = EBADF;
         return -1;
     }
 
-    if(!ctx->isSocket() || ctx->getUserNonblock()) {
+    if(!ctx->isSocket() || ctx->getUserNonblock())
+    {
         return fun(fd, std::forward<Args>(args)...);
     }
 
@@ -107,7 +112,8 @@ static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,
 
 retry:
     ssize_t n = fun(fd, std::forward<Args>(args)...);
-    while(n == -1 && errno == EINTR) {
+    while(n == -1 && errno == EINTR)
+    {
         n = fun(fd, std::forward<Args>(args)...);
     }
     if(n == -1 && errno == EAGAIN) {
@@ -243,14 +249,12 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
         return connect_f(fd, addr, addrlen);
     }
 
-    SYLAR_LOG_ERROR(g_logger) << "start connect";
     int n = connect_f(fd, addr, addrlen);
     if(n == 0) {
         return 0;
     } else if(n != -1 || errno != EINPROGRESS) {
         return n;
     }
-    SYLAR_LOG_ERROR(g_logger) << "end connect: " << n ;
 
     sylar::IOManager* iom = sylar::IOManager::GetThis();
     sylar::Timer::ptr timer;
@@ -274,7 +278,6 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
     if(rt == 0) {
         sylar::Fiber::YieldToHold();
         if(timer) {
-            SYLAR_LOG_ERROR(g_logger) << "i am back";
             timer->cancel();
         }
         if(tinfo->cancelled) {
@@ -305,9 +308,11 @@ int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen) {
     return connect_with_timeout(sockfd, addr, addrlen, 1);
 }
 
-int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
+int accept(int s, struct sockaddr *addr, socklen_t *addrlen)
+{
     int fd = do_io(s, accept_f, "accept", sylar::IOManager::READ, SO_RCVTIMEO, addr, addrlen);
-    if(fd >= 0) {
+    if(fd >= 0)
+    {
         sylar::FdMgr::GetInstance()->get(fd, true);
     }
     return fd;
@@ -353,15 +358,19 @@ ssize_t sendmsg(int s, const struct msghdr *msg, int flags) {
     return do_io(s, sendmsg_f, "sendmsg", sylar::IOManager::WRITE, SO_SNDTIMEO, msg, flags);
 }
 
-int close(int fd) {
-    if(!sylar::t_hook_enable) {
+int close(int fd)
+{
+    if(!sylar::t_hook_enable)
+    {
         return close_f(fd);
     }
 
     sylar::FdCtx::ptr ctx = sylar::FdMgr::GetInstance()->get(fd);
-    if(ctx) {
+    if(ctx)
+    {
         auto iom = sylar::IOManager::GetThis();
-        if(iom) {
+        if(iom)
+        {
             iom->cancelAll(fd);
         }
         sylar::FdMgr::GetInstance()->del(fd);
@@ -369,7 +378,8 @@ int close(int fd) {
     return close_f(fd);
 }
 
-int fcntl(int fd, int cmd, ... /* arg */ ) {
+int fcntl(int fd, int cmd, ... /* arg */ )
+{
     va_list va;
     va_start(va, cmd);
     switch(cmd) {
@@ -456,16 +466,19 @@ int fcntl(int fd, int cmd, ... /* arg */ ) {
     }
 }
 
-int ioctl(int d, unsigned long int request, ...) {
+int ioctl(int d, unsigned long int request, ...)
+{
     va_list va;
     va_start(va, request);
     void* arg = va_arg(va, void*);
     va_end(va);
 
-    if(FIONBIO == request) {
+    if(FIONBIO == request)
+    {
         bool user_nonblock = !!*(int*)arg;
         sylar::FdCtx::ptr ctx = sylar::FdMgr::GetInstance()->get(d);
-        if(!ctx || ctx->isClose() || !ctx->isSocket()) {
+        if(!ctx || ctx->isClose() || !ctx->isSocket())
+        {
             return ioctl_f(d, request, arg);
         }
         ctx->setUserNonblock(user_nonblock);
@@ -473,11 +486,13 @@ int ioctl(int d, unsigned long int request, ...) {
     return ioctl_f(d, request, arg);
 }
 
-int getsockopt(int sockfd, int level, int optname, void *optval, socklen_t *optlen) {
+int getsockopt(int sockfd, int level, int optname, void *optval, socklen_t *optlen)
+{
     return getsockopt_f(sockfd, level, optname, optval, optlen);
 }
 
-int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen) {
+int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen)
+{
     if(!sylar::t_hook_enable) {
         return setsockopt_f(sockfd, level, optname, optval, optlen);
     }

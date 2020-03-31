@@ -17,9 +17,11 @@
 #include "noncopyable.h"
 #include "config.h"
 
-namespace sylar {
+namespace sylar
+{
 
-struct TcpServerConf {
+struct TcpServerConf
+{
     typedef std::shared_ptr<TcpServerConf> ptr;
 
     std::vector<std::string> address;
@@ -37,11 +39,13 @@ struct TcpServerConf {
     std::string process_worker;
     std::map<std::string, std::string> args;
 
-    bool isValid() const {
+    bool isValid() const
+    {
         return !address.empty();
     }
 
-    bool operator==(const TcpServerConf& oth) const {
+    bool operator==(const TcpServerConf& oth) const
+    {
         return address == oth.address
             && keepalive == oth.keepalive
             && timeout == oth.timeout
@@ -117,7 +121,8 @@ public:
  * @brief TCP服务器封装
  */
 class TcpServer : public std::enable_shared_from_this<TcpServer>
-                    , Noncopyable {
+                    , Noncopyable 
+{
 public:
     typedef std::shared_ptr<TcpServer> ptr;
     /**
@@ -138,7 +143,7 @@ public:
      * @brief 绑定地址
      * @return 返回是否绑定成功
      */
-    virtual bool bind(sylar::Address::ptr addr, bool ssl = false);
+    virtual bool listen(sylar::Address::ptr addr, bool ssl = false);
 
     /**
      * @brief 绑定地址数组
@@ -146,7 +151,7 @@ public:
      * @param[out] fails 绑定失败的地址
      * @return 是否绑定成功
      */
-    virtual bool bind(const std::vector<Address::ptr>& addrs
+    virtual bool listen(const std::vector<Address::ptr>& addrs
                         ,std::vector<Address::ptr>& fails
                         ,bool ssl = false);
 

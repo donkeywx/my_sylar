@@ -19,7 +19,8 @@ class IPAddress;
 /**
  * @brief 网络地址的基类,抽象类
  */
-class Address {
+class Address
+{
 public:
     typedef std::shared_ptr<Address> ptr;
 
@@ -269,7 +270,8 @@ private:
 /**
  * @brief UnixSocket地址
  */
-class UnixAddress : public Address {
+class UnixAddress : public Address
+{
 public:
     typedef std::shared_ptr<UnixAddress> ptr;
 
@@ -298,7 +300,8 @@ private:
 /**
  * @brief 未知地址
  */
-class UnknownAddress : public Address {
+class UnknownAddress : public Address
+{
 public:
     typedef std::shared_ptr<UnknownAddress> ptr;
     UnknownAddress(int family);
