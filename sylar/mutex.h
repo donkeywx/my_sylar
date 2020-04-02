@@ -5,6 +5,7 @@
 #include <semaphore.h>
 #include <pthread.h>
 #include <stdint.h>
+#include <string.h>
 
 namespace sylar
 {
@@ -116,8 +117,10 @@ public:
     typedef ScopedLockImpl<Mutex> Lock;
 
     Mutex()
-    {   
+    {
+        // memset(&attr, 0, sizeof(attr));
         pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+        
         pthread_mutex_init(&m_mutex, &attr);
     }
 

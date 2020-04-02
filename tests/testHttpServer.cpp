@@ -60,7 +60,7 @@ void run()
 int main(int argc, char** argv)
 {
     sylar::IOManager iom(1, true, "main");
-    worker.reset(new sylar::IOManager(3, false, "worker"));
+    worker.reset(new sylar::IOManager(50, false, "worker"));
     iom.schedule(run);
     return 0;
 }

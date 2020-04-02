@@ -265,6 +265,8 @@ pthread.h
 -
 stdint.h
 -
+string.h
+-
 
 /home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
 
