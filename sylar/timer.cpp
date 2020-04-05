@@ -105,7 +105,7 @@ TimerManager::~TimerManager()
 
 void TimerManager::addTimer(Timer::ptr val)
 {
-    TimerManager::RWMutexType::Lock lock(m_mutex);
+    TimerManager::RWMutexType::WriteLock lock(m_mutex);
     auto it = m_timers.insert(val).first;
     bool at_front = (it == m_timers.begin()) && !m_tickled;
     if(at_front)
@@ -145,7 +145,7 @@ Timer::ptr TimerManager::addConditionTimer(uint64_t ms, std::function<void()> cb
 
 bool TimerManager::deleteTimer(Timer::ptr val)
 {
-    TimerManager::RWMutexType::Lock loc(m_mutex);
+    TimerManager::RWMutexType::WriteLock lock(m_mutex);
     auto it = m_timers.find(val);
     if(it == m_timers.end())
     {
@@ -158,7 +158,7 @@ bool TimerManager::deleteTimer(Timer::ptr val)
 
 uint64_t TimerManager::getNextTimer()
 {
-    RWMutexType::Lock lock(m_mutex);
+    RWMutexType::ReadLock lock(m_mutex);
     m_tickled = false;
     if(m_timers.empty())
     {
@@ -180,42 +180,50 @@ uint64_t TimerManager::getNextTimer()
 void TimerManager::listExpiredCb(std::vector<std::function<void()> >& cbs)
 {
     uint64_t now_ms = sylar::GetCurrentMS();
-
-    RWMutexType::Lock lock(m_mutex);
     std::vector<Timer::ptr> expired;
-    if(m_timers.empty())
+    bool rollover = false;
+    std::set<Timer::ptr, Timer::Comparator>::iterator it;
     {
-        return;
-    }
-
-    bool rollover = detectClockRollover(now_ms);
-    if(!rollover && ((*m_timers.begin())->getNext() > now_ms))
-    {
-        return;
-    }
-
-    Timer::ptr now_timer(new Timer(now_ms));
-    auto it = rollover ? m_timers.end() : m_timers.lower_bound(now_timer);
-    while(it != m_timers.end() && (*it)->getNext() == now_ms)
-    {
-        ++it;
-    }
-
-    expired.insert(expired.begin(), m_timers.begin(), it);
-    m_timers.erase(m_timers.begin(), it);
-    cbs.reserve(expired.size());
-
-    for(auto& timer : expired)
-    {
-        cbs.push_back(timer->getCb());
-        if(timer->getRecurring())
+        RWMutexType::ReadLock lock(m_mutex);
+        
+        if(m_timers.empty())
         {
-            timer->setNext(now_ms + timer->getMs());
-            m_timers.insert(timer);
+            return;
         }
-        else
+
+        rollover = detectClockRollover(now_ms);
+        if(!rollover && ((*m_timers.begin())->getNext() > now_ms))
         {
-            timer->setCb(nullptr);
+            return;
+        }
+
+        Timer::ptr now_timer(new Timer(now_ms));
+        it = rollover ? m_timers.end() : m_timers.lower_bound(now_timer);
+        while(it != m_timers.end() && (*it)->getNext() == now_ms)
+        {
+            ++it;
+        }
+        expired.insert(expired.begin(), m_timers.begin(), it);
+    }
+
+    {
+        RWMutexType::WriteLock lock(m_mutex);
+
+        m_timers.erase(m_timers.begin(), it);
+        cbs.reserve(expired.size());
+
+        for(auto& timer : expired)
+        {
+            cbs.push_back(timer->getCb());
+            if(timer->getRecurring())
+            {
+                timer->setNext(now_ms + timer->getMs());
+                m_timers.insert(timer);
+            }
+            else
+            {
+                timer->setCb(nullptr);
+            }
         }
     }
 }
@@ -234,7 +242,7 @@ bool TimerManager::detectClockRollover(uint64_t now_ms)
 
 bool TimerManager::hasTimer()
 {
-    RWMutexType::Lock lock(m_mutex);
+    RWMutexType::ReadLock lock(m_mutex);
     return !m_timers.empty();
 }
 

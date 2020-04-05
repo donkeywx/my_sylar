@@ -93,7 +93,7 @@ class TimerManager
 {
 public:
     /// 读写锁类型
-    typedef Mutex RWMutexType;
+    typedef RWLock RWMutexType;
 
     /**
      * @brief 构造函数

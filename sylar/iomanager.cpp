@@ -117,7 +117,7 @@ int IOManager::addEvent(int fd, Event event, std::function<void()> cb)
     FdContext* fd_ctx = nullptr;
 
     {
-        RWMutexType::Lock lock(m_mutex);
+        RWMutexType::WriteLock lock(m_mutex);
         if((int)m_fdContexts.size() <= fd)
         {
             contextResize(fd * 1.5);    // 扩增fd的1.5倍
@@ -175,7 +175,7 @@ bool IOManager::delEvent(int fd, Event event)
 {
     FdContext* fd_ctx = nullptr;
     {
-        RWMutexType::Lock lock(m_mutex);
+        RWMutexType::ReadLock lock(m_mutex);
         if((int)m_fdContexts.size() <= fd)
         {
             return false;
@@ -215,7 +215,7 @@ bool IOManager::cancelEvent(int fd, Event event)
 {
     FdContext* fd_ctx = nullptr;
     {
-        RWMutexType::Lock lock(m_mutex);
+        RWMutexType::ReadLock lock(m_mutex);
         if((int)m_fdContexts.size() <= fd)
         {
             return false;
@@ -253,7 +253,7 @@ bool IOManager::cancelAll(int fd)
 {
     FdContext* fd_ctx = nullptr;
     {
-        RWMutexType::Lock lock(m_mutex);
+        RWMutexType::ReadLock lock(m_mutex);
         if((int)m_fdContexts.size() <= fd)
         {
             return false;

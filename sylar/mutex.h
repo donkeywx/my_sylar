@@ -47,7 +47,8 @@ private:
 };
 
 template<class T>
-struct ReadScopedLockImpl {
+class ReadScopedLockImpl
+{
 public:
     ReadScopedLockImpl(T& redlock)
         : m_rdlock(redlock)
@@ -56,11 +57,6 @@ public:
     }
 
     ~ReadScopedLockImpl()
-    {
-        m_rdlock.unlock();
-    }
-
-    void unlock()
     {
         m_rdlock.unlock();
     }
@@ -73,7 +69,8 @@ private:
  * @brief 局部写锁模板实现
  */
 template<class T>
-struct WriteScopedLockImpl {
+class WriteScopedLockImpl
+{
 public:
     WriteScopedLockImpl(T& wrlock)
         : m_wrlock(wrlock)
@@ -82,11 +79,6 @@ public:
     }
 
     ~WriteScopedLockImpl()
-    {
-        m_wrlock.unlock();
-    }
-
-    void unlock()
     {
         m_wrlock.unlock();
     }
@@ -120,7 +112,6 @@ public:
     {
         pthread_mutexattr_init(&attr);
         pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
-        
         pthread_mutex_init(&m_mutex, &attr);
     }
 
@@ -128,7 +119,11 @@ public:
 
     void lock(){pthread_mutex_lock(&m_mutex);}
 
-    void unlock(){pthread_mutex_unlock(&m_mutex);}
+    void unlock()
+    {
+        pthread_mutex_unlock(&m_mutex);
+        pthread_mutexattr_destroy(&attr);
+    }
 private:
     pthread_mutex_t m_mutex;
     pthread_mutexattr_t attr;

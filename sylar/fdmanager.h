@@ -107,7 +107,7 @@ private:
 class FdManager
 {
 public:
-    typedef Mutex RWMutexType;
+    typedef RWLock RWMutexType;
     /**
      * @brief 无参构造函数
      */

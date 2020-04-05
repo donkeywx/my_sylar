@@ -15,7 +15,7 @@ class IOManager : public Scheduler, public TimerManager
 {
 public:
     typedef std::shared_ptr<IOManager> ptr;
-    typedef Mutex RWMutexType;
+    typedef RWLock RWMutexType;
 
     /**
      * @brief IO事件
