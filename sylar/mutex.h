@@ -118,7 +118,7 @@ public:
 
     Mutex()
     {
-        // memset(&attr, 0, sizeof(attr));
+        pthread_mutexattr_init(&attr);
         pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
         
         pthread_mutex_init(&m_mutex, &attr);
