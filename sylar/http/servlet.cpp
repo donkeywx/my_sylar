@@ -162,7 +162,10 @@ NotFoundServlet::NotFoundServlet(const std::string& name)
     ,m_name(name) {
     m_content = "<html><head><title>404 Not Found"
         "</title></head><body><center><h1>404 Not Found</h1></center>"
-        "<hr><center>" + name + "</center></body></html>";
+        "<hr><center>" + name + 
+        "If you see this page, the nginx web server is successfully installed and working. Further configuration is required. For online documentation and support please refer to nginx.org. Commercial support is available at nginx.com.Thank you for using nginx." 
+        + 
+        "</center></body></html>";
 
 }
 

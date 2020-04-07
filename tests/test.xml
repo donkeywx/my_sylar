@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4cxx/">
+
+
+    <!-- <appender name="common_file_async" class="log4cxx.AsyncAppender">
+        <appender-ref ref="common_file"/>
+    </appender> -->
+
+    <appender name="common_file" class="log4cxx.FileAppender">
+		<layout class="log4cxx.SimpleLayout" />
+		<param name="File" value="log.dat" />
+		<param name="Append" value="true" />
+        <parma name="BufferSize" value="10240"/>
+        <param name="BufferedIO" value="true"/>
+    </appender>
+
+	<root>
+		<priority value="all" />
+		<appender-ref ref="common_file" />
+	</root>
+
+</log4j:configuration>

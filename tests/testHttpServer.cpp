@@ -64,3 +64,6 @@ int main(int argc, char** argv)
     iom.schedule(run);
     return 0;
 }
+
+// ab -k -n 10000 -c 1000 "http://127.0.0.1:8020/"
+
