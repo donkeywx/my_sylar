@@ -4,7 +4,7 @@ PROJECT(sylar)
 SET(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 # -fsanitize=address
-SET(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -O0 -g  -std=c++11 -Wall -Wno-unused-const-variable -Wno-builtin-macro-redefined -Wno-deprecated -Werror -Wno-unused-function") 
+SET(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -O0 -g -std=c++11 -Wall -Wno-unused-const-variable -Wno-builtin-macro-redefined -Wno-deprecated -Werror -Wno-unused-function") 
 SET(LIB_SRC
     sylar/log.cpp
     sylar/util.cpp
@@ -34,12 +34,15 @@ SET(LIB_SRC
     sylar/http/http_server.cpp
     sylar/http/servlet.cpp
     #sylar/http/http_connection.cpp
+    sylar/context.cpp
+    sylar/fiber_boost.cpp
 )
 SET(LIB_LIB
     sylar
     pthread
     yaml-cpp
-    dl)
+    dl
+    boost_context)
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
@@ -126,6 +129,16 @@ ADD_EXECUTABLE(testTcpServer tests/testTcpServer.cpp)
 ADD_DEPENDENCIES(testTcpServer sylar)
 force_redefine_file_macro_for_sources(testTcpServer)
 TARGET_LINK_LIBRARIES(testTcpServer ${LIB_LIB})
+
+ADD_EXECUTABLE(testBoostContext tests/testBoostContext.cpp)
+ADD_DEPENDENCIES(testBoostContext sylar)
+force_redefine_file_macro_for_sources(testBoostContext)
+TARGET_LINK_LIBRARIES(testBoostContext ${LIB_LIB})
+
+ADD_EXECUTABLE(testBoostFiber tests/testBoostFiber.cpp)
+ADD_DEPENDENCIES(testBoostFiber sylar)
+force_redefine_file_macro_for_sources(testBoostFiber)
+TARGET_LINK_LIBRARIES(testBoostFiber ${LIB_LIB})
 
 #ADD_EXECUTABLE(testConnection tests/testConnection.cpp)
 #ADD_DEPENDENCIES(testConnection sylar)

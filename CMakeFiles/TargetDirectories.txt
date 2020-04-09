@@ -8,11 +8,13 @@
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testThread.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testLog.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testHttpParse.dir
+/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testBoostFiber.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testScheduler.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testIomanager.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testByteArray.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testHook.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testAddress.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testSocket.dir
+/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testBoostContext.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testHttp.dir
 /home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles/testHttpServer.dir

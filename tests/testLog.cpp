@@ -5,7 +5,7 @@ static sylar::Logger::ptr g_logger = SYLAR_LOG_ROOT();
 static const int NTHREADS = 10;
 
 // 本系统日志 单线程 100万 8.7s 
-// 本系统日志 10线程各 50万 161.143 
+// 本系统日志 10线程各 50万 161.143 优化日志的锁之后129.458 
 void* printfLog(void* arg)
 {
     
@@ -33,7 +33,6 @@ int main()
     {
         pthread_create(&threads[i], nullptr, printfLog, nullptr);
     }
-
 
     for (int i = 0; i < NTHREADS; i++)
     {

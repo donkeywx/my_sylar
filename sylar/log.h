@@ -181,6 +181,8 @@ class LogAppender
 {
 public:
     typedef std::shared_ptr<LogAppender> ptr;
+    typedef RWLock MutexType;
+
     virtual ~LogAppender(){}
 
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) = 0;
@@ -196,7 +198,7 @@ protected:
     LogLevel::Level m_level = LogLevel::DEBUG;
     bool m_hasFormatter = false;
     LogFormatter::ptr m_formatter;
-    Mutex m_mutex;
+    MutexType m_mutex;
 };
 
 // 输出到控制台的Appender
@@ -234,6 +236,7 @@ class Logger: public std::enable_shared_from_this<Logger>
 {
 public:
     typedef std::shared_ptr<Logger> ptr;
+    typedef RWLock MutexType;
 
     Logger(const std::string& name = "root");
 
@@ -267,13 +270,14 @@ private:
     LogLevel::Level m_level;
     std::list<LogAppender::ptr> m_appenders;
     LogFormatter::ptr m_formatter;
-    Mutex m_mutex;
+    MutexType m_mutex;
     Logger::ptr m_root; // 在不指定任何的appender的时候，使用root日志器
 };
 
 class LoggerManager
 {
 public:
+    typedef RWLock MutexType;
     LoggerManager();
 
     Logger::ptr getLogger(const std::string& name);
@@ -289,7 +293,7 @@ private:
     
     Logger::ptr m_root;
 
-    Mutex m_mutex;
+    MutexType m_mutex;
 };
 /// 日志器管理类单例模式
 typedef sylar::Singleton<LoggerManager> LoggerMgr;

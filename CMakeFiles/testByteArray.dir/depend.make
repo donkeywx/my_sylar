@@ -5,7 +5,9 @@ CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/address.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/bytearray.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/config.h
+CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/context.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/fiber.h
+CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/fiber_boost.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/hook.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/http/http.h
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: sylar/http/http11_common.h
@@ -43,6 +45,7 @@ CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/concept/usage.hpp
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/concept_check.hpp
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/config.hpp
+CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/config/auto_link.hpp
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/config/compiler/borland.hpp
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/config/compiler/clang.hpp
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/config/compiler/codegear.hpp
@@ -110,6 +113,8 @@ CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/config/workaround.hpp
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/container/container_fwd.hpp
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/container/detail/std_fwd.hpp
+CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/context/detail/config.hpp
+CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/context/detail/fcontext.hpp
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/core/addressof.hpp
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/core/checked_delete.hpp
 CMakeFiles/testByteArray.dir/tests/testByteArray.cpp.o: /usr/local/boost/include/boost/core/enable_if.hpp

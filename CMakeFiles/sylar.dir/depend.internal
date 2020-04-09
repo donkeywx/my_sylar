@@ -674,6 +674,81 @@ CMakeFiles/sylar.dir/sylar/config.cpp.o
  /usr/local/yaml-cpp/include/yaml-cpp/stlemitter.h
  /usr/local/yaml-cpp/include/yaml-cpp/traits.h
  /usr/local/yaml-cpp/include/yaml-cpp/yaml.h
+CMakeFiles/sylar.dir/sylar/context.cpp.o
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/context.cpp
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/context.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
+ /usr/local/boost/include/boost/config.hpp
+ /usr/local/boost/include/boost/config/auto_link.hpp
+ /usr/local/boost/include/boost/config/compiler/borland.hpp
+ /usr/local/boost/include/boost/config/compiler/clang.hpp
+ /usr/local/boost/include/boost/config/compiler/codegear.hpp
+ /usr/local/boost/include/boost/config/compiler/comeau.hpp
+ /usr/local/boost/include/boost/config/compiler/common_edg.hpp
+ /usr/local/boost/include/boost/config/compiler/compaq_cxx.hpp
+ /usr/local/boost/include/boost/config/compiler/cray.hpp
+ /usr/local/boost/include/boost/config/compiler/digitalmars.hpp
+ /usr/local/boost/include/boost/config/compiler/gcc.hpp
+ /usr/local/boost/include/boost/config/compiler/gcc_xml.hpp
+ /usr/local/boost/include/boost/config/compiler/greenhills.hpp
+ /usr/local/boost/include/boost/config/compiler/hp_acc.hpp
+ /usr/local/boost/include/boost/config/compiler/intel.hpp
+ /usr/local/boost/include/boost/config/compiler/kai.hpp
+ /usr/local/boost/include/boost/config/compiler/metrowerks.hpp
+ /usr/local/boost/include/boost/config/compiler/mpw.hpp
+ /usr/local/boost/include/boost/config/compiler/nvcc.hpp
+ /usr/local/boost/include/boost/config/compiler/pathscale.hpp
+ /usr/local/boost/include/boost/config/compiler/pgi.hpp
+ /usr/local/boost/include/boost/config/compiler/sgi_mipspro.hpp
+ /usr/local/boost/include/boost/config/compiler/sunpro_cc.hpp
+ /usr/local/boost/include/boost/config/compiler/vacpp.hpp
+ /usr/local/boost/include/boost/config/compiler/visualc.hpp
+ /usr/local/boost/include/boost/config/compiler/xlcpp.hpp
+ /usr/local/boost/include/boost/config/compiler/xlcpp_zos.hpp
+ /usr/local/boost/include/boost/config/detail/posix_features.hpp
+ /usr/local/boost/include/boost/config/detail/select_compiler_config.hpp
+ /usr/local/boost/include/boost/config/detail/select_platform_config.hpp
+ /usr/local/boost/include/boost/config/detail/select_stdlib_config.hpp
+ /usr/local/boost/include/boost/config/detail/suffix.hpp
+ /usr/local/boost/include/boost/config/helper_macros.hpp
+ /usr/local/boost/include/boost/config/no_tr1/utility.hpp
+ /usr/local/boost/include/boost/config/platform/aix.hpp
+ /usr/local/boost/include/boost/config/platform/amigaos.hpp
+ /usr/local/boost/include/boost/config/platform/beos.hpp
+ /usr/local/boost/include/boost/config/platform/bsd.hpp
+ /usr/local/boost/include/boost/config/platform/cray.hpp
+ /usr/local/boost/include/boost/config/platform/cygwin.hpp
+ /usr/local/boost/include/boost/config/platform/hpux.hpp
+ /usr/local/boost/include/boost/config/platform/irix.hpp
+ /usr/local/boost/include/boost/config/platform/linux.hpp
+ /usr/local/boost/include/boost/config/platform/macos.hpp
+ /usr/local/boost/include/boost/config/platform/qnxnto.hpp
+ /usr/local/boost/include/boost/config/platform/solaris.hpp
+ /usr/local/boost/include/boost/config/platform/symbian.hpp
+ /usr/local/boost/include/boost/config/platform/vms.hpp
+ /usr/local/boost/include/boost/config/platform/vxworks.hpp
+ /usr/local/boost/include/boost/config/platform/win32.hpp
+ /usr/local/boost/include/boost/config/platform/zos.hpp
+ /usr/local/boost/include/boost/config/pragma_message.hpp
+ /usr/local/boost/include/boost/config/stdlib/dinkumware.hpp
+ /usr/local/boost/include/boost/config/stdlib/libcomo.hpp
+ /usr/local/boost/include/boost/config/stdlib/libcpp.hpp
+ /usr/local/boost/include/boost/config/stdlib/libstdcpp3.hpp
+ /usr/local/boost/include/boost/config/stdlib/modena.hpp
+ /usr/local/boost/include/boost/config/stdlib/msl.hpp
+ /usr/local/boost/include/boost/config/stdlib/roguewave.hpp
+ /usr/local/boost/include/boost/config/stdlib/sgi.hpp
+ /usr/local/boost/include/boost/config/stdlib/stlport.hpp
+ /usr/local/boost/include/boost/config/stdlib/vacpp.hpp
+ /usr/local/boost/include/boost/config/stdlib/xlcpp_zos.hpp
+ /usr/local/boost/include/boost/config/user.hpp
+ /usr/local/boost/include/boost/config/workaround.hpp
+ /usr/local/boost/include/boost/context/detail/config.hpp
+ /usr/local/boost/include/boost/context/detail/fcontext.hpp
+ /usr/local/boost/include/boost/cstdint.hpp
+ /usr/local/boost/include/boost/detail/workaround.hpp
+ /usr/local/boost/include/boost/limits.hpp
+ /usr/local/boost/include/boost/version.hpp
 CMakeFiles/sylar.dir/sylar/fdmanager.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fdmanager.cpp
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fdmanager.h
@@ -1338,6 +1413,82 @@ CMakeFiles/sylar.dir/sylar/fiber.cpp.o
  /usr/local/yaml-cpp/include/yaml-cpp/stlemitter.h
  /usr/local/yaml-cpp/include/yaml-cpp/traits.h
  /usr/local/yaml-cpp/include/yaml-cpp/yaml.h
+CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/context.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber_boost.cpp
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber_boost.h
+ /home/wangk/code/cpp/sylar/code/my_sylar/sylar/noncopyable.h
+ /usr/local/boost/include/boost/config.hpp
+ /usr/local/boost/include/boost/config/auto_link.hpp
+ /usr/local/boost/include/boost/config/compiler/borland.hpp
+ /usr/local/boost/include/boost/config/compiler/clang.hpp
+ /usr/local/boost/include/boost/config/compiler/codegear.hpp
+ /usr/local/boost/include/boost/config/compiler/comeau.hpp
+ /usr/local/boost/include/boost/config/compiler/common_edg.hpp
+ /usr/local/boost/include/boost/config/compiler/compaq_cxx.hpp
+ /usr/local/boost/include/boost/config/compiler/cray.hpp
+ /usr/local/boost/include/boost/config/compiler/digitalmars.hpp
+ /usr/local/boost/include/boost/config/compiler/gcc.hpp
+ /usr/local/boost/include/boost/config/compiler/gcc_xml.hpp
+ /usr/local/boost/include/boost/config/compiler/greenhills.hpp
+ /usr/local/boost/include/boost/config/compiler/hp_acc.hpp
+ /usr/local/boost/include/boost/config/compiler/intel.hpp
+ /usr/local/boost/include/boost/config/compiler/kai.hpp
+ /usr/local/boost/include/boost/config/compiler/metrowerks.hpp
+ /usr/local/boost/include/boost/config/compiler/mpw.hpp
+ /usr/local/boost/include/boost/config/compiler/nvcc.hpp
+ /usr/local/boost/include/boost/config/compiler/pathscale.hpp
+ /usr/local/boost/include/boost/config/compiler/pgi.hpp
+ /usr/local/boost/include/boost/config/compiler/sgi_mipspro.hpp
+ /usr/local/boost/include/boost/config/compiler/sunpro_cc.hpp
+ /usr/local/boost/include/boost/config/compiler/vacpp.hpp
+ /usr/local/boost/include/boost/config/compiler/visualc.hpp
+ /usr/local/boost/include/boost/config/compiler/xlcpp.hpp
+ /usr/local/boost/include/boost/config/compiler/xlcpp_zos.hpp
+ /usr/local/boost/include/boost/config/detail/posix_features.hpp
+ /usr/local/boost/include/boost/config/detail/select_compiler_config.hpp
+ /usr/local/boost/include/boost/config/detail/select_platform_config.hpp
+ /usr/local/boost/include/boost/config/detail/select_stdlib_config.hpp
+ /usr/local/boost/include/boost/config/detail/suffix.hpp
+ /usr/local/boost/include/boost/config/helper_macros.hpp
+ /usr/local/boost/include/boost/config/no_tr1/utility.hpp
+ /usr/local/boost/include/boost/config/platform/aix.hpp
+ /usr/local/boost/include/boost/config/platform/amigaos.hpp
+ /usr/local/boost/include/boost/config/platform/beos.hpp
+ /usr/local/boost/include/boost/config/platform/bsd.hpp
+ /usr/local/boost/include/boost/config/platform/cray.hpp
+ /usr/local/boost/include/boost/config/platform/cygwin.hpp
+ /usr/local/boost/include/boost/config/platform/hpux.hpp
+ /usr/local/boost/include/boost/config/platform/irix.hpp
+ /usr/local/boost/include/boost/config/platform/linux.hpp
+ /usr/local/boost/include/boost/config/platform/macos.hpp
+ /usr/local/boost/include/boost/config/platform/qnxnto.hpp
+ /usr/local/boost/include/boost/config/platform/solaris.hpp
+ /usr/local/boost/include/boost/config/platform/symbian.hpp
+ /usr/local/boost/include/boost/config/platform/vms.hpp
+ /usr/local/boost/include/boost/config/platform/vxworks.hpp
+ /usr/local/boost/include/boost/config/platform/win32.hpp
+ /usr/local/boost/include/boost/config/platform/zos.hpp
+ /usr/local/boost/include/boost/config/pragma_message.hpp
+ /usr/local/boost/include/boost/config/stdlib/dinkumware.hpp
+ /usr/local/boost/include/boost/config/stdlib/libcomo.hpp
+ /usr/local/boost/include/boost/config/stdlib/libcpp.hpp
+ /usr/local/boost/include/boost/config/stdlib/libstdcpp3.hpp
+ /usr/local/boost/include/boost/config/stdlib/modena.hpp
+ /usr/local/boost/include/boost/config/stdlib/msl.hpp
+ /usr/local/boost/include/boost/config/stdlib/roguewave.hpp
+ /usr/local/boost/include/boost/config/stdlib/sgi.hpp
+ /usr/local/boost/include/boost/config/stdlib/stlport.hpp
+ /usr/local/boost/include/boost/config/stdlib/vacpp.hpp
+ /usr/local/boost/include/boost/config/stdlib/xlcpp_zos.hpp
+ /usr/local/boost/include/boost/config/user.hpp
+ /usr/local/boost/include/boost/config/workaround.hpp
+ /usr/local/boost/include/boost/context/detail/config.hpp
+ /usr/local/boost/include/boost/context/detail/fcontext.hpp
+ /usr/local/boost/include/boost/cstdint.hpp
+ /usr/local/boost/include/boost/detail/workaround.hpp
+ /usr/local/boost/include/boost/limits.hpp
+ /usr/local/boost/include/boost/version.hpp
 CMakeFiles/sylar.dir/sylar/hook.cpp.o
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/config.h
  /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fdmanager.h

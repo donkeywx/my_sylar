@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o"
   "CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o"
   "CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o"
+  "CMakeFiles/sylar.dir/sylar/context.cpp.o"
+  "CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o"
   "lib/libsylar.pdb"
   "lib/libsylar.so"
 )

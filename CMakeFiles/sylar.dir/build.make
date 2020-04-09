@@ -684,6 +684,54 @@ CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o.provides: CMakeFiles/sylar.dir/syl
 CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o
 
 
+CMakeFiles/sylar.dir/sylar/context.cpp.o: CMakeFiles/sylar.dir/flags.make
+CMakeFiles/sylar.dir/sylar/context.cpp.o: sylar/context.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/sylar.dir/sylar/context.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/context.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/context.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/context.cpp
+
+CMakeFiles/sylar.dir/sylar/context.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/context.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/context.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/sylar/context.cpp > CMakeFiles/sylar.dir/sylar/context.cpp.i
+
+CMakeFiles/sylar.dir/sylar/context.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/context.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/context.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/sylar/context.cpp -o CMakeFiles/sylar.dir/sylar/context.cpp.s
+
+CMakeFiles/sylar.dir/sylar/context.cpp.o.requires:
+
+.PHONY : CMakeFiles/sylar.dir/sylar/context.cpp.o.requires
+
+CMakeFiles/sylar.dir/sylar/context.cpp.o.provides: CMakeFiles/sylar.dir/sylar/context.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/context.cpp.o.provides.build
+.PHONY : CMakeFiles/sylar.dir/sylar/context.cpp.o.provides
+
+CMakeFiles/sylar.dir/sylar/context.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/context.cpp.o
+
+
+CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o: CMakeFiles/sylar.dir/flags.make
+CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o: sylar/fiber_boost.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) -D__FILE__=\"sylar/fiber_boost.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o -c /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber_boost.cpp
+
+CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/fiber_boost.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber_boost.cpp > CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.i
+
+CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) -D__FILE__=\"sylar/fiber_boost.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wangk/code/cpp/sylar/code/my_sylar/sylar/fiber_boost.cpp -o CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.s
+
+CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o.requires:
+
+.PHONY : CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o.requires
+
+CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o.provides: CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o.provides.build
+.PHONY : CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o.provides
+
+CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o.provides.build: CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o
+
+
 # Object files for target sylar
 sylar_OBJECTS = \
 "CMakeFiles/sylar.dir/sylar/log.cpp.o" \
@@ -711,7 +759,9 @@ sylar_OBJECTS = \
 "CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o" \
 "CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o" \
 "CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o" \
-"CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o"
+"CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o" \
+"CMakeFiles/sylar.dir/sylar/context.cpp.o" \
+"CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o"
 
 # External object files for target sylar
 sylar_EXTERNAL_OBJECTS =
@@ -742,9 +792,11 @@ lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o
+lib/libsylar.so: CMakeFiles/sylar.dir/sylar/context.cpp.o
+lib/libsylar.so: CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o
 lib/libsylar.so: CMakeFiles/sylar.dir/build.make
 lib/libsylar.so: CMakeFiles/sylar.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX shared library lib/libsylar.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wangk/code/cpp/sylar/code/my_sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX shared library lib/libsylar.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sylar.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -778,6 +830,8 @@ CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/httpclient_parser
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/http_session.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/http_server.cpp.o.requires
 CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/http/servlet.cpp.o.requires
+CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/context.cpp.o.requires
+CMakeFiles/sylar.dir/requires: CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o.requires
 
 .PHONY : CMakeFiles/sylar.dir/requires
 

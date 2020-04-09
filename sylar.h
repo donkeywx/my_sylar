@@ -21,5 +21,7 @@
 #include "sylar/http/http_parser.h"
 #include "sylar/http/http_session.h"
 #include "sylar/http/http_server.h"
+#include "sylar/context.h"
+#include "sylar/fiber_boost.h"
 
 #endif

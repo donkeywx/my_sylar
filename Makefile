@@ -218,6 +218,19 @@ testHttpParse/fast:
 .PHONY : testHttpParse/fast
 
 #=============================================================================
+# Target rules for targets named testBoostFiber
+
+# Build rule for target.
+testBoostFiber: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testBoostFiber
+.PHONY : testBoostFiber
+
+# fast build rule for target.
+testBoostFiber/fast:
+	$(MAKE) -f CMakeFiles/testBoostFiber.dir/build.make CMakeFiles/testBoostFiber.dir/build
+.PHONY : testBoostFiber/fast
+
+#=============================================================================
 # Target rules for targets named testScheduler
 
 # Build rule for target.
@@ -294,6 +307,19 @@ testSocket: cmake_check_build_system
 testSocket/fast:
 	$(MAKE) -f CMakeFiles/testSocket.dir/build.make CMakeFiles/testSocket.dir/build
 .PHONY : testSocket/fast
+
+#=============================================================================
+# Target rules for targets named testBoostContext
+
+# Build rule for target.
+testBoostContext: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testBoostContext
+.PHONY : testBoostContext
+
+# fast build rule for target.
+testBoostContext/fast:
+	$(MAKE) -f CMakeFiles/testBoostContext.dir/build.make CMakeFiles/testBoostContext.dir/build
+.PHONY : testBoostContext/fast
 
 #=============================================================================
 # Target rules for targets named testHttp
@@ -402,6 +428,33 @@ sylar/config.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/config.cpp.s
 .PHONY : sylar/config.cpp.s
 
+sylar/context.o: sylar/context.cpp.o
+
+.PHONY : sylar/context.o
+
+# target to build an object file
+sylar/context.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/context.cpp.o
+.PHONY : sylar/context.cpp.o
+
+sylar/context.i: sylar/context.cpp.i
+
+.PHONY : sylar/context.i
+
+# target to preprocess a source file
+sylar/context.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/context.cpp.i
+.PHONY : sylar/context.cpp.i
+
+sylar/context.s: sylar/context.cpp.s
+
+.PHONY : sylar/context.s
+
+# target to generate assembly for a file
+sylar/context.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/context.cpp.s
+.PHONY : sylar/context.cpp.s
+
 sylar/fdmanager.o: sylar/fdmanager.cpp.o
 
 .PHONY : sylar/fdmanager.o
@@ -455,6 +508,33 @@ sylar/fiber.s: sylar/fiber.cpp.s
 sylar/fiber.cpp.s:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber.cpp.s
 .PHONY : sylar/fiber.cpp.s
+
+sylar/fiber_boost.o: sylar/fiber_boost.cpp.o
+
+.PHONY : sylar/fiber_boost.o
+
+# target to build an object file
+sylar/fiber_boost.cpp.o:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.o
+.PHONY : sylar/fiber_boost.cpp.o
+
+sylar/fiber_boost.i: sylar/fiber_boost.cpp.i
+
+.PHONY : sylar/fiber_boost.i
+
+# target to preprocess a source file
+sylar/fiber_boost.cpp.i:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.i
+.PHONY : sylar/fiber_boost.cpp.i
+
+sylar/fiber_boost.s: sylar/fiber_boost.cpp.s
+
+.PHONY : sylar/fiber_boost.s
+
+# target to generate assembly for a file
+sylar/fiber_boost.cpp.s:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber_boost.cpp.s
+.PHONY : sylar/fiber_boost.cpp.s
 
 sylar/hook.o: sylar/hook.cpp.o
 
@@ -1050,6 +1130,60 @@ tests/testAddress.cpp.s:
 	$(MAKE) -f CMakeFiles/testAddress.dir/build.make CMakeFiles/testAddress.dir/tests/testAddress.cpp.s
 .PHONY : tests/testAddress.cpp.s
 
+tests/testBoostContext.o: tests/testBoostContext.cpp.o
+
+.PHONY : tests/testBoostContext.o
+
+# target to build an object file
+tests/testBoostContext.cpp.o:
+	$(MAKE) -f CMakeFiles/testBoostContext.dir/build.make CMakeFiles/testBoostContext.dir/tests/testBoostContext.cpp.o
+.PHONY : tests/testBoostContext.cpp.o
+
+tests/testBoostContext.i: tests/testBoostContext.cpp.i
+
+.PHONY : tests/testBoostContext.i
+
+# target to preprocess a source file
+tests/testBoostContext.cpp.i:
+	$(MAKE) -f CMakeFiles/testBoostContext.dir/build.make CMakeFiles/testBoostContext.dir/tests/testBoostContext.cpp.i
+.PHONY : tests/testBoostContext.cpp.i
+
+tests/testBoostContext.s: tests/testBoostContext.cpp.s
+
+.PHONY : tests/testBoostContext.s
+
+# target to generate assembly for a file
+tests/testBoostContext.cpp.s:
+	$(MAKE) -f CMakeFiles/testBoostContext.dir/build.make CMakeFiles/testBoostContext.dir/tests/testBoostContext.cpp.s
+.PHONY : tests/testBoostContext.cpp.s
+
+tests/testBoostFiber.o: tests/testBoostFiber.cpp.o
+
+.PHONY : tests/testBoostFiber.o
+
+# target to build an object file
+tests/testBoostFiber.cpp.o:
+	$(MAKE) -f CMakeFiles/testBoostFiber.dir/build.make CMakeFiles/testBoostFiber.dir/tests/testBoostFiber.cpp.o
+.PHONY : tests/testBoostFiber.cpp.o
+
+tests/testBoostFiber.i: tests/testBoostFiber.cpp.i
+
+.PHONY : tests/testBoostFiber.i
+
+# target to preprocess a source file
+tests/testBoostFiber.cpp.i:
+	$(MAKE) -f CMakeFiles/testBoostFiber.dir/build.make CMakeFiles/testBoostFiber.dir/tests/testBoostFiber.cpp.i
+.PHONY : tests/testBoostFiber.cpp.i
+
+tests/testBoostFiber.s: tests/testBoostFiber.cpp.s
+
+.PHONY : tests/testBoostFiber.s
+
+# target to generate assembly for a file
+tests/testBoostFiber.cpp.s:
+	$(MAKE) -f CMakeFiles/testBoostFiber.dir/build.make CMakeFiles/testBoostFiber.dir/tests/testBoostFiber.cpp.s
+.PHONY : tests/testBoostFiber.cpp.s
+
 tests/testByteArray.o: tests/testByteArray.cpp.o
 
 .PHONY : tests/testByteArray.o
@@ -1444,12 +1578,14 @@ help:
 	@echo "... testThread"
 	@echo "... testLog"
 	@echo "... testHttpParse"
+	@echo "... testBoostFiber"
 	@echo "... testScheduler"
 	@echo "... testIomanager"
 	@echo "... testByteArray"
 	@echo "... testHook"
 	@echo "... testAddress"
 	@echo "... testSocket"
+	@echo "... testBoostContext"
 	@echo "... testHttp"
 	@echo "... testHttpServer"
 	@echo "... sylar/address.o"
@@ -1461,12 +1597,18 @@ help:
 	@echo "... sylar/config.o"
 	@echo "... sylar/config.i"
 	@echo "... sylar/config.s"
+	@echo "... sylar/context.o"
+	@echo "... sylar/context.i"
+	@echo "... sylar/context.s"
 	@echo "... sylar/fdmanager.o"
 	@echo "... sylar/fdmanager.i"
 	@echo "... sylar/fdmanager.s"
 	@echo "... sylar/fiber.o"
 	@echo "... sylar/fiber.i"
 	@echo "... sylar/fiber.s"
+	@echo "... sylar/fiber_boost.o"
+	@echo "... sylar/fiber_boost.i"
+	@echo "... sylar/fiber_boost.s"
 	@echo "... sylar/hook.o"
 	@echo "... sylar/hook.i"
 	@echo "... sylar/hook.s"
@@ -1533,6 +1675,12 @@ help:
 	@echo "... tests/testAddress.o"
 	@echo "... tests/testAddress.i"
 	@echo "... tests/testAddress.s"
+	@echo "... tests/testBoostContext.o"
+	@echo "... tests/testBoostContext.i"
+	@echo "... tests/testBoostContext.s"
+	@echo "... tests/testBoostFiber.o"
+	@echo "... tests/testBoostFiber.i"
+	@echo "... tests/testBoostFiber.s"
 	@echo "... tests/testByteArray.o"
 	@echo "... tests/testByteArray.i"
 	@echo "... tests/testByteArray.s"

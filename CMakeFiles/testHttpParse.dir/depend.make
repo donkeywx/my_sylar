@@ -5,7 +5,9 @@ CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/address.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/bytearray.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/config.h
+CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/context.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/fiber.h
+CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/fiber_boost.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/hook.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/http/http.h
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: sylar/http/http11_common.h
@@ -43,6 +45,7 @@ CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/concept/usage.hpp
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/concept_check.hpp
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/config.hpp
+CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/config/auto_link.hpp
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/config/compiler/borland.hpp
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/config/compiler/clang.hpp
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/config/compiler/codegear.hpp
@@ -110,6 +113,8 @@ CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/config/workaround.hpp
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/container/container_fwd.hpp
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/container/detail/std_fwd.hpp
+CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/context/detail/config.hpp
+CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/context/detail/fcontext.hpp
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/core/addressof.hpp
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/core/checked_delete.hpp
 CMakeFiles/testHttpParse.dir/tests/testHttpParse.cpp.o: /usr/local/boost/include/boost/core/enable_if.hpp
